@@ -62,7 +62,7 @@ const TeamGridNoImage = () => {
         <div className="max-w-2xl">
           <h2 className="text-4xl font-extrabold tracking-tight text-base-content sm:text-5xl">Meet our team</h2>
           <p className="mt-6 text-lg leading-8 text-base-content/80">
-            Libero fames augue nisl porttitor nisi, quis. Id ac elit odio vitae elementum enim vitae ullamcorper suspendisse.
+            Our dedicated team works tirelessly to create memorable experiences for our community.
           </p>
         </div>
         <ul role="list" className="grid gap-x-8 gap-y-12 sm:grid-cols-2 md:grid-cols-3 mt-12 xl:col-span-2">
