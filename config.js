@@ -3,6 +3,8 @@ import themes from "daisyui/src/theming/themes";
 const config = {
   // REQUIRED
   appName: "International Berlin Community",
+
+  appNameShort: "IBC",
   // REQUIRED: a short description of your app for SEO tags (can be overwritten)
   appDescription:
     "Meet like-minded people, explore Berlin, and experience the best the city has to offer through our vibrant community events.",
