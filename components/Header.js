@@ -66,7 +66,8 @@ const Header = () => {
                 width={32}
                 height={32}
               />
-              <span className="font-extrabold text-lg">{config.appName}</span>
+              <span className="font-extrabold text-lg block lg:hidden">{config.appNameShort}</span>
+              <span className="font-extrabold text-lg hidden lg:block">{config.appName}</span>
             </Link>
           </div>
 
@@ -131,7 +132,8 @@ const Header = () => {
                 width={32}
                 height={32}
               />
-              <span className="font-extrabold text-lg">{config.appName}</span>
+              <span className="font-extrabold text-lg lg:hidden">{config.appNameShort}</span>
+              <span className="font-extrabold text-lg hidden lg:block">{config.appName}</span>
             </Link>
             <button
               type="button"
@@ -155,7 +157,6 @@ const Header = () => {
               </svg>
             </button>
           </div>
-
           <div className="flow-root mt-6">
             <div className="py-4">
               <div className="flex flex-col gap-y-4 items-start">
