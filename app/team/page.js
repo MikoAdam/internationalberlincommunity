@@ -13,7 +13,9 @@ const LinkedInIcon = () => (
 const TeamPage = () => {
   return (
     <>
-      <Header />
+      <Suspense fallback={<div>Loading header...</div>}>
+        <Header />
+      </Suspense>
       <main className="bg-base-100 py-24 sm:py-32 text-center">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="max-w-2xl mx-auto text-center">
@@ -25,7 +27,7 @@ const TeamPage = () => {
             </p>
           </div>
 
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<div>Loading team members...</div>}>
             {/* Current Team Members */}
             <div className="bg-base-200 mt-12 mb-20 rounded-lg shadow-md p-6">  {/* Increased mb */}
               <h2 className="text-2xl font-bold tracking-tight text-base-content sm:text-3xl">
