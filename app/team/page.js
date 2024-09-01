@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { teamMembers } from "@/components/TeamGrid";
 import { formerTeamMembers } from "@/components/FormerTeam";
 import Header from "@/components/Header";
@@ -24,59 +25,61 @@ const TeamPage = () => {
             </p>
           </div>
 
-          {/* Current Team Members */}
-          <div className="bg-base-200 mt-12 mb-20 rounded-lg shadow-md p-6">  {/* Increased mb */}
-            <h2 className="text-2xl font-bold tracking-tight text-base-content sm:text-3xl">
-              Current Team Members
-            </h2>
-            <ul className="grid gap-x-8 gap-y-12 sm:grid-cols-2 md:grid-cols-3 mt-6 xl:col-span-2">
-              {teamMembers.map((member) => (
-                <li key={member.name}>
-                  <div className="flex flex-col items-center gap-y-2">
-                    <h3 className="text-base font-semibold leading-7 tracking-tight text-base-content">
-                      {member.name}
-                    </h3>
-                    <p className="text-sm font-semibold leading-6 text-primary">
-                      {member.role}
-                    </p>
-                    {member.linkedinUrl && member.linkedinUrl.trim() !== '' && (
-                      <a href={member.linkedinUrl} target="_blank" rel="noopener noreferrer" title="LinkedIn profile">
-                        <LinkedInIcon />
-                      </a>
-                    )}
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Former Team Members */}
-          <div className="bg-base-200 mt-12 mb-32 rounded-lg shadow-md p-6">  {/* Increased mb */}
-            <h2 className="text-2xl font-bold tracking-tight text-base-content sm:text-3xl">
-              Former Team Members
-            </h2>
-            <ul className="grid gap-x-8 gap-y-12 sm:grid-cols-2 md:grid-cols-3 mt-6 xl:col-span-2">
-              {formerTeamMembers.map((member) => (
-                <li key={member.name}>
-                  <div className="flex flex-col items-center gap-y-2">
-                    <h3 className="text-base font-semibold leading-7 tracking-tight text-base-content">
-                      {member.name}
-                    </h3>
-                    {member.role && (
+          <Suspense fallback={<div>Loading...</div>}>
+            {/* Current Team Members */}
+            <div className="bg-base-200 mt-12 mb-20 rounded-lg shadow-md p-6">  {/* Increased mb */}
+              <h2 className="text-2xl font-bold tracking-tight text-base-content sm:text-3xl">
+                Current Team Members
+              </h2>
+              <ul className="grid gap-x-8 gap-y-12 sm:grid-cols-2 md:grid-cols-3 mt-6 xl:col-span-2">
+                {teamMembers.map((member) => (
+                  <li key={member.name}>
+                    <div className="flex flex-col items-center gap-y-2">
+                      <h3 className="text-base font-semibold leading-7 tracking-tight text-base-content">
+                        {member.name}
+                      </h3>
                       <p className="text-sm font-semibold leading-6 text-primary">
                         {member.role}
                       </p>
-                    )}
-                    {member.linkedinUrl && member.linkedinUrl.trim() !== '' && (
-                      <a href={member.linkedinUrl} target="_blank" rel="noopener noreferrer" title="LinkedIn profile">
-                        <LinkedInIcon />
-                      </a>
-                    )}
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
+                      {member.linkedinUrl && member.linkedinUrl.trim() !== '' && (
+                        <a href={member.linkedinUrl} target="_blank" rel="noopener noreferrer" title="LinkedIn profile">
+                          <LinkedInIcon />
+                        </a>
+                      )}
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Former Team Members */}
+            <div className="bg-base-200 mt-12 mb-32 rounded-lg shadow-md p-6">  {/* Increased mb */}
+              <h2 className="text-2xl font-bold tracking-tight text-base-content sm:text-3xl">
+                Former Team Members
+              </h2>
+              <ul className="grid gap-x-8 gap-y-12 sm:grid-cols-2 md:grid-cols-3 mt-6 xl:col-span-2">
+                {formerTeamMembers.map((member) => (
+                  <li key={member.name}>
+                    <div className="flex flex-col items-center gap-y-2">
+                      <h3 className="text-base font-semibold leading-7 tracking-tight text-base-content">
+                        {member.name}
+                      </h3>
+                      {member.role && (
+                        <p className="text-sm font-semibold leading-6 text-primary">
+                          {member.role}
+                        </p>
+                      )}
+                      {member.linkedinUrl && member.linkedinUrl.trim() !== '' && (
+                        <a href={member.linkedinUrl} target="_blank" rel="noopener noreferrer" title="LinkedIn profile">
+                          <LinkedInIcon />
+                        </a>
+                      )}
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Suspense>
         </div>
       </main>
       <Footer />
