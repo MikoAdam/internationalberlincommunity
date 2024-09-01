@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import TestimonialsAvatars from "./TestimonialsAvatars";
-import config from "@/config";
 import Button2Section from "@/components/Button2Section";
 
 const imageUrls = [
@@ -40,9 +39,9 @@ const Hero = () => {
         <TestimonialsAvatars priority={true} />
       </div>
 
-      <div className="lg:w-full">
+      <div className="w-full max-w-[500px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[600px] xl:max-w-[700px]">
         <Link href="/programs">
-          <div className="relative w-[500px] h-[500px] overflow-hidden rounded-[10px] cursor-pointer">
+          <div className="relative w-full pb-[100%] md:pb-[100%] lg:pb-[100%] xl:pb-[100%] overflow-hidden rounded-[10px] cursor-pointer">
             <Image
               src={imageUrls[currentImageIndex]}
               alt="Product Demo"
