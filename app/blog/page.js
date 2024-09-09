@@ -1,8 +1,10 @@
+import { Suspense } from 'react';
 import { categories, articles } from "./_assets/content";
 import CardArticle from "./_assets/components/CardArticle";
 import CardCategory from "./_assets/components/CardCategory";
 import config from "@/config";
 import { getSEOTags } from "@/libs/seo";
+import dynamic from 'next/dynamic';
 
 export const metadata = getSEOTags({
   title: `${config.appName} Blog | Stripe Chargeback Protection`,
@@ -11,12 +13,21 @@ export const metadata = getSEOTags({
   canonicalUrlRelative: "/blog",
 });
 
+// Dynamically import SearchForm to ensure it loads as a client component
+const SearchForm = dynamic(() => import('@/components/SearchForm'), { ssr: false });
+
 export default async function Blog() {
   const articlesToDisplay = articles
     .sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt))
     .slice(0, 6);
+
   return (
     <>
+      <section className="text-center max-w-xl mx-auto mt-12">
+        <Suspense fallback={<div>Loading search...</div>}>
+          <SearchForm data={articles} dataType="blog" />
+        </Suspense>
+      </section>
       <section className="text-center max-w-xl mx-auto mt-12 mb-24 md:mb-32">
         <h1 className="font-extrabold text-3xl lg:text-5xl tracking-tight mb-6">
           The {config.appName} Blog
