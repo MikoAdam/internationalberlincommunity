@@ -21,10 +21,10 @@ export default function Home() {
       <main>
         <Hero />
         <LatestPrograms />
-        <Testimonial1Small />
+        {/* <Testimonial1Small /> */}
         <FeaturesAccordion />
         <LatestBlogPosts />
-        <Testimonial2Small />
+        {/* <Testimonial2Small /> */}
         <AboutUs />
         <TeamGrid />
         <FAQ />

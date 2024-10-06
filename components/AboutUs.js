@@ -16,7 +16,7 @@ const AboutUs = () => {
 
         <div className="stats shadow grid grid-flow-row md:grid-flow-col gap-4">
           <div className="stat">
-            <div className="stat-figure text-primary">
+            <div className="stat-figure text-secondary">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -49,22 +49,29 @@ const AboutUs = () => {
               </svg>
             </div>
             <div className="stat-title">Events So Far</div>
-            <div className="stat-value text-secondary">100+</div> {/* Fixed incomplete tag */}
-            <div className="stat-desc">5-10 new events every month</div>
+            <div className="stat-value text-primary">100+</div> {/* Fixed incomplete tag */}
+            <div className="stat-desc">usually 20-40 participants per event</div>
           </div>
 
           <div className="stat">
             <div className="stat-figure text-secondary">
-              <div className="avatar online">
-                <div className="w-16 rounded-full">
-                  <img src="/assets/adam.jpeg" alt="User Avatar" />
-                </div>
-              </div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                className="inline-block h-8 w-8 stroke-current">
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M16 11V9a4 4 0 10-8 0v2a4 4 0 00-4 4v3a2 2 0 002 2h12a2 2 0 002-2v-3a4 4 0 00-4-4z"></path>
+              </svg>
             </div>
-            <div className="stat-value">10+</div>
-            <div className="stat-title">Organizers and team members</div>
-            <div className="stat-desc text-secondary">New organizers always welcome</div>
+            <div className="stat-title">Organizers and Team Members</div>
+            <div className="stat-value text-primary">10+</div>
+            <div className="stat-desc">New organizers always welcome</div>
           </div>
+
         </div>
       </div>
     </section>

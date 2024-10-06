@@ -14,15 +14,15 @@ const faqList = [
     question: "Are the events free to attend?",
     answer: (
       <p>
-        Most of our events are free, though some might have a small fee to help cover costs. You can find all the details in the event descriptions.
+        All of our events are for free, however there might be events for example kayaking where you have to rent a kayak or pay entrance fee.
       </p>
     ),
   },
   {
-    question: "Do I need to be an expat to join?",
+    question: "Do I need to be an foreigner to join?",
     answer: (
       <p>
-        Not at all! Our community welcomes everyone—whether you’re an expat, a local, or just visiting Berlin.
+        Not at all! Our community welcomes everyone—whether you’re an foreigner, a local, or just visiting Berlin.
       </p>
     ),
   },

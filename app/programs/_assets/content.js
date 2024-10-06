@@ -209,7 +209,7 @@ export const programs = [
     // The unique slug to use in the URL. It's also used to generate the canonical URL.
     slug: "hiking-2024-09-10",
     // The title to display in the article page (h1). Less than 60 characters. It's also used to generate the meta title.
-    title: "Hiking to Mount Everest from Base Camp",
+    title: "Hikes",
     // The description of the article to display in the article page. Up to 160 characters. It's also used to generate the meta description.
     description:
       "Best trip near Berlin, with the best people around. Join us for our peak attempt.",
@@ -233,7 +233,7 @@ export const programs = [
       <>
         <Image
           src={hikingImg} // replace with a relevant image if available
-          alt="Mount Everest Expedition"
+          alt="hike"
           width={700}
           height={500}
           priority={true}
@@ -243,7 +243,7 @@ export const programs = [
         <section>
           <h2 className={styles.h2}>Introduction</h2>
           <p className={styles.p}>
-            Embark on an unforgettable adventure to the Himalayas as we hike from the base camp of Mount Everest. This journey offers a unique opportunity to witness the majestic surroundings of the world's highest peak and challenge yourself with high-altitude trekking.
+            Embark on an unforgettable adventure all around Germany.
           </p>
         </section>
         <section>
@@ -270,16 +270,15 @@ export const programs = [
           </pre>
         </section>
         <section>
-          <h3 className={styles.h3}>3. Highlights of the Expedition</h3>
+          <h3 className={styles.h3}>3. Highlights of the hikes</h3>
           <p className={styles.p}>
-            The main highlight is reaching the Everest Base Camp, where you feel the sheer magnitude of the mountain. Climbing Kala Patthar provides the best close-up view of Everest, Nuptse, and Lhotse. The entire journey is a photographer's dream come true.
+                
           </p>
           
 
           <ul className={styles.ul}>
-            <li className={styles.li}>Spectacular views of Mount Everest and surrounding peaks.</li>
-            <li className={styles.li}>Immersive cultural experience with local Sherpa communities.</li>
-            <li className={styles.li}>An opportunity to test your limits and achieve a personal milestone.</li>
+            <li className={styles.li}>Beautiful places all around Germany.</li>
+            <li className={styles.li}>Amazing traditional German towns.</li>
           </ul>
         </section>
         <section>
@@ -297,7 +296,7 @@ export const programs = [
   {
     
     slug: "language-2024-09-15",
-    title: "Language Exchange Program with Hamburger and Beer",
+    title: "Language Exchange Program",
     description:
       "Practice and improve your language skills with native speakers in a relaxed and friendly environment.",
     
@@ -318,7 +317,7 @@ export const programs = [
       <>
         <Image
           src={languageExchange}
-          alt="Mount Everest Expedition"
+          alt="hike"
           width={700}
           height={500}
           priority={true}
@@ -342,16 +341,6 @@ export const programs = [
           <p className={styles.p}>
             We host regular interactive sessions where you can engage in conversations with native speakers. These sessions are designed to be engaging and fun, focusing on real-life conversational skills rather than textbook learning.
           </p>
-          <pre className={styles.code}>
-            <code>
-              {`SCHEDULE:
-                - Week 1: Introduction and Goals
-                - Week 2: Vocabulary Building
-                - Week 3: Practice Conversations
-                - Week 4: Cultural Exchange
-                - Week 5: Advanced Conversational Skills`}
-            </code>
-          </pre>
         </section>
         <section>
           <h3 className={styles.h3}>3. Benefits of Participation</h3>
@@ -368,7 +357,7 @@ export const programs = [
         <section>
           <h3 className={styles.h3}>4. How to Join</h3>
           <p className={styles.p}>
-            Joining our Language Exchange Program is easy! Simply sign up on our website and attend the next scheduled session. We look forward to helping you on your language learning journey.
+            Joining our Language Exchange Program is easy! Simply join our group through Facebook. We look forward to helping you on your language learning journey.
           </p>
         </section>
       </>
