@@ -23,7 +23,7 @@ const TeamPage = () => {
               Our Team
             </h1>
             <p className="text-lg leading-8 text-base-content/80">
-              Meet the brilliant minds behind our success and those who contributed in the past.
+              Meet the team behind our success and those who contributed in the past.
             </p>
           </div>
 
