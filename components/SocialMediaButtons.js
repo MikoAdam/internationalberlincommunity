@@ -62,7 +62,7 @@ const SocialMediaButtons = () => {
         data-twe-ripple-init
         data-twe-ripple-color="light"
         className="flex items-center justify-center rounded bg-[#0088cc] px-2.5 py-2.5 text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg"
-        onClick={() => window.open("https://t.me/internationalberlin", "_blank")}
+        onClick={() => window.open("https://t.me/+-k5Vkm-SxkE0ZDFl", "_blank")}
       >
         <span className="[&>svg]:h-4 [&>svg]:w-4">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-telegram" viewBox="0 0 16 16">
