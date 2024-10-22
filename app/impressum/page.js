@@ -3,10 +3,38 @@ import config from "@/config";
 
 const impressum = [
   {
+    title: "Legal Status",
+    description: [
+      "The International Berlin Community (IBC) e.V. is a legally registered association (Verein) in Germany. It operates in full compliance with German association law.",
+    ],
+  },
+  {
     title: "Name and Location",
     description: [
-      "<strong>Name:</strong> International Berlin Community (IBC)",
+      "<strong>Name:</strong> International Berlin Community (IBC) e.V.",
       "<strong>Location:</strong> Berlin, Germany",
+    ],
+  },
+  {
+    title: "Representation",
+    description: [
+      "The association is represented both judicially and extrajudicially by the President and Vice President, each individually authorized to represent the association.",
+      "<strong>President:</strong> Lê, Phan Thanh Phương",
+      "<strong>Vice President:</strong> Miko, Adam",
+    ],
+  },
+  {
+    title: "Legal Information",
+    description: [
+      "<strong>Amtsgericht Charlottenburg (zu VR 41380 B)</strong>",
+      "Handelsregister: Hardenbergstr. 31, 10623 Berlin",
+      "Vereinsregister: Amtsgerichtsplatz 1, 14057 Berlin",
+    ],
+  },
+  {
+    title: "Website Information",
+    description: [
+      "The website is developed by boring.hu, maintained by Adam Miko, and is the property of International Berlin Community (IBC) e.V.",
     ],
   },
   {
@@ -16,13 +44,6 @@ const impressum = [
       "<strong>Facebook:</strong> <a href='https://www.facebook.com/groups/internationalberlinhiking' target='_blank'>International Berlin Community on Facebook</a>",
       "<strong>Instagram:</strong> <a href='https://www.instagram.com/internationalberlincommunity/' target='_blank'>@internationalberlinhiking</a>",
       "<strong>WhatsApp:</strong> <a href='https://chat.whatsapp.com/KvFKTUWcWrd6lhff5YlIow' target='_blank'>Join our WhatsApp group</a>",
-    ],
-  },
-  {
-    title: "Legal Form",
-    description: [
-      "The International Berlin Community (IBC) has successfully conducted its founding meeting. All necessary documents have been submitted to our legal representatives, and we are currently in the final stages of obtaining official registration and recognition as an association under German law.",
-      "Our purpose is to foster international understanding, tolerance, and cultural exchange in Berlin through social events.",
     ],
   },
 ];
@@ -60,7 +81,7 @@ const Impressum = () => {
         ))}
 
         <p className="text-lg opacity-70 text-center mt-12">
-          Last Updated: August 29, 2024
+          Last Updated: October 22, 2024
         </p>
       </div>
     </main>
