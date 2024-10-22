@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import ThemeSwitch from "./ThemeSwitch"; // Import the ThemeSwitch component
 import logo from "@/app/icon.png";
 import config from "@/config";
 import SocialMediaButtons from "./SocialMediaButtons";
@@ -70,7 +69,7 @@ const Header = () => {
             </Link>
           </div>
 
-          {/* Desktop Links, ThemeSwitch, and CTA */}
+          {/* Desktop Links, and CTA */}
           <div className="hidden lg:flex lg:items-center lg:gap-12">
             {links.map((link) => (
               <Link
@@ -82,7 +81,7 @@ const Header = () => {
                 {link.label}
               </Link>
             ))}
-            <ThemeSwitch /> {/* Add Theme Switch here */}
+            
             {cta}
           </div>
 
@@ -174,7 +173,7 @@ const Header = () => {
             <div className="divider"></div>
             <div className="flex flex-col items-center mb-4">{cta}</div>
             <div className="flex justify-center">
-              <ThemeSwitch /> 
+
             </div>
           </div>
         </div>
