@@ -10,26 +10,27 @@ import SocialMediaButtons from "./SocialMediaButtons";
 
 const links = [
   {
-    href: "/programs",
-    label: "Programs",
+    href: "/about",
+    label: "About Us",
   },
   {
-    href: "/blog",
-    label: "Blog",
+    href: "/impressum",
+    label: "Impressum",
   },
   {
     href: "/team",
     label: "Team",
   },
   {
-    href: "/rules",
-    label: "Rules",
-  },
-  {
     href: "/statutes",
     label: "Statutes",
   },
+  {
+    href: "/rules",
+    label: "Rules",
+  },
 ];
+
 
 const cta = <SocialMediaButtons />;
 
@@ -45,7 +46,7 @@ const Header = () => {
     <header className="bg-base-200">
       <div className="max-w-7xl mx-auto px-8">
         <nav
-          className="container flex items-center justify-between py-4 mx-auto"
+          className="container flex items-center justify-start py-4 mx-auto"
           aria-label="Global"
         >
           {/* Logo Section */}
@@ -81,7 +82,7 @@ const Header = () => {
                 {link.label}
               </Link>
             ))}
-            
+
             {cta}
           </div>
 
@@ -173,7 +174,6 @@ const Header = () => {
             <div className="divider"></div>
             <div className="flex flex-col items-center mb-4">{cta}</div>
             <div className="flex justify-center">
-
             </div>
           </div>
         </div>
