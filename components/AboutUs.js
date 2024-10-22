@@ -3,14 +3,14 @@ import config from "@/config";
 
 const AboutUs = () => {
   return (
-    <section className="bg-base-200 py-24"> {/* Changed bg-base-100 to bg-base-200 */}
+    <section className="bg-base-200 py-24">
       <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
         <div className="mx-auto max-w-screen-sm text-center lg:mb-16 mb-8">
           <h2 className="mb-4 text-4xl font-extrabold tracking-tight text-base-content sm:text-5xl">
             About Us
           </h2>
           <p className="font-light text-base-content/80 sm:text-lg">
-            Welcome to {config.appName}! We are dedicated to bringing like-minded people together to explore and experience the best that our city has to offer. Join us and become a part of something great!
+            Welcome to {config.appName}, a legally registered association (Verein) in Germany. We are committed to fostering international understanding, tolerance, and cultural exchange through various social and community activities. Our organization connects like-minded individuals, encouraging both locals and immigrants to explore Berlin and build lasting relationships.
           </p>
         </div>
 
@@ -31,7 +31,7 @@ const AboutUs = () => {
             </div>
             <div className="stat-title">Total Members</div>
             <div className="stat-value text-primary">6000+</div>
-            <div className="stat-desc">2000+ participants</div>
+            <div className="stat-desc">Over 2,000 active participants</div>
           </div>
 
           <div className="stat">
@@ -48,9 +48,9 @@ const AboutUs = () => {
                   d="M13 10V3L4 14h7v7l9-11h-7z"></path>
               </svg>
             </div>
-            <div className="stat-title">Events So Far</div>
-            <div className="stat-value text-primary">100+</div> {/* Fixed incomplete tag */}
-            <div className="stat-desc">usually 20-40 participants per event</div>
+            <div className="stat-title">Events Organized</div>
+            <div className="stat-value text-primary">100+</div>
+            <div className="stat-desc">With 20-40 participants per event</div>
           </div>
 
           <div className="stat">
@@ -68,8 +68,8 @@ const AboutUs = () => {
               </svg>
             </div>
             <div className="stat-title">Organizers and Team Members</div>
-            <div className="stat-value text-primary">10+</div>
-            <div className="stat-desc">New organizers always welcome</div>
+            <div className="stat-value text-primary">15+</div>
+            <div className="stat-desc">Growing team, new organizers welcome</div>
           </div>
 
         </div>
