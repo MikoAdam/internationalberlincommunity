@@ -13,28 +13,26 @@ export const teamMembers = [
   {
     name: 'Adam Miko',
     role: 'Founder / Vice President',
-    bio: `Adam Miko is the founder and Vice President of the International Berlin Community (IBC). 
-    He has been actively engaged in building community spaces in Berlin, particularly for immigrants and expats. 
-    Adam's expertise lies in community leadership, organizing diverse events, and connecting people from all backgrounds 
-    to foster cultural exchange and understanding.`,
+    bio: `Adam Miko is the founder and Vice President of the International Berlin Community (IBC) e.V., 
+    a leading non-profit in Berlin dedicated to fostering cultural exchange, inclusivity, and community building. 
+    With a strong background in software engineering and consulting, Adam combines technical expertise 
+    with community leadership to create lasting impact.`,
     experience: [
-      'Founder and Vice President of International Berlin Community (IBC)',
-      'Polarion Consultant at Garantis IT Solutions',
-      'Part-time work in certification and development processes at eRC-System',
-      'Junior Software Engineer at European IT Consultancy EITCO GmbH',
-      'Digital Tech Developer Analyst at Accenture',
-      'Actively involved in community building activities, organizing various events such as hikes, language exchanges, picnics, and cultural activities',
-      'Over 4 years of experience writing macros, plugins, and consulting on Polarion with clients in both English and German',
+      'Founder and Vice President of International Berlin Community (IBC) e.V., one of Berlin’s largest non-profits of its kind',
+      'Consultant and Software Developer in healthcare, aerospace, and transportation industries',
+      'Led a team of 15+ volunteers and organized over 100 diverse events, including cultural celebrations, guided tours, and interfaith gatherings',
+      'Delivered innovative technical solutions and led healthcare data migrations at Accenture',
+      '5+ years of experience in consulting and technical project delivery for clients in English and German environments',
     ],
     education: [
       "Bachelor’s Degree in Computer Science, Budapest University of Technology and Economics",
     ],
     skills: [
-      'Application Lifecycle Management (ALM)',
-      'Community Leadership',
-      'Event Planning and Management',
-      'Polarion Customization',
-      'Software Engineering',
+      'Leadership and Team Management',
+      'Community Building',
+      'Event Organization',
+      'Software Development',
+      'Stakeholder Engagement',
     ],
     profileImage: '/assets/adam.jpeg', // Placeholder image
   },
