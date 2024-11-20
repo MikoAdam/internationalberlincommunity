@@ -45,7 +45,51 @@ export const teamMembers = [
     skills: [],
     profileImage: "/assets/profile_pic_placeholder.png", // Placeholder image
   },
-  // Additional team members...
+  {
+    name: "Masud H.",
+    role: "Language Exchange",
+    bio: "Experienced event organizer.",
+    experience: ["Event Organizer at IBC"],
+    education: [],
+    skills: [],
+    profileImage: "/assets/profile_pic_placeholder.png", // Placeholder image
+  },
+  {
+    name: "Ratnesh P.",
+    role: "Event Organizer",
+    bio: "Experienced event organizer.",
+    experience: ["Event Organizer at IBC"],
+    education: [],
+    skills: [],
+    profileImage: "/assets/profile_pic_placeholder.png", // Placeholder image
+  },
+  {
+    name: "Talal D.",
+    role: "Event Organizer",
+    bio: "Experienced event organizer.",
+    experience: ["Event Organizer at IBC"],
+    education: [],
+    skills: [],
+    profileImage: "/assets/profile_pic_placeholder.png", // Placeholder image
+  },
+  {
+    name: "Ashish S.",
+    role: "Event Organizer",
+    bio: "Experienced event organizer.",
+    experience: ["Event Organizer at IBC"],
+    education: [],
+    skills: [],
+    profileImage: "/assets/profile_pic_placeholder.png", // Placeholder image
+  },
+  {
+    name: "Shristi R.",
+    role: "Event Organizer",
+    bio: "Experienced event organizer.",
+    experience: ["Event Organizer at IBC"],
+    education: [],
+    skills: [],
+    profileImage: "/assets/profile_pic_placeholder.png", // Placeholder image
+  },
 ];
 
 // Component to display the team grid

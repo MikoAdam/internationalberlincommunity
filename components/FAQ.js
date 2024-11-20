@@ -2,53 +2,109 @@
 
 import { useRef, useState } from "react";
 
-// <FAQ> component is a lsit of <Item> component
-// Just import the FAQ & add your FAQ content to the const faqList
-
 const faqList = [
   {
-    question: "How do I join the community??",
-    answer: <div className="space-y-2 leading-relaxed">Simply request to join our Facebook group! It’s easy and free, and you’ll be part of our community in no time.</div>,
+    question: "Who can join?",
+    answer: (
+      <p>
+        Everyone is welcome! Regardless of your nationality, religion, gender, or background, our community is open to all.
+      </p>
+    ),
+  },
+  {
+    question: "How do I join the community?",
+    answer: (
+      <p>
+        Simply request to join our Facebook group or contact us directly via email at{" "}
+        <a
+          href="mailto:ibcmanagement@outlook.com"
+          className="text-primary underline">
+          ibcmanagement@outlook.com
+        </a>
+        . It’s easy and free!
+      </p>
+    ),
+  },
+  {
+    question: "How often are events organized?",
+    answer: (
+      <p>
+        We host events every week, so there’s always something exciting happening. Check out our Facebook group or website for updates!
+      </p>
+    ),
   },
   {
     question: "Are the events free to attend?",
     answer: (
       <p>
-        All of our events are for free, however there might be events for example kayaking where you have to rent a kayak or pay entrance fee.
+        Most of our events are free, but for activities like kayaking or museum visits, you may need to pay for rentals or entrance fees.
       </p>
     ),
   },
   {
-    question: "Do I need to be an foreigner to join?",
+    question: "Can I bring a friend to the events?",
     answer: (
       <p>
-        Not at all! Our community welcomes everyone—whether you’re an foreigner, a local, or just visiting Berlin.
+        Absolutely! Feel free to invite friends to join. The more, the merrier!
       </p>
     ),
   },
   {
-    question: "How often do you organize events?",
+    question: "What languages are spoken at the events?",
     answer: (
       <p>
-        We host events every week, so there’s always something fun and exciting happening.
+        Most events are conducted in English, but many of our organizers also speak some level of German. Language should never be a barrier to joining!
       </p>
     ),
   },
   {
-    question: "Can I suggest an event?",
+    question: "Are children or pets allowed at events?",
     answer: (
       <p>
-        Definitely! We love when our members contribute ideas. Feel free to drop your suggestions in the group or message one of our admins.
+        It depends on the event. Most are family-friendly, but please check the event details to confirm if children or pets are welcome.
       </p>
     ),
   },
   {
-    question: "I have another question",
+    question: "What should I bring to an event?",
     answer: (
-      <div className="space-y-2 leading-relaxed">Cool, write in our community or contact us by email</div>
+      <p>
+        This varies depending on the activity. For hikes, bring comfortable shoes and water. For potlucks, bring a dish to share. Event-specific details will be shared beforehand.
+      </p>
+    ),
+  },
+  {
+    question: "What happens if it rains on the day of an outdoor event?",
+    answer: (
+      <p>
+        If the event is outdoors, we might adapt by gathering somewhere indoors instead of canceling. Complete cancellations are very rare, and we’ll always notify participants in advance.
+      </p>
+    ),
+  },
+  {
+    question: "How can I support IBC?",
+    answer: (
+      <p>
+        You can support us by attending events, spreading the word, or volunteering your time. Donations are currently not possible, but your participation helps us thrive!
+      </p>
+    ),
+  },
+  {
+    question: "I have another question.",
+    answer: (
+      <p>
+        Cool! Write in our community group or contact us directly at{" "}
+        <a
+          href="mailto:ibcmanagement@outlook.com"
+          className="text-primary underline">
+          ibcmanagement@outlook.com
+        </a>
+        .
+      </p>
     ),
   },
 ];
+
 
 const Item = ({ item }) => {
   const accordion = useRef(null);
@@ -112,7 +168,7 @@ const Item = ({ item }) => {
 
 const FAQ = () => {
   return (
-    <section className="bg-base-200" id="faq">
+    <section className="bg-base-100" id="faq">
       <div className="py-24 px-8 max-w-7xl mx-auto flex flex-col md:flex-row gap-12">
         <div className="flex flex-col text-left basis-1/2">
           <p className="inline-block font-semibold text-primary mb-4">FAQ</p>
