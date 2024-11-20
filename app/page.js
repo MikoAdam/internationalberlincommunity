@@ -1,16 +1,10 @@
-import { Suspense } from 'react'
+import { Suspense } from 'react';
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import FeaturesAccordion from "@/components/FeaturesAccordion";
+import AboutUs from "@/components/AboutUs";
+import TeamGrid from "@/components/TeamGrid";
 import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
-import TeamGrid from "@/components/TeamGrid";
-import LatestBlogPosts from "@/components/LatestBlogPosts";
-import LatestPrograms from "@/components/LatestPrograms";
-import Testimonial1Small from "@/components/Testimonial1Small";
-import Testimonial2Small from "@/components/Testimonial2Small";
-import AboutUs from "@/components/AboutUs";
-
 
 export default function Home() {
   return (
@@ -19,14 +13,16 @@ export default function Home() {
         <Header />
       </Suspense>
       <main>
+        {/* Hero Section */}
         <Hero />
-        <LatestPrograms />
-        {/* <Testimonial1Small /> */}
-        <FeaturesAccordion />
-        <LatestBlogPosts />
-        {/* <Testimonial2Small /> */}
+        
+        {/* About Us Section */}
         <AboutUs />
+        
+        {/* Team Section */}
         <TeamGrid />
+        
+        {/* FAQ Section */}
         <FAQ />
       </main>
       <Footer />
