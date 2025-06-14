@@ -1,5 +1,3 @@
-
-
 import Link from "next/link";
 import Image from "next/image";
 import config from "@/config";
@@ -43,16 +41,15 @@ const Footer = () => {
                 LINKS
               </div>
               <div className="flex flex-col justify-center items-center md:items-start gap-2 mb-10 text-sm">
-                
                 <Link href="/programs" className="link link-hover">
                   Programs
                 </Link>
-                <Link href="/blog" className="link link-hover">
-                  Blog
+                <Link href="/about" className="link link-hover">
+                  About
                 </Link>
-                <a href="/team" className="link link-hover">
+                <Link href="/team" className="link link-hover">
                   Team
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -81,6 +78,7 @@ const Footer = () => {
                 <a
                   href="https://www.facebook.com/groups/internationalberlinhiking"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center gap-2 link link-hover"
                   aria-label="Visit our Facebook group"
                 >
@@ -90,6 +88,7 @@ const Footer = () => {
                 <a
                   href="https://www.instagram.com/internationalberlincommunity/"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center gap-2 link link-hover"
                   aria-label="Visit our Instagram"
                 >
@@ -99,6 +98,7 @@ const Footer = () => {
                 <a
                   href="https://chat.whatsapp.com/KvFKTUWcWrd6lhff5YlIow"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center gap-2 link link-hover"
                   aria-label="Join our WhatsApp group"
                 >
@@ -107,7 +107,6 @@ const Footer = () => {
                 </a>
                 <a
                   href="mailto:ibcmanagement@outlook.com"
-                  target="_blank"
                   className="flex items-center gap-2 link link-hover"
                   aria-label="Send us an email"
                 >
@@ -117,6 +116,7 @@ const Footer = () => {
                 <a
                   href="https://t.me/+-k5Vkm-SxkE0ZDFl"
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center gap-2 link link-hover"
                   aria-label="Visit our Telegram group"
                 >
