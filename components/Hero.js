@@ -5,12 +5,12 @@ import Image from "next/image";
 import Link from "next/link";
 
 const imageUrls = [
-  "https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-  "https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-  "https://images.unsplash.com/photo-1577563908411-5077b6dc7624?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-  "https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-  "https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-  "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
+  "/assets/adam.jpeg", // Your actual team photo
+  "/assets/profile_pic_placeholder.png", // Placeholder until you add more real photos
+  // Add your actual IBC event photos here instead of stock images
+  // "/assets/ibc-hiking-event.jpg",
+  // "/assets/ibc-cultural-event.jpg", 
+  // "/assets/ibc-social-gathering.jpg",
 ];
 
 const Hero = () => {
