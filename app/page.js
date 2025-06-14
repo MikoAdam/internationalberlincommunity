@@ -4,9 +4,10 @@ import Hero from "@/components/Hero";
 import FeaturesAccordion from "@/components/FeaturesAccordion";
 import AboutUs from "@/components/AboutUs";
 import TeamGrid from "@/components/TeamGrid";
+import FAQ from "@/components/FAQ";
 import Footer from "@/components/Footer";
 
-// Testing with TeamGrid added back
+// Back to full original structure - TeamGrid is now fixed
 export default function Home() {
   return (
     <>
@@ -18,7 +19,7 @@ export default function Home() {
         <FeaturesAccordion />
         <AboutUs />
         <TeamGrid />
-        {/* If this breaks, the error is in TeamGrid */}
+        <FAQ />
       </main>
       <Footer />
     </>
