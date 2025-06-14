@@ -3,80 +3,87 @@ import config from "@/config";
 
 const rules = [
   {
-    title: "1. Personal Responsibility",
+    title: "1. Personal Responsibility & Safety",
     description:
-      "Keep in mind, you're joining our hikes at your own risk. The group leaders can't be held responsible for any accidents or issues that arise among members. It's up to each member to prepare well, stay safe, and maintain a harmonious atmosphere.",
+      "Participate in all IBC activities at your own risk. While our organizers work hard to plan safe and enjoyable events, you are responsible for your own safety and well-being. Please prepare appropriately for each activity and inform organizers of any health conditions or concerns.",
+    icon: "🛡️"
   },
   {
-    title: "2. Mutual Respect",
+    title: "2. Mutual Respect & Inclusivity",
     description:
-      "Treat all members with respect. If you experience any form of harassment or inappropriate behavior, please notify the admins as soon as possible. Everyone's comfort and safety is our priority.",
+      "Treat all community members with dignity and respect, regardless of their background, nationality, religion, gender identity, sexual orientation, or any other personal characteristic. We have zero tolerance for discrimination, harassment, or disrespectful behavior.",
+    icon: "🤝"
   },
   {
-    title: "3. Leaving Early",
+    title: "3. Communication & Safety Protocols",
     description:
-      "If you need to leave a hike early, please make sure to notify one of the group admins. It's crucial for everyone's safety that we keep track of all group members.",
+      "Always inform an organizer if you need to leave an event early or if any issues arise. This helps us keep track of all participants and ensures everyone's safety. Use the designated communication channels for event-related discussions.",
+    icon: "📢"
   },
   {
-    title: "4. No Personal Advertising",
+    title: "4. No Commercial Activities",
     description:
-      "This is a hiking group, not a dating service or advertising space. Posts of this nature will be promptly removed, and the poster warned. Repeat offenders will be banned from the group. Please keep all content relevant and respectful.",
+      "IBC is a community space, not a marketplace. Personal advertising, business promotion, dating solicitation, or spam are not permitted. Keep all content relevant to community activities and cultural exchange. Violations will result in warnings and potential removal.",
+    icon: "🚫"
   },
   {
-    title: "5. Be Kind and Courteous",
+    title: "5. Kindness & Constructive Communication", 
     description:
-      "We're all in this together to create a welcoming environment. Let's treat everyone with respect. Healthy debates are natural, but kindness is required.",
+      "Foster a welcoming environment through kind and courteous interactions. Healthy debates and diverse perspectives are welcome, but always communicate respectfully. Help create a space where everyone feels valued and heard.",
+    icon: "💝"
   },
   {
-    title: "6. No Hate Speech or Bullying",
+    title: "6. Zero Tolerance for Hate Speech",
     description:
-      "Make sure that everyone feels safe. Bullying of any kind isn't allowed, and degrading comments about things such as race, religion, culture, sexual orientation, gender, or identity will not be tolerated.",
+      "We absolutely do not tolerate hate speech, bullying, or discriminatory behavior of any kind. Comments targeting race, religion, culture, sexual orientation, gender identity, nationality, or any personal characteristic will result in immediate removal from the community.",
+    icon: "🚨"
   },
   {
-    title: "7. No Promotions or Spam",
+    title: "7. No Spam or Irrelevant Content",
     description:
-      "Give more to this group than you take. Self-promotion, spam, and irrelevant links aren't allowed.",
+      "Share meaningfully and avoid spam or irrelevant links. Focus on contributing valuable content that enhances our community experience. Self-promotion and off-topic posts detract from our collaborative environment.",
+    icon: "📝"
   },
   {
-    title: "8. Respect Everyone's Privacy",
+    title: "8. Privacy & Confidentiality",
     description:
-      "Being part of this group requires mutual trust. Authentic, expressive discussions make groups great, but may also be sensitive and private. What's shared in the group should stay in the group.",
+      "Respect everyone's privacy and maintain confidentiality of personal information shared within the group. What's discussed in IBC stays in IBC. Do not share photos of members without their explicit consent.",
+    icon: "🔒"
   },
+  {
+    title: "9. Event Participation Guidelines",
+    description:
+      "RSVP accurately and update your status if plans change. Respect event capacity limits and cancellation policies. Be punctual and come prepared according to event guidelines. No-shows may affect future event invitations.",
+    icon: "🎯"
+  },
+  {
+    title: "10. Language & Communication",
+    description:
+      "While our primary language is English, we welcome and encourage multilingual interactions. Help non-native speakers feel included and be patient with language barriers. Use translation tools when helpful.",
+    icon: "🌍"
+  },
+  {
+    title: "11. Alcohol & Substance Policy",
+    description:
+      "Consume alcohol responsibly at events where it's permitted. Never pressure others to drink. Illegal substances are strictly prohibited at all IBC events. Anyone under the influence and behaving inappropriately will be asked to leave.",
+    icon: "🍷"
+  },
+  {
+    title: "12. Photography & Social Media",
+    description:
+      "Always ask for consent before taking photos of other members. Respect those who prefer not to be photographed. When sharing event photos on social media, ensure you have permission from everyone visible in the image.",
+    icon: "📸"
+  },
+  {
+    title: "13. Conflict Resolution",
+    description:
+      "If conflicts arise, address them constructively and involve organizers if needed. We're committed to fair mediation and finding solutions that work for everyone. Escalating conflicts publicly is discouraged - reach out to admins privately.",
+    icon: "⚖️"
+  },
+  {
+    title: "14. Community Contribution",
+    description:
+      "Contribute positively to our community's growth and success. Share ideas for events, help newcomers feel welcome, and volunteer when possible. Remember that IBC thrives because of member participation and mutual support.",
+    icon: "🌱"
+  }
 ];
-
-const TOS = () => {
-  return (
-    <main className="max-w-4xl mx-auto">
-      <div className="p-8">
-        <Link href="/" className="btn btn-ghost mb-5">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            className="w-6 h-6"
-          >
-            <path
-              fillRule="evenodd"
-              d="M15 10a.75.75 0 01-.75.75H7.612l2.158 1.96a.75.75 0 11-1.04 1.08l-3.5-3.25a.75.75 0 010-1.08l3.5-3.25a.75.75 0 111.04 1.08L7.612 9.25h6.638A.75.75 0 0115 10z"
-              clipRule="evenodd"
-            />
-          </svg>
-          Back
-        </Link>
-        <h1 className="text-4xl font-extrabold pb-8 mb-6">
-          Rules for the {config.appName}
-        </h1>
-        {rules.map((rule, index) => (
-          <section key={index} className="mb-6 p-6 bg-base-200 rounded-lg shadow-md">
-            <h2 className="text-3xl font-bold mb-4 text-primary">{rule.title}</h2>
-            <p className="text-lg leading-relaxed">{rule.description}</p>
-          </section>
-        ))}
-        <p className="text-lg opacity-70 text-center mt-12">
-          Last Updated: August 29, 2024
-        </p>
-      </div>
-    </main>
-  );
-};
-export default TOS;

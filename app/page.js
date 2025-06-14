@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 import AboutUs from "@/components/AboutUs";
 import TeamGrid from "@/components/TeamGrid";
 import FAQ from "@/components/FAQ";
+import FeaturesAccordion from "@/components/FeaturesAccordion";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -13,16 +14,10 @@ export default function Home() {
         <Header />
       </Suspense>
       <main>
-        {/* Hero Section */}
         <Hero />
-        
-        {/* About Us Section */}
+        <FeaturesAccordion />
         <AboutUs />
-        
-        {/* Team Section */}
         <TeamGrid />
-        
-        {/* FAQ Section */}
         <FAQ />
       </main>
       <Footer />

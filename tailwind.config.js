@@ -9,7 +9,36 @@ module.exports = {
     extend: {
       backgroundImage: {
         gradient:
-          "linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82)",
+          "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "hero-pattern": "linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%)",
+      },
+      colors: {
+        'brand': {
+          50: '#f0fdfa',
+          100: '#ccfbf1',
+          200: '#99f6e4',
+          300: '#5eead4',
+          400: '#2dd4bf',
+          500: '#14b8a6',
+          600: '#0d9488',
+          700: '#0f766e',
+          800: '#115e59',
+          900: '#134e4a',
+        },
+        'accent': {
+          50: '#fef3f2',
+          100: '#fee4e2',
+          200: '#fecdd3',
+          300: '#fda4af',
+          400: '#fb7185',
+          500: '#f43f5e',
+          600: '#e11d48',
+          700: '#be123c',
+          800: '#9f1239',
+          900: '#881337',
+        }
       },
       animation: {
         opacity: "opacity 0.25s ease-in-out",
@@ -17,6 +46,9 @@ module.exports = {
         wiggle: "wiggle 1.5s ease-in-out infinite",
         popup: "popup 0.25s ease-in-out",
         shimmer: "shimmer 3s ease-out infinite alternate",
+        "fade-in": "fadeIn 0.6s ease-in-out",
+        "slide-up": "slideUp 0.6s ease-out",
+        "bounce-soft": "bounceSoft 2s ease-in-out infinite",
       },
       keyframes: {
         opacity: {
@@ -54,28 +86,64 @@ module.exports = {
           "50%": { backgroundPosition: "100% 50%" },
           "100%": { backgroundPosition: "0% 50%" },
         },
+        fadeIn: {
+          "0%": { opacity: 0 },
+          "100%": { opacity: 1 },
+        },
+        slideUp: {
+          "0%": { opacity: 0, transform: "translateY(30px)" },
+          "100%": { opacity: 1, transform: "translateY(0)" },
+        },
+        bounceSoft: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-10px)" },
+        },
       },
+      boxShadow: {
+        'soft': '0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04)',
+        'medium': '0 4px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+        'large': '0 10px 40px -10px rgba(0, 0, 0, 0.1)',
+        'glow': '0 0 20px rgba(20, 184, 166, 0.3)',
+      }
     },
   },
   plugins: [require("daisyui")],
   daisyui: {
-    // Light & dark themes are added by default (it switches automatically based on OS settings)
-    // You can add another theme among the list of 30+
-    // Add "data-theme='theme_name" to any HTML tag to enable the 'theme_name' theme.
-    // https://daisyui.com/
     themes: [
-    {
-      light: {
-        ...require("daisyui/src/theming/themes")["light"],
-        primary: "#1abc9c",
-        secondary: "#ff5757",
+      {
+        light: {
+          ...require("daisyui/src/theming/themes")["light"],
+          primary: "#14b8a6",
+          secondary: "#f43f5e",
+          accent: "#3b82f6",
+          neutral: "#374151",
+          "neutral-content": "#f9fafb",
+          "base-100": "#ffffff",
+          "base-200": "#f8fafc",
+          "base-300": "#e2e8f0",
+          "base-content": "#1e293b",
+          info: "#0ea5e9",
+          success: "#22c55e",
+          warning: "#f59e0b",
+          error: "#ef4444",
+        },
       },
-    },
       {
         dark: {
           ...require("daisyui/src/theming/themes")["dark"],
-          primary: "#1abc9c",
-          secondary: "#ff5757",
+          primary: "#2dd4bf",
+          secondary: "#fb7185",
+          accent: "#60a5fa",
+          neutral: "#1f2937",
+          "neutral-content": "#f3f4f6",
+          "base-100": "#111827",
+          "base-200": "#1f2937",
+          "base-300": "#374151",
+          "base-content": "#f9fafb",
+          info: "#38bdf8",
+          success: "#4ade80",
+          warning: "#fbbf24",
+          error: "#f87171",
         },
       },
     ],

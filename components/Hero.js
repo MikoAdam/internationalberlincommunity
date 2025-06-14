@@ -5,12 +5,12 @@ import Image from "next/image";
 import Link from "next/link";
 
 const imageUrls = [
-  "/assets/victoria-prymak-W-6NH6X8S7I-unsplash.jpg",
-  "/assets/beachDay.jpg",
-  "/assets/culturalEvents.jpg",
-  "/assets/dayTrips.jpg",
-  "/assets/hiking.jpg",
-  "/assets/languageExchange.jpeg",
+  "https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+  "https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+  "https://images.unsplash.com/photo-1577563908411-5077b6dc7624?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+  "https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+  "https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+  "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80",
 ];
 
 const Hero = () => {
@@ -19,7 +19,7 @@ const Hero = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % imageUrls.length);
-    }, 3000); // Change image every 3 seconds
+    }, 3000);
 
     return () => clearInterval(interval);
   }, []);
@@ -44,6 +44,9 @@ const Hero = () => {
           <Link href="/programs" className="bg-gray-100 hover:bg-gray-200 text-gray-800 font-semibold py-3 px-6 rounded shadow-lg">
             Explore Events
           </Link>
+          <Link href="https://linktr.ee/InternationalBerlinCommunity" target="_blank" rel="noopener noreferrer" className="bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded shadow-lg">
+            All Links
+          </Link>
         </div>
       </div>
 
@@ -53,8 +56,8 @@ const Hero = () => {
           <Image
             src={imageUrls[currentImageIndex]}
             alt="IBC Event Highlight"
-            layout="fill"
-            objectFit="cover"
+            fill
+            className="object-cover"
             priority={true}
           />
         </div>
