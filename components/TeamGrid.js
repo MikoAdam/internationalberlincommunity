@@ -8,8 +8,8 @@ export const teamMembers = [
     experience: ["President of International Berlin Community", "Student Research Assistant at Université de Montréal", "Researcher at University of Potsdam"],
     education: ["Master of Science - MS, Cognitive Science at University of Potsdam", "Bachelor of Arts - BA, Psychology at University of Pécs"],
     skills: ["Leadership", "Research", "Community Building", "Cross-cultural Communication", "Psychology"],
-    profileImage: "/assets/gia.jpg", // Gia gets a photo
-    linkedinUrl: "",
+    profileImage: "/assets/Gia.jpeg", // Gia gets a photo
+    linkedinUrl: "https://www.linkedin.com/in/thanh-phuong-le-phan/",
     isLeadership: true,
     hasPage: true // Gia gets a page
   },
@@ -107,7 +107,7 @@ const TeamGrid = () => {
             <p className="text-base-content/70 mb-6">
               We have an amazing team of volunteer organizers who make our events possible.
             </p>
-            <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-w-4xl mx-auto">
+            <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 max-w-4xl mx-auto">
               {organizers.map((organizer) => (
                 <div key={organizer.name} className="p-4 bg-white dark:bg-base-200 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-base-content/10">
                   <div className="flex flex-col items-center text-center">
@@ -127,14 +127,7 @@ const TeamGrid = () => {
                   </div>
                 </div>
               ))}
-              <div className="p-4 bg-base-content/5 rounded-xl border border-base-content/10 text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-base-content/20 to-base-content/30 rounded-full flex items-center justify-center mb-3 mx-auto">
-                  <span className="text-base-content font-bold text-lg">+</span>
-                </div>
-                <p className="text-sm text-base-content/70">
-                  Many more volunteers
-                </p>
-              </div>
+              {/* REMOVED the stupid "Many more volunteers" card */}
             </div>
           </div>
         </div>

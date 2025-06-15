@@ -5,13 +5,13 @@ import Image from "next/image";
 import Link from "next/link";
 
 const imageUrls = [
-  "/assets/adam.jpeg", // Adam's actual photo
-  "/assets/profile_pic_placeholder.png", // Placeholder until you add more real photos
-  // Add your actual IBC event photos here:
-  // "/assets/ibc-hiking-group.jpg",
-  // "/assets/ibc-cultural-event.jpg", 
-  // "/assets/ibc-language-exchange.jpg",
-  // "/assets/ibc-picnic.jpg",
+  "/assets/culturalEvents.jpg",
+  "/assets/dayTrip.jpg",
+  "/assets/dayTrip1.jpg",
+  "/assets/hiking.jpg",
+  "/assets/picnic.jpg",
+  "/assets/sachsenTrip.jpg",
+  "/assets/zakona.jpg",
 ];
 
 const Hero = () => {
