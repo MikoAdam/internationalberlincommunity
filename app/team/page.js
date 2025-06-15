@@ -41,7 +41,7 @@ const TeamPage = () => {
           {/* Board of Directors */}
           <section className="bg-white dark:bg-gray-800 rounded-lg shadow-lg mt-16 mb-20 p-12">
             <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-12 text-left border-b border-gray-200 dark:border-gray-700 pb-4">
-              Board of Directors (Vorstand)
+              Board of Directors
             </h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-12">
@@ -88,10 +88,10 @@ const TeamPage = () => {
             </div>
           </section>
 
-          {/* Team Organizers */}
+          {/* Organizers */}
           <section className="bg-white dark:bg-gray-800 rounded-lg shadow-lg mt-16 mb-32 p-12">
             <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-12 text-left border-b border-gray-200 dark:border-gray-700 pb-4">
-              Team Organizers
+              Organizers
             </h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">

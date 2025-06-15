@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 
-// Board/Leadership members (Vorstand)
+// Board/Leadership members
 export const boardMembers = [
   {
     name: "Le Phan Thanh Phuong",
@@ -22,7 +22,7 @@ export const boardMembers = [
   }
 ];
 
-// Team Organizers - no photos, no pages, just simple cards
+// Organizers - no photos, no pages, just simple cards
 export const teamOrganizers = [
   { name: "Masud H.", role: "Language Exchange Coordinator" },
   { name: "Ratnesh P.", role: "Event Organizer" },
@@ -46,9 +46,9 @@ const TeamGrid = () => {
           </p>
         </div>
 
-        {/* Board/Leadership Section (Vorstand) - Only Adam and Gia with photos and pages */}
+        {/* Board/Leadership Section - Only Adam and Gia with photos and pages */}
         <div className="mt-16">
-          <h3 className="text-2xl font-bold text-base-content mb-8">Board of Directors (Vorstand)</h3>
+          <h3 className="text-2xl font-bold text-base-content mb-8">Board of Directors</h3>
           <ul role="list" className="grid gap-x-8 gap-y-12 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:col-span-2">
             {leadership.map((member) => (
               <li key={member.name}>
@@ -79,9 +79,9 @@ const TeamGrid = () => {
           </ul>
         </div>
 
-        {/* Team Organizers Section - Simple cards, no photos, no links, no "Open CV" */}
+        {/* Organizers Section - Simple cards, no photos, no links, no "Open CV" */}
         <div className="mt-20">
-          <h3 className="text-2xl font-bold text-base-content mb-8">Our Team Organizers</h3>
+          <h3 className="text-2xl font-bold text-base-content mb-8">Our Organizers</h3>
           <div className="text-center">
             <p className="text-base-content/70 mb-6">
               We have an amazing team of volunteer organizers who make our events possible.
