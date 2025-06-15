@@ -5,12 +5,13 @@ import Image from "next/image";
 import Link from "next/link";
 
 const imageUrls = [
-  "/assets/adam.jpeg", // Your actual team photo
+  "/assets/adam.jpeg", // Adam's actual photo
   "/assets/profile_pic_placeholder.png", // Placeholder until you add more real photos
-  // Add your actual IBC event photos here instead of stock images
-  // "/assets/ibc-hiking-event.jpg",
+  // Add your actual IBC event photos here:
+  // "/assets/ibc-hiking-group.jpg",
   // "/assets/ibc-cultural-event.jpg", 
-  // "/assets/ibc-social-gathering.jpg",
+  // "/assets/ibc-language-exchange.jpg",
+  // "/assets/ibc-picnic.jpg",
 ];
 
 const Hero = () => {
@@ -55,11 +56,25 @@ const Hero = () => {
         <div className="relative w-full pb-[100%] md:pb-[100%] lg:pb-[100%] xl:pb-[100%] overflow-hidden rounded-[10px]">
           <Image
             src={imageUrls[currentImageIndex]}
-            alt="IBC Event Highlight"
+            alt="IBC Community Highlight"
             fill
             className="object-cover"
             priority={true}
           />
+        </div>
+        
+        {/* Image Indicators */}
+        <div className="flex justify-center mt-4 gap-2">
+          {imageUrls.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentImageIndex(index)}
+              className={`w-3 h-3 rounded-full transition-colors duration-200 ${
+                index === currentImageIndex ? 'bg-primary' : 'bg-primary/30'
+              }`}
+              aria-label={`Show image ${index + 1}`}
+            />
+          ))}
         </div>
       </div>
     </section>

@@ -1,3 +1,6 @@
+import { Suspense } from "react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import config from "@/config";
 
 const impressum = [
@@ -49,26 +52,34 @@ const impressum = [
 
 const Impressum = () => {
   return (
-    <main className="max-w-4xl mx-auto">
-      <div className="p-8">
-        <h1 className="text-4xl font-extrabold pb-8 mb-6 text-base-content">
-          Impressum for {config.appName}
-        </h1>
+    <>
+      <Suspense fallback={<div>Loading header...</div>}>
+        <Header />
+      </Suspense>
 
-        {impressum.map((item, index) => (
-          <section key={index} className="mb-6 p-6 bg-base-200 rounded-lg shadow-md">
-            <h2 className="text-3xl font-bold mb-4 text-primary">{item.title}</h2>
-            {item.description.map((paragraph, pIndex) => (
-              <p key={pIndex} className="text-lg leading-relaxed mb-4 text-base-content" dangerouslySetInnerHTML={{ __html: paragraph }}></p>
-            ))}
-          </section>
-        ))}
+      <main className="max-w-4xl mx-auto">
+        <div className="p-8">
+          <h1 className="text-4xl font-extrabold pb-8 mb-6 text-base-content">
+            Impressum for {config.appName}
+          </h1>
 
-        <p className="text-lg opacity-70 text-center mt-12 text-base-content">
-          Last Updated: October 22, 2024
-        </p>
-      </div>
-    </main>
+          {impressum.map((item, index) => (
+            <section key={index} className="mb-6 p-6 bg-base-200 rounded-lg shadow-md">
+              <h2 className="text-3xl font-bold mb-4 text-primary">{item.title}</h2>
+              {item.description.map((paragraph, pIndex) => (
+                <p key={pIndex} className="text-lg leading-relaxed mb-4 text-base-content" dangerouslySetInnerHTML={{ __html: paragraph }}></p>
+              ))}
+            </section>
+          ))}
+
+          <p className="text-lg opacity-70 text-center mt-12 text-base-content">
+            Last Updated: October 22, 2024
+          </p>
+        </div>
+      </main>
+
+      <Footer />
+    </>
   );
 };
 

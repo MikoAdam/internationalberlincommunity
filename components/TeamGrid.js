@@ -4,13 +4,14 @@ export const teamMembers = [
   {
     name: "Le Phan Thanh Phuong",
     role: "President", 
-    bio: "Experienced community leader and event organizer with a passion for bringing people together across cultural boundaries.",
-    experience: ["President of International Berlin Community", "Community organizing and leadership"],
-    education: [],
-    skills: ["Leadership", "Event Management", "Community Building"],
-    profileImage: "/assets/profile_pic_placeholder.png",
+    bio: "Sound Designer turned Psychology student and soon Auditory Neuroscientist. Leading IBC's mission to build bridges across cultures.",
+    experience: ["President of International Berlin Community", "Student Research Assistant at Université de Montréal", "Researcher at University of Potsdam"],
+    education: ["Master of Science - MS, Cognitive Science at University of Potsdam", "Bachelor of Arts - BA, Psychology at University of Pécs"],
+    skills: ["Leadership", "Research", "Community Building", "Cross-cultural Communication", "Psychology"],
+    profileImage: "/assets/gia.jpg", // Gia gets a photo
     linkedinUrl: "",
-    isLeadership: true
+    isLeadership: true,
+    hasPage: true // Gia gets a page
   },
   {
     name: "Adam Miko",
@@ -36,65 +37,24 @@ export const teamMembers = [
       "Software Development",
       "Stakeholder Engagement",
     ],
-    profileImage: "/assets/adam.jpeg",
+    profileImage: "/assets/adam.jpeg", // Adam gets a photo
     linkedinUrl: "https://linkedin.com/in/adammiko",
-    isLeadership: true
-  },
-  {
-    name: "Masud H.", 
-    role: "Language Exchange Coordinator",
-    bio: "Passionate about language learning and cultural exchange.",
-    experience: ["Language Exchange Coordinator at IBC"],
-    education: [],
-    skills: ["Language Teaching", "Cultural Exchange"],
-    linkedinUrl: "",
-    isLeadership: false
-  },
-  {
-    name: "Ratnesh P.",
-    role: "Event Organizer",
-    bio: "Enthusiastic volunteer helping connect the international community.",
-    experience: ["Event Organizer at IBC"],
-    education: [],
-    skills: ["Event Coordination", "Community Outreach"],
-    linkedinUrl: "",
-    isLeadership: false
-  },
-  {
-    name: "Talal D.",
-    role: "Event Organizer", 
-    bio: "Community volunteer focused on creating inclusive events.",
-    experience: ["Event Organizer at IBC"],
-    education: [],
-    skills: ["Event Management", "Cross-cultural Communication"],
-    linkedinUrl: "",
-    isLeadership: false
-  },
-  {
-    name: "Ashish S.",
-    role: "Event Organizer",
-    bio: "Dedicated team member supporting community initiatives.",
-    experience: ["Event Organizer at IBC"],
-    education: [],
-    skills: ["Event Planning", "Team Collaboration"],
-    linkedinUrl: "",
-    isLeadership: false
-  },
-  {
-    name: "Shristi R.",
-    role: "Event Organizer",
-    bio: "Passionate organizer committed to fostering community connections.",
-    experience: ["Event Organizer at IBC"],
-    education: [],
-    skills: ["Event Coordination", "Community Engagement"],
-    linkedinUrl: "",
-    isLeadership: false
-  },
+    isLeadership: true,
+    hasPage: true // Adam gets a page
+  }
+];
+
+// Organizers - no photos, no pages, just simple cards - EXACTLY the list you provided
+export const organizers = [
+  { name: "Masud H.", role: "Language Exchange Coordinator" },
+  { name: "Ratnesh P.", role: "Event Organizer" },
+  { name: "Talal D.", role: "Event Organizer" },
+  { name: "Ashish S.", role: "Event Organizer" },
+  { name: "Shristi R.", role: "Event Organizer" }
 ];
 
 const TeamGrid = () => {
-  const leadership = teamMembers.filter(member => member.isLeadership);
-  const organizers = teamMembers.filter(member => !member.isLeadership);
+  const leadership = teamMembers;
 
   return (
     <section className="bg-base-100 py-24 sm:py-32">
@@ -108,14 +68,14 @@ const TeamGrid = () => {
           </p>
         </div>
 
-        {/* Leadership Section */}
+        {/* Leadership Section - Only Adam and Gia with photos and pages */}
         <div className="mt-16">
           <h3 className="text-2xl font-bold text-base-content mb-8">Leadership Team</h3>
           <ul role="list" className="grid gap-x-8 gap-y-12 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:col-span-2">
             {leadership.map((member) => (
               <li key={member.name}>
                 <Link href={`/team/${member.name.toLowerCase().replace(/\s+/g, '-')}`}>
-                  <span className="flex flex-col items-center gap-y-4 cursor-pointer hover:text-primary transition-colors">
+                  <span className="flex flex-col items-center gap-y-4 cursor-pointer hover:text-primary transition-colors bg-white dark:bg-base-200 p-6 rounded-xl shadow-lg hover:shadow-xl">
                     <img
                       src={member.profileImage}
                       alt={member.name}
@@ -140,28 +100,39 @@ const TeamGrid = () => {
           </ul>
         </div>
 
-        {/* Organizers Section */}
+        {/* Organizers Section - Simple cards, no photos, no links, no "Open CV" */}
         <div className="mt-20">
           <h3 className="text-2xl font-bold text-base-content mb-8">Our Amazing Organizers</h3>
           <div className="text-center">
             <p className="text-base-content/70 mb-6">
               We have an amazing team of volunteer organizers who make our events possible.
             </p>
-            <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-w-2xl mx-auto">
-              {/* Only show organizers who have actual pages/content */}
-              {organizers.filter(member => member.linkedinUrl || member.name === "Masud H." || member.name === "Ratnesh P.").map((member) => (
-                <div key={member.name} className="p-4 bg-base-content/5 rounded-lg border border-base-content/10 hover:border-primary/30 transition-all duration-300 hover:bg-base-content/10">
-                  <h4 className="text-lg font-semibold text-base-content mb-1">
-                    {member.name}
-                  </h4>
-                  <p className="text-sm text-primary">
-                    {member.role}
-                  </p>
+            <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-w-4xl mx-auto">
+              {organizers.map((organizer) => (
+                <div key={organizer.name} className="p-4 bg-white dark:bg-base-200 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-base-content/10">
+                  <div className="flex flex-col items-center text-center">
+                    {/* Initials instead of photos */}
+                    <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mb-3">
+                      <span className="text-white font-bold text-lg">
+                        {organizer.name.split(' ').map(n => n[0]).join('')}
+                      </span>
+                    </div>
+                    <h4 className="text-base font-semibold text-base-content mb-1">
+                      {organizer.name}
+                    </h4>
+                    <p className="text-sm text-primary">
+                      {organizer.role}
+                    </p>
+                    {/* NO "Open CV" text, NO links for organizers */}
+                  </div>
                 </div>
               ))}
-              <div className="p-4 bg-base-content/5 rounded-lg border border-base-content/10 text-center">
+              <div className="p-4 bg-base-content/5 rounded-xl border border-base-content/10 text-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-base-content/20 to-base-content/30 rounded-full flex items-center justify-center mb-3 mx-auto">
+                  <span className="text-base-content font-bold text-lg">+</span>
+                </div>
                 <p className="text-sm text-base-content/70">
-                  + Many more volunteers
+                  Many more volunteers
                 </p>
               </div>
             </div>

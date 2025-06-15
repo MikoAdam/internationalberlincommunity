@@ -29,38 +29,38 @@ const AboutUs = () => {
 
         {/* Vision, Values, and Impact Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          <div className="group bg-white rounded-2xl p-8 shadow-soft hover:shadow-large transition-all duration-300 border border-primary/10 hover:border-primary/20">
+          <div className="group bg-white dark:bg-base-300 rounded-2xl p-8 shadow-soft hover:shadow-large transition-all duration-300 border border-primary/10 hover:border-primary/20">
             <div className="w-12 h-12 bg-gradient-to-br from-primary to-primary/70 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
               <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" className="w-6 h-6 text-white">
                 <path fill="currentColor" d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5M12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5s5 2.24 5 5s-2.24 5-5 5m0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3s3-1.34 3-3s-1.34-3-3-3"/>
               </svg>
             </div>
             <h3 className="text-2xl font-bold text-base-content mb-4 group-hover:text-primary transition-colors">Our Vision</h3>
-            <p className="text-base-content/70 leading-relaxed">
+            <p className="text-base-content/80 leading-relaxed">
               To create a globally recognized model for inclusive community building that breaks down cultural barriers and celebrates diversity as our greatest strength.
             </p>
           </div>
 
-          <div className="group bg-white rounded-2xl p-8 shadow-soft hover:shadow-large transition-all duration-300 border border-secondary/10 hover:border-secondary/20">
+          <div className="group bg-white dark:bg-base-300 rounded-2xl p-8 shadow-soft hover:shadow-large transition-all duration-300 border border-secondary/10 hover:border-secondary/20">
             <div className="w-12 h-12 bg-gradient-to-br from-secondary to-secondary/70 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
               <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" className="w-6 h-6 text-white">
                 <path fill="currentColor" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54z"/>
               </svg>
             </div>
             <h3 className="text-2xl font-bold text-base-content mb-4 group-hover:text-secondary transition-colors">Our Values</h3>
-            <p className="text-base-content/70 leading-relaxed">
+            <p className="text-base-content/80 leading-relaxed">
               Radical inclusivity, cultural celebration, mutual respect, community empowerment, and sustainable social impact through authentic human connections.
             </p>
           </div>
 
-          <div className="group bg-white rounded-2xl p-8 shadow-soft hover:shadow-large transition-all duration-300 border border-accent/10 hover:border-accent/20">
+          <div className="group bg-white dark:bg-base-300 rounded-2xl p-8 shadow-soft hover:shadow-large transition-all duration-300 border border-accent/10 hover:border-accent/20">
             <div className="w-12 h-12 bg-gradient-to-br from-accent to-accent/70 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
               <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" className="w-6 h-6 text-white">
                 <path fill="currentColor" d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22L12 18.77L5.82 22L7 14.14L2 9.27l6.91-1.01z"/>
               </svg>
             </div>
             <h3 className="text-2xl font-bold text-base-content mb-4 group-hover:text-accent transition-colors">Our Impact</h3>
-            <p className="text-base-content/70 leading-relaxed">
+            <p className="text-base-content/80 leading-relaxed">
               6,500+ active members, 100+ transformative events, and countless success stories of integration, friendship, and personal growth across Berlin.
             </p>
           </div>
@@ -126,7 +126,7 @@ const AboutUs = () => {
 
         {/* Partnership CTA */}
         <div className="text-center mt-16">
-          <div className="bg-white rounded-2xl p-8 shadow-large max-w-2xl mx-auto border border-primary/10">
+          <div className="bg-white dark:bg-base-300 rounded-2xl p-8 shadow-large max-w-2xl mx-auto border border-primary/10">
             <h3 className="text-2xl font-bold text-base-content mb-4">
               Partner with Berlin's Leading Integration Non-Profit
             </h3>
