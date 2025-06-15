@@ -1,16 +1,13 @@
 "use client";
 
 import { useState, useRef } from "react";
-import Image from "next/image";
 
 const features = [
   {
     title: "Outdoor Adventures",
     description:
       "Explore Berlin's natural beauty with our hiking trips and beach days. Perfect for those who love the great outdoors.",
-    type: "image",
-    path: "/assets/profile_pic_placeholder.png", // Replace with your actual hiking photos
-    alt: "IBC Hiking Adventures",
+    type: "icon",
     svg: (
       <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 100 100"><path fill="currentColor" fillRule="evenodd" d="M46.43 7.5c4.055 0 7.337 3.379 7.337 7.434s-3.282 7.433-7.337 7.433s-7.434-3.379-7.434-7.433S42.376 7.5 46.43 7.5m.483 15.543c2.79-.087 4.947 1.649 6.082 3.476l7.723 12.84l13.516 5.696c3.861 1.64 2.027 6.757-2.317 5.599a5 5 0 0 0-.483-.29l-9.075 20.08s2.896 6.662 6.565 14.193c3.572 7.626-5.117 10.909-8.303 3.861l-3.185-7.144l-4.634 10.137l-1.931-.869l5.406-11.778l-9.075-19.79c-.386.096-.772 0-1.255 0c0 0-10.523 23.941-13.42 30.217c-2.799 6.275-11.101 2.51-8.302-3.67c2.8-6.178 16.123-36.202 16.123-36.202l-9.903.162c-1.5.013-1.859-.226-1.954-1.35c-.153-2.97-.415-9.958.272-13.197c.886-4.175 1.415-8.77 4.344-10.137s8.013 2.414 8.013 2.414c.772-2.51 3.186-4.248 5.793-4.248m5.985 15.06V49.69l8.303 18.15l8.302-18.247l-12.067-5.02c-.58-.29-1.062-.676-1.449-1.255z" color="currentColor"/></svg>
     ),
@@ -19,9 +16,7 @@ const features = [
     title: "Cultural Experiences",
     description:
       "Discover Berlin's rich cultural scene with museum visits, art exhibitions, and historical tours.",
-    type: "image",
-    path: "/assets/profile_pic_placeholder.png", // Replace with your actual cultural event photos
-    alt: "IBC Cultural Activities",
+    type: "icon",
     svg: (
       <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 15 15"><path fill="currentColor" d="M7.5 0L1 3.5V4h13v-.5zM2 5v5l-1 1.6V13h13v-1.4L13 10V5zm2 1h1v5.5H4zm3 0h1v5.5H7zm3 0h1v5.5h-1z"/></svg>
     ),
@@ -30,9 +25,7 @@ const features = [
     title: "Language Exchanges",
     description:
       "Practice your language skills in a friendly environment. Whether you're learning German or perfecting your English, our events are the place to be.",
-    type: "image",
-    path: "/assets/profile_pic_placeholder.png", // Replace with your actual language exchange photos
-    alt: "IBC Language Exchange",
+    type: "icon",
     svg: (
       <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M21.056 12h-2a1 1 0 0 0 0 2v2H17.87a3 3 0 0 0 .185-1a3 3 0 0 0-5.598-1.5a1 1 0 1 0 1.732 1a1 1 0 0 1 .866-.5a1 1 0 0 1 0 2a1 1 0 0 0 0 2a1 1 0 1 1 0 2a1 1 0 0 1-.866-.5a1 1 0 1 0-1.732 1a3 3 0 0 0 5.598-1.5a3 3 0 0 0-.185-1h1.185v3a1 1 0 0 0 2 0v-7a1 1 0 1 0 0-2m-11.97-.757a1 1 0 1 0 1.94-.486l-1.757-7.03a2.28 2.28 0 0 0-4.425 0l-1.758 7.03a1 1 0 1 0 1.94.486L5.585 9h2.94ZM6.086 7l.697-2.787a.292.292 0 0 1 .546 0L8.026 7Zm7.97 0h1a1 1 0 0 1 1 1v1a1 1 0 0 0 2 0V8a3.003 3.003 0 0 0-3-3h-1a1 1 0 0 0 0 2m-4 9h-1a1 1 0 0 1-1-1v-1a1 1 0 0 0-2 0v1a3.003 3.003 0 0 0 3 3h1a1 1 0 0 0 0-2"/></svg>
     ),
@@ -41,9 +34,7 @@ const features = [
     title: "Social Gatherings",
     description:
       "Join our picnics, barbecues, and casual meet-ups to connect with fellow community members and make new friends.",
-    type: "image",
-    path: "/assets/profile_pic_placeholder.png", // Replace with your actual social gathering photos
-    alt: "IBC Social Events",
+    type: "icon",
     svg: (
       <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16"><path fill="currentColor" d="M7 14s-1 0-1-1s1-4 5-4s5 3 5 4s-1 1-1 1zm4-6a3 3 0 1 0 0-6a3 3 0 0 0 0 6m-5.784 6A2.24 2.24 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5a2.5 2.5 0 0 0 0 5"/></svg>
     ),
@@ -52,16 +43,13 @@ const features = [
     title: "Day Trips",
     description:
       "Take a break from the city with our day trips to nearby attractions. Perfect for a quick getaway.",
-    type: "image",
-    path: "/assets/profile_pic_placeholder.png", // Replace with your actual day trip photos
-    alt: "IBC Day Trips",
+    type: "icon",
     svg: (
       <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16"><g fill="currentColor"><path d="M5 13v-3h4v.5a.5.5 0 0 0 1 0V10h1v3z"/><path d="M6 2v.341C3.67 3.165 2 5.388 2 8v5.5A2.5 2.5 0 0 0 4.5 16h7a2.5 2.5 0 0 0 2.5-2.5V8a6 6 0 0 0-4-5.659V2a2 2 0 1 0-4 0m2-1a1 1 0 0 1 1 1v.083a6 6 0 0 0-2 0V2a1 1 0 0 1 1-1m0 3a4 4 0 0 1 3.96 3.43a.5.5 0 1 1-.99.14a3 3 0 0 0-5.94 0a.5.5 0 1 1-.99-.14A4 4 0 0 1 8 4M4.5 9h7a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 .5-.5"/></g></svg>
     ),
   },
 ];
 
-// An SEO-friendly accordion component including the title and a description (when clicked.)
 const Item = ({ feature, isOpen, setFeatureSelected }) => {
   const accordion = useRef(null);
   const { title, description, svg } = feature;
@@ -103,48 +91,19 @@ const Item = ({ feature, isOpen, setFeatureSelected }) => {
   );
 };
 
-// A component to display the media (video or image) of the feature. If the type is not specified, it will display an empty div.
-// Video are set to autoplay for best UX.
 const Media = ({ feature }) => {
-  const { type, path, alt } = feature;
-  const style = "rounded-2xl aspect-square w-full sm:w-[26rem]";
-  const size = {
-    width: 500,
-    height: 500,
-  };
+  const { svg } = feature;
+  const style = "rounded-2xl aspect-square w-full sm:w-[26rem] bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center";
 
-  if (type === "video") {
-    return (
-      <video
-        className={style}
-        autoPlay
-        muted
-        loop
-        playsInline
-        controls
-        width={size.width}
-        height={size.height}
-      >
-        <source src={path} type="video/mp4" />
-      </video>
-    );
-  } else if (type === "image") {
-    return (
-      <Image
-        src={path}
-        alt={alt}
-        className={`${style} object-cover object-center`}
-        width={size.width}
-        height={size.height}
-      />
-    );
-  } else {
-    return <div className={`${style} !border-none`}></div>;
-  }
+  return (
+    <div className={style}>
+      <div className="text-primary text-8xl">
+        {svg}
+      </div>
+    </div>
+  );
 };
 
-// A component to display 2 to 5 features in an accordion.
-// By default, the first feature is selected. When a feature is clicked, the others are closed.
 const FeaturesAccordion = () => {
   const [featureSelected, setFeatureSelected] = useState(0);
 

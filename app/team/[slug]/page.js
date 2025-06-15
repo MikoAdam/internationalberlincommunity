@@ -1,29 +1,26 @@
-"use client"; // Client-side rendering
+"use client";
 
 import { useParams } from 'next/navigation';
 import { notFound, useRouter } from 'next/navigation';
-import { teamMembers } from '@/components/TeamGrid'; // Import current team members
+import { teamMembers } from '@/components/TeamGrid';
 
 const TeamMemberPage = () => {
-  const { slug } = useParams(); // Get the dynamic slug from the URL
-  const router = useRouter(); // For back button functionality
+  const { slug } = useParams();
+  const router = useRouter();
 
-  // Combine current and former members into one array
   const allMembers = [...teamMembers];
 
-  // Find the member based on the slug
   const member = allMembers.find((member) =>
     member.name.toLowerCase().replace(/\s+/g, '-') === slug
   );
 
   if (!member) {
-    return notFound(); // If member is not found, return a 404 page
+    return notFound();
   }
 
   return (
     <main className="bg-base-200 dark:bg-base-100 min-h-screen py-16 px-6 lg:px-16 flex justify-center items-start">
       <div className="max-w-5xl w-full bg-base-100 dark:bg-base-200 shadow-lg rounded-lg overflow-hidden flex-grow">
-        {/* Back Button */}
         <div className="p-4">
           <button
             onClick={() => router.back()}
@@ -47,18 +44,23 @@ const TeamMemberPage = () => {
           </button>
         </div>
 
-        {/* Profile Content */}
         <div className="flex flex-col md:flex-row p-6">
-          {/* Profile Image */}
           <div className="md:w-1/3 bg-base-200 dark:bg-base-300 flex items-center justify-center p-8">
-            <img
-              src={member.profileImage || '/assets/profile_pic_placeholder.png'} // Use the placeholder image for all members
-              alt={member.name}
-              className="rounded-full shadow-lg w-56 h-56 object-cover"
-            />
+            {member.profileImage ? (
+              <img
+                src={member.profileImage}
+                alt={member.name}
+                className="rounded-full shadow-lg w-56 h-56 object-cover"
+              />
+            ) : (
+              <div className="w-56 h-56 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center shadow-lg">
+                <span className="text-white font-bold text-6xl">
+                  {member.name.split(' ').map(n => n[0]).join('')}
+                </span>
+              </div>
+            )}
           </div>
 
-          {/* Profile Info */}
           <div className="md:w-2/3 p-8">
             <h1 className="text-4xl font-bold text-base-content dark:text-base-content">
               {member.name}
@@ -70,7 +72,6 @@ const TeamMemberPage = () => {
               {member.bio}
             </p>
 
-            {/* Experience */}
             {member.experience && member.experience.length > 0 && (
               <div className="mt-8">
                 <h3 className="text-2xl font-semibold text-base-content dark:text-base-content mb-4">
@@ -84,7 +85,6 @@ const TeamMemberPage = () => {
               </div>
             )}
 
-            {/* Education */}
             {member.education && member.education.length > 0 && (
               <div className="mt-8">
                 <h3 className="text-2xl font-semibold text-base-content dark:text-base-content mb-4">
@@ -98,7 +98,6 @@ const TeamMemberPage = () => {
               </div>
             )}
 
-            {/* Skills */}
             {member.skills && member.skills.length > 0 && (
               <div className="mt-8">
                 <h3 className="text-2xl font-semibold text-base-content dark:text-base-content mb-4">
