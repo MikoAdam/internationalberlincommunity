@@ -1,5 +1,4 @@
 import Image from "next/image";
-import adamImg from "@/app/blog/_assets/images/authors/adam.jpeg";
 import languageExchange from "@/public/programs/languageExchange.jpeg";
 import hikingImg from "@/public/programs/hiking.jpg"
 

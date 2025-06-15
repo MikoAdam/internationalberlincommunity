@@ -11,7 +11,7 @@ const imageUrls = [
   "/assets/hiking.jpg",
   "/assets/picnic.jpg",
   "/assets/sachsenTrip.jpg",
-  "/assets/zakona.jpg",
+  "/assets/zakopone.jpg",
 ];
 
 const Hero = () => {
