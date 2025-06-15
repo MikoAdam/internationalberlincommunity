@@ -144,7 +144,7 @@ const HeaderBlog = () => {
   // setIsOpen(false) when the route changes (i.e: when the user clicks on a link on mobile)
   useEffect(() => {
     setIsOpen(false);
-  }, [searchParams]);
+  });
 
   return (
     <header className="bg-base-200">
