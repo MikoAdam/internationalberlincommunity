@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import logo from "@/app/icon.png";
@@ -32,7 +31,6 @@ const links = [
 ];
 
 const Header = () => {
-  const searchParams = useSearchParams();
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
