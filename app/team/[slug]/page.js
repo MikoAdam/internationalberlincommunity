@@ -3,14 +3,13 @@
 import { useParams } from 'next/navigation';
 import { notFound, useRouter } from 'next/navigation';
 import { teamMembers } from '@/components/TeamGrid'; // Import current team members
-import { formerTeamMembers } from '@/components/FormerTeam'; // Import former team members
 
 const TeamMemberPage = () => {
   const { slug } = useParams(); // Get the dynamic slug from the URL
   const router = useRouter(); // For back button functionality
 
   // Combine current and former members into one array
-  const allMembers = [...teamMembers, ...formerTeamMembers];
+  const allMembers = [...teamMembers];
 
   // Find the member based on the slug
   const member = allMembers.find((member) =>

@@ -1,51 +1,29 @@
+"use client";
+
 import Link from "next/link";
 
-export const teamMembers = [
+// Board/Leadership members (Vorstand)
+export const boardMembers = [
   {
     name: "Le Phan Thanh Phuong",
     role: "President", 
-    bio: "Sound Designer turned Psychology student and soon Auditory Neuroscientist. Leading IBC's mission to build bridges across cultures.",
-    experience: ["President of International Berlin Community", "Student Research Assistant at Université de Montréal", "Researcher at University of Potsdam"],
-    education: ["Master of Science - MS, Cognitive Science at University of Potsdam", "Bachelor of Arts - BA, Psychology at University of Pécs"],
-    skills: ["Leadership", "Research", "Community Building", "Cross-cultural Communication", "Psychology"],
-    profileImage: "/assets/Gia.jpeg", // Gia gets a photo
+    profileImage: "/assets/Gia.jpeg", // You need to add this photo
     linkedinUrl: "https://www.linkedin.com/in/thanh-phuong-le-phan/",
     isLeadership: true,
-    hasPage: true // Gia gets a page
+    hasPage: true
   },
   {
     name: "Adam Miko",
     role: "Founder / Vice President",
-    bio: `Adam Miko is the founder and Vice President of the International Berlin Community (IBC) e.V., 
-    a leading non-profit in Berlin dedicated to fostering cultural exchange, inclusivity, and community building. 
-    With a strong background in software engineering and consulting, Adam combines technical expertise 
-    with community leadership to create lasting impact.`,
-    experience: [
-      "Founder and Vice President of International Berlin Community (IBC) e.V., one of Berlin's leading non-profits of its kind",
-      "Consultant and Software Developer in healthcare, aerospace, and transportation industries",
-      "Led a team of 15+ volunteers and organized over 100 diverse events, including cultural celebrations, guided tours, and interfaith gatherings",
-      "Delivered innovative technical solutions and led healthcare data migrations at Accenture",
-      "5+ years of experience in consulting and technical project delivery for clients in English and German environments",
-    ],
-    education: [
-      "Bachelor's Degree in Computer Science, Budapest University of Technology and Economics",
-    ],
-    skills: [
-      "Leadership and Team Management",
-      "Community Building", 
-      "Event Organization",
-      "Software Development",
-      "Stakeholder Engagement",
-    ],
-    profileImage: "/assets/adam.jpeg", // Adam gets a photo
+    profileImage: "/assets/adam.jpeg",
     linkedinUrl: "https://linkedin.com/in/adammiko",
     isLeadership: true,
-    hasPage: true // Adam gets a page
+    hasPage: true
   }
 ];
 
-// Organizers - no photos, no pages, just simple cards - EXACTLY the list you provided
-export const organizers = [
+// Team Organizers - no photos, no pages, just simple cards
+export const teamOrganizers = [
   { name: "Masud H.", role: "Language Exchange Coordinator" },
   { name: "Ratnesh P.", role: "Event Organizer" },
   { name: "Talal D.", role: "Event Organizer" },
@@ -54,7 +32,7 @@ export const organizers = [
 ];
 
 const TeamGrid = () => {
-  const leadership = teamMembers;
+  const leadership = boardMembers;
 
   return (
     <section className="bg-base-100 py-24 sm:py-32">
@@ -68,9 +46,9 @@ const TeamGrid = () => {
           </p>
         </div>
 
-        {/* Leadership Section - Only Adam and Gia with photos and pages */}
+        {/* Board/Leadership Section (Vorstand) - Only Adam and Gia with photos and pages */}
         <div className="mt-16">
-          <h3 className="text-2xl font-bold text-base-content mb-8">Leadership Team</h3>
+          <h3 className="text-2xl font-bold text-base-content mb-8">Board of Directors (Vorstand)</h3>
           <ul role="list" className="grid gap-x-8 gap-y-12 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:col-span-2">
             {leadership.map((member) => (
               <li key={member.name}>
@@ -80,6 +58,9 @@ const TeamGrid = () => {
                       src={member.profileImage}
                       alt={member.name}
                       className="rounded-full shadow-lg w-32 h-32 object-cover"
+                      onError={(e) => {
+                        e.target.src = "/assets/adam.jpeg"; // Fallback to Adam's photo
+                      }}
                     />
                     <h4 className="text-xl font-semibold leading-7 tracking-tight text-base-content">
                       {member.name}
@@ -87,11 +68,9 @@ const TeamGrid = () => {
                     <p className="text-lg font-semibold leading-6 text-primary">
                       {member.role}
                     </p>
-                    <p className="text-sm text-base-content/70 text-center max-w-xs">
-                      {member.bio.substring(0, 120)}...
-                    </p>
+                    <span className="text-primary text-sm font-medium">Open CV</span>
                     {member.linkedinUrl && (
-                      <span className="text-primary text-sm">LinkedIn Profile</span>
+                      <span className="text-base-content/60 text-sm">LinkedIn Profile</span>
                     )}
                   </span>
                 </Link>
@@ -100,15 +79,15 @@ const TeamGrid = () => {
           </ul>
         </div>
 
-        {/* Organizers Section - Simple cards, no photos, no links, no "Open CV" */}
+        {/* Team Organizers Section - Simple cards, no photos, no links, no "Open CV" */}
         <div className="mt-20">
-          <h3 className="text-2xl font-bold text-base-content mb-8">Our Amazing Organizers</h3>
+          <h3 className="text-2xl font-bold text-base-content mb-8">Our Team Organizers</h3>
           <div className="text-center">
             <p className="text-base-content/70 mb-6">
               We have an amazing team of volunteer organizers who make our events possible.
             </p>
             <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 max-w-4xl mx-auto">
-              {organizers.map((organizer) => (
+              {teamOrganizers.map((organizer) => (
                 <div key={organizer.name} className="p-4 bg-white dark:bg-base-200 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-base-content/10">
                   <div className="flex flex-col items-center text-center">
                     {/* Initials instead of photos */}
@@ -127,7 +106,6 @@ const TeamGrid = () => {
                   </div>
                 </div>
               ))}
-              {/* REMOVED the stupid "Many more volunteers" card */}
             </div>
           </div>
         </div>
@@ -151,5 +129,9 @@ const TeamGrid = () => {
     </section>
   );
 };
+
+// Also export with old names for compatibility  
+export const teamMembers = boardMembers;
+export const organizers = teamOrganizers;
 
 export default TeamGrid;

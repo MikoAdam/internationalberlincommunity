@@ -1,14 +1,12 @@
-import { Suspense } from "react";
+"use client";
+
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { notFound } from 'next/navigation';
 
-const LeProfile = () => {
+export default function LeProfile() {
   return (
     <>
-      <Suspense fallback={<div>Loading header...</div>}>
-        <Header />
-      </Suspense>
+      <Header />
 
       <main className="bg-base-100 min-h-screen py-16 px-6 lg:px-16">
         <div className="max-w-6xl mx-auto">
@@ -18,9 +16,12 @@ const LeProfile = () => {
             <div className="lg:w-1/3">
               <div className="bg-base-200 rounded-2xl p-8 text-center sticky top-24">
                 <img
-                  src="/assets/gia.jpg"
+                  src="/assets/Gia.jpeg"
                   alt="Lê Phan Thanh Phương"
                   className="w-48 h-48 rounded-full mx-auto mb-6 object-cover shadow-large"
+                  onError={(e) => {
+                    e.target.src = "/assets/adam.jpeg"; // Fallback to Adam's photo if Gia's not available
+                  }}
                 />
                 <h1 className="text-3xl font-bold text-base-content mb-2">
                   Lê Phan Thanh Phương
@@ -206,6 +207,4 @@ const LeProfile = () => {
       <Footer />
     </>
   );
-};
-
-export default LeProfile;
+}

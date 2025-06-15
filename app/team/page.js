@@ -1,6 +1,6 @@
-import { Suspense } from "react";
-import { teamMembers } from "@/components/TeamGrid";
-import { formerTeamMembers } from "@/components/FormerTeam";
+"use client";
+
+import { boardMembers, teamOrganizers } from "@/components/TeamGrid";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
@@ -23,9 +23,7 @@ const LinkedInIcon = () => (
 const TeamPage = () => {
   return (
     <>
-      <Suspense fallback={<div>Loading header...</div>}>
-        <Header />
-      </Suspense>
+      <Header />
 
       <main className="bg-base-100 py-16 sm:py-24 text-center dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -40,20 +38,28 @@ const TeamPage = () => {
             </p>
           </div>
 
-          {/* Current Team Members */}
+          {/* Board of Directors */}
           <section className="bg-white dark:bg-gray-800 rounded-lg shadow-lg mt-16 mb-20 p-12">
             <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-12 text-left border-b border-gray-200 dark:border-gray-700 pb-4">
-              Current Team Members
+              Board of Directors (Vorstand)
             </h2>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
-              {teamMembers.map((member) => (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-12">
+              {boardMembers.map((member) => (
                 <Link
                   key={member.name}
                   href={`/team/${member.name.toLowerCase().replace(/\s+/g, '-')}`}
                   className="group relative bg-gray-100 dark:bg-gray-700 p-8 rounded-lg shadow hover:shadow-lg transition-shadow duration-200 ease-in-out hover:bg-gray-200 dark:hover:bg-gray-600"
                 >
                   <div className="flex flex-col items-center gap-4">
+                    <img
+                      src={member.profileImage}
+                      alt={member.name}
+                      className="w-24 h-24 rounded-full object-cover shadow-lg"
+                      onError={(e) => {
+                        e.target.src = "/assets/adam.jpeg"; // Fallback to Adam's photo
+                      }}
+                    />
                     <h3 className="text-2xl font-semibold text-gray-900 dark:text-gray-200 group-hover:text-primary transition-colors duration-200 ease-in-out">
                       {member.name}
                     </h3>
@@ -65,6 +71,7 @@ const TeamPage = () => {
                         rel="noopener noreferrer"
                         title="LinkedIn profile"
                         className="text-primary group-hover:text-primary-focus transition-colors duration-200 ease-in-out"
+                        onClick={(e) => e.stopPropagation()}
                       >
                         <LinkedInIcon />
                       </a>
@@ -81,45 +88,33 @@ const TeamPage = () => {
             </div>
           </section>
 
-          {/* Former Team Members */}
+          {/* Team Organizers */}
           <section className="bg-white dark:bg-gray-800 rounded-lg shadow-lg mt-16 mb-32 p-12">
             <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-12 text-left border-b border-gray-200 dark:border-gray-700 pb-4">
-              Former Team Members
+              Team Organizers
             </h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
-              {formerTeamMembers.map((member) => (
-                <Link
+              {teamOrganizers.map((member) => (
+                <div
                   key={member.name}
-                  href={`/team/${member.name.toLowerCase().replace(/\s+/g, '-')}`}
-                  className="group relative bg-gray-100 dark:bg-gray-700 p-8 rounded-lg shadow hover:shadow-lg transition-shadow duration-200 ease-in-out hover:bg-gray-200 dark:hover:bg-gray-600"
+                  className="bg-gray-100 dark:bg-gray-700 p-8 rounded-lg shadow hover:shadow-lg transition-shadow duration-200 ease-in-out"
                 >
                   <div className="flex flex-col items-center gap-4">
-                    <h3 className="text-2xl font-semibold text-gray-900 dark:text-gray-200 group-hover:text-primary transition-colors duration-200 ease-in-out">
+                    {/* Initials Circle */}
+                    <div className="w-24 h-24 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center">
+                      <span className="text-white font-bold text-2xl">
+                        {member.name.split(' ').map(n => n[0]).join('')}
+                      </span>
+                    </div>
+                    <h3 className="text-2xl font-semibold text-gray-900 dark:text-gray-200">
                       {member.name}
                     </h3>
                     {member.role && (
                       <p className="text-lg text-primary">{member.role}</p>
                     )}
-                    {member.linkedinUrl && (
-                      <a
-                        href={member.linkedinUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        title="LinkedIn profile"
-                        className="text-primary group-hover:text-primary-focus transition-colors duration-200 ease-in-out"
-                      >
-                        <LinkedInIcon />
-                      </a>
-                    )}
                   </div>
-                  {/* Hover effect for Open CV */}
-                  <div className="absolute inset-0 bg-gray-200 bg-opacity-0 group-hover:bg-opacity-75 dark:bg-gray-600 dark:bg-opacity-0 dark:group-hover:bg-opacity-75 flex justify-center items-center transition-opacity duration-200 ease-in-out">
-                    <span className="text-lg font-semibold text-gray-800 dark:text-gray-200 opacity-0 group-hover:opacity-100">
-                      Open CV
-                    </span>
-                  </div>
-                </Link>
+                </div>
               ))}
             </div>
           </section>

@@ -89,7 +89,7 @@ const programs = [
   }
 ];
 
-const ProgramsPage = () => {
+export default function ProgramsPage() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-base-100 to-base-200">
       {/* Hero Section */}
@@ -268,6 +268,4 @@ const ProgramsPage = () => {
       </section>
     </main>
   );
-};
-
-export default ProgramsPage;
+}
