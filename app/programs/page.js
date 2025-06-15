@@ -140,7 +140,7 @@ const ProgramsPage = () => {
             {programs.map((program, index) => (
               <div 
                 key={index}
-                className="group bg-white rounded-3xl p-8 shadow-large hover:shadow-glow transition-all duration-300 border border-base-200 hover:border-primary/20"
+                className="group bg-base-100 rounded-3xl p-8 shadow-large hover:shadow-glow transition-all duration-300 border border-base-content/10 hover:border-primary/20"
               >
                 {/* Icon & Title */}
                 <div className="mb-6">
@@ -247,19 +247,19 @@ const ProgramsPage = () => {
             Frequently Asked Questions
           </h2>
           <div className="space-y-6">
-            <div className="bg-white rounded-2xl p-6 shadow-soft">
+            <div className="bg-base-100 rounded-2xl p-6 shadow-soft">
               <h3 className="font-bold text-base-content mb-2">Are the events really free?</h3>
               <p className="text-base-content/70">Yes! All IBC events are completely free. For some activities like museum visits or kayaking, you'll only pay for entrance fees or equipment rentals directly to the venue.</p>
             </div>
-            <div className="bg-white rounded-2xl p-6 shadow-soft">
+            <div className="bg-base-100 rounded-2xl p-6 shadow-soft">
               <h3 className="font-bold text-base-content mb-2">Do I need to speak German?</h3>
               <p className="text-base-content/70">Not at all! Most events are conducted in English, and our community welcomes people of all language levels. Our language exchange events are perfect for practicing German.</p>
             </div>
-            <div className="bg-white rounded-2xl p-6 shadow-soft">
+            <div className="bg-base-100 rounded-2xl p-6 shadow-soft">
               <h3 className="font-bold text-base-content mb-2">How do I stay updated on events?</h3>
               <p className="text-base-content/70">Join our Facebook group where all events are announced. You can also follow our Instagram or contact us directly via email or WhatsApp.</p>
             </div>
-            <div className="bg-white rounded-2xl p-6 shadow-soft">
+            <div className="bg-base-100 rounded-2xl p-6 shadow-soft">
               <h3 className="font-bold text-base-content mb-2">Can I bring friends?</h3>
               <p className="text-base-content/70">Absolutely! Friends are always welcome. Just make sure they also join our Facebook group to stay informed about community guidelines and future events.</p>
             </div>
