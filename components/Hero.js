@@ -32,10 +32,10 @@ const Hero = () => {
           <span className="text-primary">Building Bridges Across Cultures</span>
         </h1>
         <p className="text-lg opacity-80 leading-relaxed">
-          The International Berlin Community (IBC) e.V. is one of Berlin's leading non-profits dedicated to fostering inclusivity, cultural exchange, and community building. Join our vibrant events and become part of a network that values diversity, connection, and collaboration.
+          The International Berlin Community (IBC) e.V. is a thriving registered non-profit dedicated to fostering inclusivity, cultural exchange, and community building. Join our vibrant events and become part of a network that values diversity, connection, and collaboration.
         </p>
         <p className="text-lg opacity-80 leading-relaxed">
-          Whether you're an local, expat, visitor, student, immigrant, or refugee, you are welcome in our community. We embrace diversity and inclusivity, ensuring a safe and respectful space for everyone, regardless of their background, ethnicity, religion, gender identity, or sexual orientation.        
+          Whether you're a local, expat, visitor, student, immigrant, or refugee, you are welcome in our community. We embrace diversity and inclusivity, ensuring a safe and respectful space for everyone, regardless of their background, ethnicity, religion, gender identity, or sexual orientation.        
         </p>
         <div className="flex gap-4 mt-6">
           <Link href="mailto:ibcmanagement@outlook.com" className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded shadow-lg">

@@ -87,3 +87,47 @@ const rules = [
     icon: "🌱"
   }
 ];
+
+const Rules = () => {
+  return (
+    <main className="max-w-4xl mx-auto">
+      <div className="p-8">
+        <h1 className="text-4xl font-extrabold pb-8 mb-6 text-base-content">
+          Community Rules for {config.appName}
+        </h1>
+
+        {rules.map((rule, index) => (
+          <section key={index} className="mb-6 p-6 bg-base-200 rounded-lg shadow-md">
+            <div className="flex items-start gap-4">
+              <span className="text-3xl">{rule.icon}</span>
+              <div>
+                <h2 className="text-2xl font-bold mb-4 text-primary">{rule.title}</h2>
+                <p className="text-lg leading-relaxed text-base-content">{rule.description}</p>
+              </div>
+            </div>
+          </section>
+        ))}
+
+        <div className="mt-12 p-6 bg-primary/10 rounded-lg">
+          <h3 className="text-xl font-bold text-primary mb-4">Questions about our rules?</h3>
+          <p className="text-base-content mb-4">
+            If you have any questions about these community guidelines or need clarification on any rule, 
+            please don't hesitate to reach out to our team.
+          </p>
+          <a 
+            href="mailto:ibcmanagement@outlook.com?subject=Community%20Rules%20Question" 
+            className="btn btn-primary"
+          >
+            Contact Us
+          </a>
+        </div>
+
+        <p className="text-lg opacity-70 text-center mt-12">
+          Last Updated: December 2024
+        </p>
+      </div>
+    </main>
+  );
+};
+
+export default Rules;
