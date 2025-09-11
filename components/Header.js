@@ -38,10 +38,9 @@ const Header = () => {
   });
 
   return (
-    <header className="bg-base-100 border-b border-base-300 sticky top-0 z-40">
+    <header className="bg-base-100 border-b border-base-content/10 sticky top-0 z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <nav className="flex items-center justify-between h-20" aria-label="Global">
-          {/* Logo Section */}
           <div className="flex items-center">
             <Link
               className="flex items-center gap-3 shrink-0 group"
@@ -68,7 +67,6 @@ const Header = () => {
             </Link>
           </div>
 
-          {/* Desktop Navigation */}
           <div className="hidden lg:flex lg:items-center lg:gap-2">
             {links.map((link) => (
               <Link
@@ -82,42 +80,39 @@ const Header = () => {
             ))}
           </div>
 
-          {/* Desktop Actions */}
           <div className="hidden lg:flex lg:items-center lg:gap-3">
             <ThemeSwitch />
-            <div className="w-px h-6 bg-base-300"></div>
+            <div className="w-px h-6 bg-base-content/20"></div>
             <Link 
               href="mailto:ibcmanagement@outlook.com?subject=Partnership%20Interest" 
-              className="btn btn-primary btn-sm"
+              className="btn btn-primary btn-sm font-medium"
             >
               Partner with Us
             </Link>
           </div>
 
-          {/* Mobile Menu Controls */}
           <div className="flex items-center gap-2 lg:hidden">
             <ThemeSwitch />
             <button
               type="button"
-              className="p-2 rounded-lg hover:bg-base-200 transition-colors duration-200"
+              className="p-2 rounded-lg hover:bg-base-content/10 transition-colors duration-200"
               onClick={() => setIsOpen(!isOpen)}
               aria-expanded={isOpen}
               aria-label="Toggle navigation menu"
             >
               <div className="w-6 h-6 flex flex-col justify-center items-center">
-                <span className={`block h-0.5 w-6 bg-current transition-all duration-300 ${isOpen ? 'rotate-45 translate-y-0.5' : '-translate-y-1'}`}></span>
-                <span className={`block h-0.5 w-6 bg-current transition-all duration-300 ${isOpen ? 'opacity-0' : 'opacity-100'}`}></span>
-                <span className={`block h-0.5 w-6 bg-current transition-all duration-300 ${isOpen ? '-rotate-45 -translate-y-0.5' : 'translate-y-1'}`}></span>
+                <span className={`block h-0.5 w-6 bg-base-content transition-all duration-300 ${isOpen ? 'rotate-45 translate-y-0.5' : '-translate-y-1'}`}></span>
+                <span className={`block h-0.5 w-6 bg-base-content transition-all duration-300 ${isOpen ? 'opacity-0' : 'opacity-100'}`}></span>
+                <span className={`block h-0.5 w-6 bg-base-content transition-all duration-300 ${isOpen ? '-rotate-45 -translate-y-0.5' : 'translate-y-1'}`}></span>
               </div>
             </button>
           </div>
         </nav>
       </div>
 
-      {/* Mobile Menu */}
       {isOpen && (
-        <div className="lg:hidden">
-          <div className="px-6 py-4 space-y-4 bg-base-100 border-t border-base-300">
+        <div className="lg:hidden bg-base-100 border-t border-base-content/10">
+          <div className="px-6 py-4 space-y-4">
             {links.map((link) => (
               <Link
                 href={link.href}
@@ -129,7 +124,7 @@ const Header = () => {
                 {link.label}
               </Link>
             ))}
-            <div className="pt-4 border-t border-base-300">
+            <div className="pt-4 border-t border-base-content/10">
               <Link
                 href="mailto:ibcmanagement@outlook.com?subject=Partnership%20Interest"
                 className="btn btn-primary btn-block"

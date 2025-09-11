@@ -2,21 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
-body {
+/* Force dark theme colors */
+:root {
+  --bg-base-100: #1e293b;
+  --bg-base-200: #334155;
+  --text-base-content: #f1f5f9;
+  --primary: #2dd4bf;
+}
+
+html, body {
+  background-color: var(--bg-base-100) !important;
+  color: var(--text-base-content) !important;
   scroll-behavior: smooth !important;
 }
 
-/* It makes the HTML progress bar filling smooth when value change. */
-progress::-webkit-progress-value {
-  transition: 0.6s width ease-out;
+.bg-base-100 {
+  background-color: var(--bg-base-100) !important;
 }
 
-@layer base {
-  .btn-gradient {
-    @apply !bg-gradient !bg-[length:300%_300%] hover:saturate-[1.2] shadow duration-100 !border-0 !border-transparent !bg-transparent animate-shimmer disabled:!bg-none disabled:!bg-gray-500/30  !text-white;
-  }
-  .btn {
-    @apply !capitalize;
-  }
+.bg-base-200 {
+  background-color: var(--bg-base-200) !important;
+}
+
+.text-base-content {
+  color: var(--text-base-content) !important;
+}
+
+.text-primary {
+  color: var(--primary) !important;
+}
+
+.btn-primary {
+  background-color: var(--primary) !important;
+  color: white !important;
 }
