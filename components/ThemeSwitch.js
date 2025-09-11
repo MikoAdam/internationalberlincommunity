@@ -10,13 +10,17 @@ const ThemeSwitch = () => {
     setIsDark(newIsDark);
     
     if (newIsDark) {
+      document.documentElement.removeAttribute('data-light');
       document.documentElement.style.setProperty('--bg-base-100', '#1e293b');
       document.documentElement.style.setProperty('--bg-base-200', '#334155');
       document.documentElement.style.setProperty('--text-base-content', '#f1f5f9');
+      document.documentElement.style.setProperty('--primary', '#14b8a6');
     } else {
-      document.documentElement.style.setProperty('--bg-base-100', '#f8fafc');
-      document.documentElement.style.setProperty('--bg-base-200', '#f1f5f9');
+      document.documentElement.setAttribute('data-light', '');
+      document.documentElement.style.setProperty('--bg-base-100', '#ffffff');
+      document.documentElement.style.setProperty('--bg-base-200', '#f8fafc');
       document.documentElement.style.setProperty('--text-base-content', '#1e293b');
+      document.documentElement.style.setProperty('--primary', '#0d9488');
     }
   };
 

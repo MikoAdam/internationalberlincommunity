@@ -2,12 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Force dark theme colors */
 :root {
-  --bg-base-100: #1e293b;
-  --bg-base-200: #334155;
-  --text-base-content: #f1f5f9;
-  --primary: #2dd4bf;
+  --bg-base-100: #1a202c;
+  --bg-base-200: #2d3748;
+  --bg-base-300: #4a5568;
+  --text-base-content: #f7fafc;
+  --text-muted: #a0aec0;
+  --primary: #38a169;
+  --primary-dark: #2f855a;
+  --secondary: #3182ce;
+  --accent: #ed8936;
+  --border: #4a5568;
+}
+
+[data-light] {
+  --bg-base-100: #f8fafc;
+  --bg-base-200: #edf2f7;
+  --bg-base-300: #e2e8f0;
+  --text-base-content: #2d3748;
+  --text-muted: #718096;
+  --primary: #38a169;
+  --primary-dark: #2f855a;
+  --secondary: #3182ce;
+  --accent: #ed8936;
+  --border: #cbd5e0;
 }
 
 html, body {
@@ -16,23 +34,89 @@ html, body {
   scroll-behavior: smooth !important;
 }
 
-.bg-base-100 {
-  background-color: var(--bg-base-100) !important;
+.bg-base-100 { background-color: var(--bg-base-100) !important; }
+.bg-base-200 { background-color: var(--bg-base-200) !important; }
+.bg-base-300 { background-color: var(--bg-base-300) !important; }
+.text-base-content { color: var(--text-base-content) !important; }
+.text-base-content\/80 { color: var(--text-muted) !important; }
+.text-base-content\/70 { color: var(--text-muted) !important; }
+.text-base-content\/60 { color: var(--text-muted) !important; }
+.text-primary { color: var(--primary) !important; }
+.bg-primary { background-color: var(--primary) !important; }
+.bg-primary\/10 { background-color: rgba(56, 161, 105, 0.1) !important; }
+.bg-primary\/5 { background-color: rgba(56, 161, 105, 0.05) !important; }
+
+/* Fix all buttons */
+.btn, .btn-primary, .btn-outline, .btn-ghost {
+  background-color: var(--primary) !important; 
+  color: white !important;
+  border: 2px solid var(--primary) !important;
+  padding: 12px 24px !important;
+  border-radius: 8px !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+  min-width: fit-content !important;
+  transition: all 0.3s ease !important;
 }
 
-.bg-base-200 {
-  background-color: var(--bg-base-200) !important;
+.btn:hover, .btn-primary:hover {
+  background-color: var(--primary-dark) !important;
+  border-color: var(--primary-dark) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 10px 25px rgba(56, 161, 105, 0.3) !important;
 }
 
-.text-base-content {
+.btn-outline {
+  background-color: transparent !important;
   color: var(--text-base-content) !important;
+  border-color: var(--border) !important;
 }
 
-.text-primary {
-  color: var(--primary) !important;
-}
-
-.btn-primary {
+.btn-outline:hover {
   background-color: var(--primary) !important;
   color: white !important;
+  border-color: var(--primary) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 10px 25px rgba(56, 161, 105, 0.3) !important;
 }
+
+.btn-ghost {
+  background-color: transparent !important;
+  color: var(--text-base-content) !important;
+  border: none !important;
+}
+
+/* Button specific fixes */
+.btn-circle {
+  border-radius: 50% !important;
+  width: 48px !important;
+  height: 48px !important;
+  padding: 0 !important;
+  min-width: 48px !important;
+}
+
+/* Fancy cards with hover effects */
+.bg-white, .card, .shadow-lg, .shadow-large, .rounded-3xl {
+  background-color: var(--bg-base-200) !important;
+  border: 1px solid var(--border) !important;
+  color: var(--text-base-content) !important;
+  transition: all 0.3s ease !important;
+}
+
+.bg-white:hover, .card:hover, .shadow-lg:hover, .shadow-large:hover, .rounded-3xl:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2) !important;
+  border-color: var(--primary) !important;
+}
+
+.border-base-content\/10 { border-color: var(--border) !important; }
+.border-base-content\/20 { border-color: var(--border) !important; }
+.border-base-300 { border-color: var(--border) !important; }
+
+* { transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; }
