@@ -3,6 +3,8 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useLanguage } from "./LanguageContext";
+import { t } from "@/lib/translations";
 
 const imageUrls = [
   "/assets/culturalEvents.jpg",
@@ -58,6 +60,7 @@ const CountUp = ({ end, duration = 2000, suffix = "" }) => {
 
 const Hero = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const { language } = useLanguage();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -67,61 +70,60 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="min-h-screen bg-base-100 flex items-center">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+    <section className="min-h-screen bg-base-100 flex items-center py-8 md:py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           
-          <div className="space-y-8">
-            <div className="inline-flex items-center gap-2 bg-base-200 rounded-full px-4 py-2 text-sm font-medium text-primary transform hover:scale-105 transition-transform">
+          <div className="space-y-6 md:space-y-8 text-center lg:text-left">
+            <div className="inline-flex items-center gap-2 bg-base-200 rounded-full px-3 py-2 text-xs md:text-sm font-medium text-primary">
               <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
-              Registered Non-Profit Organization
+              {t('registeredNonProfit', language)}
             </div>
             
-            <h1 className="text-5xl lg:text-6xl font-bold leading-tight text-base-content">
-              International<br/>
-              <span className="text-primary">Berlin Community</span>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-base-content">
+              {t('internationalBerlinCommunity', language).split(' ').slice(0, 2).join(' ')}<br/>
+              <span className="text-primary">{t('internationalBerlinCommunity', language).split(' ').slice(2).join(' ')}</span>
             </h1>
             
-            <p className="text-xl text-base-content/80 leading-relaxed">
-              Building bridges across cultures through community programs and events. 
-              Fostering integration and meaningful connections in Berlin.
+            <p className="text-lg md:text-xl text-base-content/80 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+              {t('heroDescription', language)}
             </p>
 
-            <div className="grid grid-cols-3 gap-8 py-8 border-y border-base-content/10">
+            <div className="grid grid-cols-3 gap-4 md:gap-8 py-6 md:py-8 border-y border-base-content/10">
               <div className="text-center lg:text-left group">
-                <div className="text-3xl font-bold text-primary mb-1 group-hover:scale-110 transition-transform">
+                <div className="text-xl md:text-3xl font-bold text-primary mb-1 group-hover:scale-110 transition-transform">
                   <CountUp end={10000} suffix="+" />
                 </div>
-                <div className="text-sm text-base-content/60">Social Media Members</div>
+                <div className="text-xs md:text-sm text-base-content/60">{t('socialMedia', language)}</div>
               </div>
               <div className="text-center lg:text-left group">
-                <div className="text-3xl font-bold text-primary mb-1 group-hover:scale-110 transition-transform">
+                <div className="text-xl md:text-3xl font-bold text-primary mb-1 group-hover:scale-110 transition-transform">
                   <CountUp end={200} suffix="+" />
                 </div>
-                <div className="text-sm text-base-content/60">Events Organized</div>
+                <div className="text-xs md:text-sm text-base-content/60">{t('events', language)}</div>
               </div>
               <div className="text-center lg:text-left group">
-                <div className="text-3xl font-bold text-primary mb-1 group-hover:scale-110 transition-transform">
+                <div className="text-xl md:text-3xl font-bold text-primary mb-1 group-hover:scale-110 transition-transform">
                   <CountUp end={100} suffix="+" />
                 </div>
-                <div className="text-sm text-base-content/60">Nationalities</div>
+                <div className="text-xs md:text-sm text-base-content/60">{t('countries', language)}</div>
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center lg:justify-start">
               <Link href="mailto:ibcmanagement@outlook.com?subject=Partnership%20Inquiry" 
-                    className="btn btn-primary transform hover:scale-105 hover:shadow-lg transition-all">
-                Partner with Us
+                    className="btn btn-primary px-6 py-3 text-sm md:text-base">
+                {t('partnerWithUs', language)}
               </Link>
               <Link href="/programs" 
-                    className="btn btn-outline transform hover:scale-105 transition-all">
-                View Programs
+                    className="btn btn-outline px-6 py-3 text-sm md:text-base">
+                {t('viewPrograms', language)}
               </Link>
             </div>
           </div>
 
-          <div className="relative">
-            <div className="relative w-full h-96 overflow-hidden rounded-lg bg-base-200 shadow-xl transform hover:scale-105 transition-transform duration-300">
+          <div className="relative order-first lg:order-last">
+            <div className="relative w-full h-64 sm:h-80 md:h-96 overflow-hidden rounded-lg bg-base-200">
               <Image
                 src={imageUrls[currentImageIndex]}
                 alt="IBC Community"
@@ -130,14 +132,13 @@ const Hero = () => {
                 priority={true}
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
             </div>
             
             <div className="flex justify-center mt-4 gap-2">
               {imageUrls.map((_, index) => (
                 <div
                   key={index}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all duration-300 ${
                     index === currentImageIndex ? 'bg-primary scale-125' : 'bg-base-content/30'
                   }`}
                 />
