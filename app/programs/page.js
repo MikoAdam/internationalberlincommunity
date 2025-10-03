@@ -114,15 +114,15 @@ export default function ProgramsPage() {
           {/* Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto">
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary mb-1">100+</div>
+              <div className="text-3xl font-bold text-primary mb-1">200+</div>
               <div className="text-sm text-base-content/60">Events Organized</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary mb-1">6,500+</div>
-              <div className="text-sm text-base-content/60">Community Members</div>
+              <div className="text-3xl font-bold text-primary mb-1">10.000+</div>
+              <div className="text-sm text-base-content/60">Members across social media</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-primary mb-1">50+</div>
+              <div className="text-3xl font-bold text-primary mb-1">100+</div>
               <div className="text-sm text-base-content/60">Nationalities</div>
             </div>
             <div className="text-center">
