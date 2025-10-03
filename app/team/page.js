@@ -11,7 +11,7 @@ const LinkedInIcon = () => (
     width="1em"
     height="1em"
     viewBox="0 0 24 24"
-    className="w-6 h-6 text-primary hover:text-primary-focus transition-colors duration-200 ease-in-out"
+    className="w-5 h-5"
   >
     <path
       fill="currentColor"
@@ -25,99 +25,107 @@ const TeamPage = () => {
     <>
       <Header />
 
-      <main className="bg-base-100 py-16 sm:py-24 text-center dark:bg-gray-900">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          {/* Page Title */}
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-6xl font-extrabold tracking-tight text-gray-900 mb-8 dark:text-gray-200">
-              Meet Our Team
+      <main className="max-w-5xl mx-auto py-16">
+        <div className="px-8">
+          <div className="text-center mb-16">
+            <h1 className="text-4xl md:text-5xl font-extrabold text-base-content mb-4">
+              Our Team
             </h1>
-            <p className="text-xl leading-8 text-gray-600 dark:text-gray-300">
-              Behind our success is a group of passionate individuals who bring
-              diverse skills and backgrounds to the table.
+            <p className="text-lg text-base-content/70 max-w-2xl mx-auto">
+              Passionate volunteers dedicated to building bridges across cultures and creating meaningful connections in Berlin
             </p>
           </div>
 
-          {/* Board of Directors */}
-          <section className="bg-white dark:bg-gray-800 rounded-lg shadow-lg mt-16 mb-20 p-12">
-            <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-12 text-left border-b border-gray-200 dark:border-gray-700 pb-4">
-              Board of Directors
-            </h2>
+          <section className="mb-20">
+            <h2 className="text-3xl font-bold text-primary mb-3">Leadership</h2>
+            <p className="text-base-content/70 mb-10">
+              Guiding IBC's strategic direction and sustainable growth
+            </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {boardMembers.map((member) => (
                 <Link
                   key={member.name}
                   href={`/team/${member.name.toLowerCase().replace(/\s+/g, '-')}`}
-                  className="group relative bg-gray-100 dark:bg-gray-700 p-8 rounded-lg shadow hover:shadow-lg transition-shadow duration-200 ease-in-out hover:bg-gray-200 dark:hover:bg-gray-600"
+                  className="group bg-base-200 rounded-xl p-8 shadow-md hover:shadow-xl transition-shadow duration-300"
                 >
-                  <div className="flex flex-col items-center gap-4">
+                  <div className="flex flex-col items-center text-center gap-5">
                     <img
                       src={member.profileImage}
                       alt={member.name}
-                      className="w-24 h-24 rounded-full object-cover shadow-lg"
+                      className="w-32 h-32 rounded-full object-cover shadow-lg"
                       onError={(e) => {
-                        e.target.src = "/assets/adam.jpeg"; // Fallback to Adam's photo
+                        e.target.src = "/assets/adam.jpeg";
                       }}
                     />
-                    <h3 className="text-2xl font-semibold text-gray-900 dark:text-gray-200 group-hover:text-primary transition-colors duration-200 ease-in-out">
-                      {member.name}
-                    </h3>
-                    <p className="text-lg text-primary">{member.role}</p>
-                    {member.linkedinUrl && (
-                      <a
-                        href={member.linkedinUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        title="LinkedIn profile"
-                        className="text-primary group-hover:text-primary-focus transition-colors duration-200 ease-in-out"
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        <LinkedInIcon />
-                      </a>
-                    )}
-                  </div>
-                  {/* Hover effect for Open CV */}
-                  <div className="absolute inset-0 bg-gray-200 bg-opacity-0 group-hover:bg-opacity-75 dark:bg-gray-600 dark:bg-opacity-0 dark:group-hover:bg-opacity-75 flex justify-center items-center transition-opacity duration-200 ease-in-out">
-                    <span className="text-lg font-semibold text-gray-800 dark:text-gray-200 opacity-0 group-hover:opacity-100">
-                      Open CV
-                    </span>
+                    <div>
+                      <h3 className="text-2xl font-bold text-base-content group-hover:text-primary transition-colors mb-2">
+                        {member.name}
+                      </h3>
+                      <p className="text-lg text-primary font-semibold mb-4">{member.role}</p>
+                      {member.linkedinUrl && (
+                        <a
+                          href={member.linkedinUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 text-base-content/60 hover:text-primary transition-colors"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          <LinkedInIcon />
+                          <span className="text-sm">View Profile</span>
+                        </a>
+                      )}
+                    </div>
                   </div>
                 </Link>
               ))}
             </div>
           </section>
 
-          {/* Organizers */}
-          <section className="bg-white dark:bg-gray-800 rounded-lg shadow-lg mt-16 mb-32 p-12">
-            <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-12 text-left border-b border-gray-200 dark:border-gray-700 pb-4">
-              Organizers
-            </h2>
+          <section className="mb-16">
+            <h2 className="text-3xl font-bold text-primary mb-3">Organizers</h2>
+            <p className="text-base-content/70 mb-10">
+              Volunteer team members who plan events and welcome newcomers
+            </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
               {teamOrganizers.map((member) => (
                 <div
                   key={member.name}
-                  className="bg-gray-100 dark:bg-gray-700 p-8 rounded-lg shadow hover:shadow-lg transition-shadow duration-200 ease-in-out"
+                  className="flex flex-col items-center text-center gap-3"
                 >
-                  <div className="flex flex-col items-center gap-4">
-                    {/* Initials Circle */}
-                    <div className="w-24 h-24 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center">
-                      <span className="text-white font-bold text-2xl">
-                        {member.name.split(' ').map(n => n[0]).join('')}
-                      </span>
-                    </div>
-                    <h3 className="text-2xl font-semibold text-gray-900 dark:text-gray-200">
+                  <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center shadow-md">
+                    <span className="text-white font-bold text-xl">
+                      {member.name.split(' ').map(n => n[0]).join('')}
+                    </span>
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-base-content">
                       {member.name}
                     </h3>
                     {member.role && (
-                      <p className="text-lg text-primary">{member.role}</p>
+                      <p className="text-sm text-base-content/60 mt-1">{member.role}</p>
                     )}
                   </div>
                 </div>
               ))}
             </div>
           </section>
+
+          <div className="bg-primary/10 rounded-xl p-8 border border-primary/20 text-center">
+            <h3 className="text-2xl font-bold text-base-content mb-3">
+              Join Our Team
+            </h3>
+            <p className="text-base-content/70 mb-6 max-w-xl mx-auto">
+              Interested in volunteering? We're always looking for passionate people to help organize events and grow our community.
+            </p>
+            <a 
+              href="mailto:ibcmanagement@outlook.com?subject=Volunteer%20Interest" 
+              className="btn btn-primary btn-lg"
+            >
+              Get in Touch
+            </a>
+          </div>
         </div>
       </main>
 
