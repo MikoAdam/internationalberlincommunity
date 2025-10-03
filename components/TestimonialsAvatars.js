@@ -3,7 +3,6 @@ import Image from "next/image";
 const avatars = [
   {
     alt: "User",
-    // Ideally, load from a statically generated image for better SEO performance (import userImage from "@/public/userImage.png")
     src: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3276&q=80",
   },
   {
@@ -63,7 +62,7 @@ const TestimonialsAvatars = ({ priority = false }) => {
         </div>
 
         <div className="text-base text-base-content/80">
-          <span className="font-semibold text-base-content">6261</span> members are enjoying Berlin together
+          <span className="font-semibold text-base-content">10,000+</span> members are enjoying Berlin together
         </div>
       </div>
     </div>

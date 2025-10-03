@@ -14,12 +14,12 @@ const Header = () => {
   const { language, switchLanguage } = useLanguage();
 
   const links = [
-    { href: "/about", label: t('aboutUs', language) },
-    { href: "/programs", label: t('programs', language) },
-    { href: "/team", label: t('team', language) },
-    { href: "/rules", label: t('communityRules', language) },
-    { href: "/statutes", label: t('legalInfo', language) },
-  ];
+  { href: "/about", label: t('aboutUs', language) },
+  { href: "/programs", label: t('programs', language) },
+  { href: "/team", label: t('team', language) },
+  { href: "/rules", label: t('communityRules', language) },
+  { href: "/statutes", label: t('legalInfo', language) },
+];
 
   return (
     <header className="bg-base-100 border-b border-base-content/10 sticky top-0 z-50">

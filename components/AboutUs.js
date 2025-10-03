@@ -76,7 +76,7 @@ const AboutUs = () => {
                 <div className="absolute -top-2 -right-2 w-4 h-4 bg-primary/20 rounded-full animate-pulse"></div>
               </div>
               <div className="font-semibold text-base-content mb-1">Social Media Members</div>
-              <div className="text-sm text-base-content/60">6,500+ active community</div>
+              <div className="text-sm text-base-content/60">10,000+ active community</div>
             </div>
 
             <div className="group bg-base-200 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-secondary/10 hover:border-secondary/30">
