@@ -16,14 +16,14 @@ const AboutPage = () => {
               About Us
             </h1>
             <p className="text-lg leading-8 text-base-content/80">
-              Discover our mission, values, and the thriving community we are building together.
+              Berlin's leading registered non-profit for international community integration
             </p>
           </div>
 
           <div className="bg-base-200 rounded-2xl shadow-lg py-12 px-8 mb-12">
             <h2 className="text-3xl font-bold text-primary mb-6 text-center">Our Mission</h2>
             <p className="text-lg leading-relaxed text-base-content/80 mb-8 text-center max-w-4xl mx-auto">
-              At International Berlin Community (IBC), we strive to foster international understanding, tolerance, and cultural exchange. Our mission is to connect individuals from diverse backgrounds through social events, empowering immigrants and locals alike to build meaningful relationships and explore Berlin's unique culture.
+              At International Berlin Community (IBC), we foster international understanding, tolerance, and cultural exchange. Our mission is to connect individuals from diverse backgrounds through accessible community events, empowering immigrants and locals to build meaningful relationships and integrate into Berlin's unique culture.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mt-8">
@@ -54,7 +54,7 @@ const AboutPage = () => {
                   </svg>
                 </div>
                 <h3 className="text-2xl font-bold text-accent mb-2">20+</h3>
-                <p className="text-sm text-base-content/80">Team Members</p>
+                <p className="text-sm text-base-content/80">Volunteer Organizers</p>
               </div>
 
               <div className="bg-base-100 p-6 rounded-lg shadow-md text-center hover:shadow-xl transition-shadow">
@@ -93,7 +93,7 @@ const AboutPage = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             <div className="bg-base-200 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all">
               <div className="w-12 h-12 bg-gradient-to-br from-primary to-primary/70 rounded-xl flex items-center justify-center mb-6">
                 <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" className="w-6 h-6 text-white">
@@ -128,6 +128,84 @@ const AboutPage = () => {
               <p className="text-base text-base-content/80 leading-relaxed">
                 Creating sustainable pathways for integration and meaningful cross-cultural connections in Berlin's diverse international community.
               </p>
+            </div>
+          </div>
+
+          <div className="bg-base-200 rounded-2xl shadow-lg p-8 md:p-12 mb-12">
+            <h2 className="text-3xl font-bold text-primary mb-8 text-center">Leadership & Governance</h2>
+            <p className="text-lg text-base-content/80 mb-8 text-center max-w-3xl mx-auto">
+              IBC operates as a volunteer-driven organization with professional governance standards, ensuring transparency and accountability in all our activities.
+            </p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              <div className="bg-base-100 rounded-xl p-8 shadow-md text-center">
+                <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" className="w-10 h-10 text-primary">
+                    <path fill="currentColor" d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4s-4 1.79-4 4s1.79 4 4 4m0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4"/>
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-base-content mb-2">Lê Phan Thanh Phương</h3>
+                <p className="text-primary font-semibold mb-3">President</p>
+                <p className="text-sm text-base-content/70">Leading strategic direction and organizational development</p>
+              </div>
+
+              <div className="bg-base-100 rounded-xl p-8 shadow-md text-center">
+                <div className="w-20 h-20 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" className="w-10 h-10 text-secondary">
+                    <path fill="currentColor" d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4s-4 1.79-4 4s1.79 4 4 4m0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4"/>
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-base-content mb-2">Adam Miko</h3>
+                <p className="text-secondary font-semibold mb-3">Founder / Vice President</p>
+                <p className="text-sm text-base-content/70">Overseeing operations and community engagement</p>
+              </div>
+            </div>
+
+            <div className="mt-8 text-center">
+              <p className="text-base text-base-content/80">
+                Supported by <strong>20+ dedicated volunteer organizers</strong> from diverse cultural backgrounds
+              </p>
+            </div>
+          </div>
+
+          <div className="bg-gradient-to-r from-primary/10 via-secondary/5 to-primary/10 rounded-2xl p-8 md:p-12 shadow-lg border border-primary/20">
+            <h2 className="text-3xl font-bold text-primary mb-6 text-center">Get in Touch</h2>
+            <p className="text-lg text-base-content/80 mb-8 text-center max-w-2xl mx-auto">
+              Interested in partnering with us? We welcome collaborations with NGOs, government institutions, businesses, and international networks.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-8">
+              <div className="bg-base-100 rounded-xl p-6 shadow-md">
+                <h3 className="font-bold text-base-content mb-4 flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" className="w-5 h-5 text-primary">
+                    <path fill="currentColor" d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2m0 4l-8 5l-8-5V6l8 5l8-5z"/>
+                  </svg>
+                  Email
+                </h3>
+                <a href="mailto:ibcmanagement@outlook.com" className="text-primary hover:underline">
+                  ibcmanagement@outlook.com
+                </a>
+              </div>
+
+              <div className="bg-base-100 rounded-xl p-6 shadow-md">
+                <h3 className="font-bold text-base-content mb-4 flex items-center gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" className="w-5 h-5 text-primary">
+                    <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m-1 17.93c-3.95-.49-7-3.85-7-7.93c0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41c0 2.08-.8 3.97-2.1 5.39"/>
+                  </svg>
+                  Social Media
+                </h3>
+                <div className="space-y-2">
+                  <a href="https://www.facebook.com/groups/internationalberlinhiking" target="_blank" rel="noopener noreferrer" className="block text-base-content/80 hover:text-primary">Facebook Community</a>
+                  <a href="https://www.instagram.com/internationalberlincommunity/" target="_blank" rel="noopener noreferrer" className="block text-base-content/80 hover:text-primary">Instagram</a>
+                  <a href="https://linktr.ee/InternationalBerlinCommunity" target="_blank" rel="noopener noreferrer" className="block text-base-content/80 hover:text-primary">All Links</a>
+                </div>
+              </div>
+            </div>
+
+            <div className="text-center">
+              <a href="mailto:ibcmanagement@outlook.com?subject=Partnership%20Inquiry" className="btn btn-primary btn-lg px-8">
+                Contact Us for Partnerships
+              </a>
             </div>
           </div>
         </section>
