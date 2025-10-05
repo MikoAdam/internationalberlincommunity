@@ -3,6 +3,8 @@
 import { boardMembers, teamOrganizers } from "@/components/TeamGrid";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { useLanguage } from "@/components/LanguageContext";
+import { t } from "@/lib/translations";
 import { useRouter } from "next/navigation";
 
 const LinkedInIcon = () => (
@@ -21,6 +23,7 @@ const LinkedInIcon = () => (
 );
 
 const TeamPage = () => {
+  const { language } = useLanguage();
   const router = useRouter();
 
   return (
@@ -31,17 +34,17 @@ const TeamPage = () => {
         <div className="px-8">
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-extrabold text-base-content mb-4">
-              Our Team
+              {t('teamTitle', language)}
             </h1>
             <p className="text-lg text-base-content/70 max-w-2xl mx-auto">
-              Passionate volunteers dedicated to building bridges across cultures and creating meaningful connections in Berlin
+              {t('teamSubtitle', language)}
             </p>
           </div>
 
           <section className="mb-20">
-            <h2 className="text-3xl font-bold text-primary mb-3">Leadership</h2>
+            <h2 className="text-3xl font-bold text-primary mb-3">{t('leadershipTitle', language)}</h2>
             <p className="text-base-content/70 mb-10">
-              Guiding IBC's strategic direction and sustainable growth
+              {t('leadershipDescription', language)}
             </p>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -85,9 +88,9 @@ const TeamPage = () => {
           </section>
 
           <section className="mb-20">
-            <h2 className="text-3xl font-bold text-primary mb-3">Our Organizers</h2>
+            <h2 className="text-3xl font-bold text-primary mb-3">{t('organizersTitle', language)}</h2>
             <p className="text-base-content/70 mb-10">
-              Dedicated volunteers who make our events possible
+              {t('organizersDescription', language)}
             </p>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
@@ -113,16 +116,16 @@ const TeamPage = () => {
 
           <section className="text-center bg-base-200 rounded-xl p-12">
             <h2 className="text-3xl font-bold text-base-content mb-4">
-              Want to Join Our Team?
+              {t('joinTeamTitle', language)}
             </h2>
             <p className="text-base-content/70 mb-8 max-w-2xl mx-auto">
-              We're always looking for passionate volunteers who want to help build bridges across cultures.
+              {t('joinTeamDescription', language)}
             </p>
             <a
               href="mailto:ibcmanagement@outlook.com?subject=Volunteer%20Interest"
               className="btn btn-primary btn-lg"
             >
-              Become a Volunteer
+              {t('becomeVolunteer', language)}
             </a>
           </section>
         </div>
