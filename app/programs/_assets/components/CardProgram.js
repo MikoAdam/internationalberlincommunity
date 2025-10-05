@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import BadgeCategory from "./BadgeCategory";
 import Avatar from "./Avatar";
@@ -10,29 +10,33 @@ const CardProgram = ({
   showCategory = true,
   isImagePriority = false,
 }) => {
+  const router = useRouter();
   const TitleTag = tag;
 
   return (
     <article className="card bg-base-200 rounded-box overflow-hidden">
       {program.image?.src && (
-        <Link
-          href={`/programs/${program.slug}`}
-          className="link link-hover hover:link-primary"
-          title={program.title}
-          rel="bookmark"
+        <figure 
+          onClick={() => router.push(`/programs/${program.slug}`)}
+          className="cursor-pointer hover:opacity-90 transition-opacity"
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              router.push(`/programs/${program.slug}`);
+            }
+          }}
         >
-          <figure>
-            <Image
-              src={program.image.src}
-              alt={program.image.alt}
-              width={600}
-              height={338}
-              priority={isImagePriority}
-              placeholder="blur"
-              className="aspect-video object-center object-cover hover:scale-[1.03] duration-200 ease-in-out"
-            />
-          </figure>
-        </Link>
+          <Image
+            src={program.image.src}
+            alt={program.image.alt}
+            width={600}
+            height={338}
+            priority={isImagePriority}
+            placeholder="blur"
+            className="aspect-video object-center object-cover hover:scale-[1.03] duration-200 ease-in-out"
+          />
+        </figure>
       )}
       <div className="card-body">
         {/* CATEGORIES */}
@@ -46,14 +50,13 @@ const CardProgram = ({
 
         {/* TITLE WITH RIGHT TAG */}
         <TitleTag className="mb-1 text-xl md:text-2xl font-bold">
-          <Link
-            href={`/programs/${program.slug}`}
-            className="link link-hover hover:link-primary"
+          <button
+            onClick={() => router.push(`/programs/${program.slug}`)}
+            className="text-left hover:text-primary transition-colors"
             title={program.title}
-            rel="bookmark"
           >
             {program.title}
-          </Link>
+          </button>
         </TitleTag>
 
         <div className="text-base-content/80 space-y-4">

@@ -3,7 +3,7 @@
 import { boardMembers, teamOrganizers } from "@/components/TeamGrid";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const LinkedInIcon = () => (
   <svg
@@ -21,6 +21,8 @@ const LinkedInIcon = () => (
 );
 
 const TeamPage = () => {
+  const router = useRouter();
+
   return (
     <>
       <Header />
@@ -44,10 +46,10 @@ const TeamPage = () => {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {boardMembers.map((member) => (
-                <Link
+                <div
                   key={member.name}
-                  href={`/team/${member.name.toLowerCase().replace(/\s+/g, '-')}`}
-                  className="group bg-base-200 rounded-xl p-8 shadow-md hover:shadow-xl transition-shadow duration-300"
+                  onClick={() => router.push(`/team/${member.name.toLowerCase().replace(/\s+/g, '-')}`)}
+                  className="group bg-base-200 rounded-xl p-8 shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer"
                 >
                   <div className="flex flex-col items-center text-center gap-5">
                     <img
@@ -77,55 +79,52 @@ const TeamPage = () => {
                       )}
                     </div>
                   </div>
-                </Link>
+                </div>
               ))}
             </div>
           </section>
 
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold text-primary mb-3">Organizers</h2>
+          <section className="mb-20">
+            <h2 className="text-3xl font-bold text-primary mb-3">Our Organizers</h2>
             <p className="text-base-content/70 mb-10">
-              Volunteer team members who plan events and welcome newcomers
+              Dedicated volunteers who make our events possible
             </p>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8">
-              {teamOrganizers.map((member) => (
-                <div
-                  key={member.name}
-                  className="flex flex-col items-center text-center gap-3"
-                >
-                  <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center shadow-md">
-                    <span className="text-white font-bold text-xl">
-                      {member.name.split(' ').map(n => n[0]).join('')}
-                    </span>
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-base-content">
-                      {member.name}
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+              {teamOrganizers.map((organizer) => (
+                <div key={organizer.name} className="bg-base-200 rounded-xl p-4 hover:shadow-lg transition-all duration-300 border border-base-content/10">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mb-3">
+                      <span className="text-white font-bold text-lg">
+                        {organizer.name.split(' ').map(n => n[0]).join('')}
+                      </span>
+                    </div>
+                    <h3 className="text-base font-semibold text-base-content mb-1">
+                      {organizer.name}
                     </h3>
-                    {member.role && (
-                      <p className="text-sm text-base-content/60 mt-1">{member.role}</p>
-                    )}
+                    <p className="text-sm text-primary">
+                      {organizer.role}
+                    </p>
                   </div>
                 </div>
               ))}
             </div>
           </section>
 
-          <div className="bg-primary/10 rounded-xl p-8 border border-primary/20 text-center">
-            <h3 className="text-2xl font-bold text-base-content mb-3">
-              Join Our Team
-            </h3>
-            <p className="text-base-content/70 mb-6 max-w-xl mx-auto">
-              Interested in volunteering? We're always looking for passionate people to help organize events and grow our community.
+          <section className="text-center bg-base-200 rounded-xl p-12">
+            <h2 className="text-3xl font-bold text-base-content mb-4">
+              Want to Join Our Team?
+            </h2>
+            <p className="text-base-content/70 mb-8 max-w-2xl mx-auto">
+              We're always looking for passionate volunteers who want to help build bridges across cultures.
             </p>
-            <a 
-              href="mailto:ibcmanagement@outlook.com?subject=Volunteer%20Interest" 
+            <a
+              href="mailto:ibcmanagement@outlook.com?subject=Volunteer%20Interest"
               className="btn btn-primary btn-lg"
             >
-              Get in Touch
+              Become a Volunteer
             </a>
-          </div>
+          </section>
         </div>
       </main>
 
