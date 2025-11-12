@@ -1,6 +1,5 @@
 import { categories, programs } from "@/app/programs/_assets/content";
 import CardProgram from "@/app/programs/_assets/components/CardProgram";
-import CardCategory from "@/app/programs/_assets/components/CardCategory";
 import { getSEOTags } from "@/libs/seo";
 import config from "@/config";
 
@@ -59,14 +58,6 @@ export default async function Category({ params }) {
         <h2 className="font-bold text-2xl lg:text-4xl tracking-tight text-center mb-8 md:mb-12">
           Other categories you might like
         </h2>
-
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {categories
-            .filter((c) => c.slug !== category.slug)
-            .map((category) => (
-              <CardCategory key={category.slug} category={category} tag="h3" />
-            ))}
-        </div>
       </section>
     </>
   );
