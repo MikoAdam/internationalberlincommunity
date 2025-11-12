@@ -24,11 +24,6 @@ const nextConfig = {
       },
     ],
   },
-  // Ensure proper internationalization
-  i18n: {
-    locales: ['en', 'de'],
-    defaultLocale: 'en',
-  },
 };
 
 module.exports = nextConfig;
