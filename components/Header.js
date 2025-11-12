@@ -13,20 +13,44 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { language, switchLanguage } = useLanguage();
 
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (isOpen && !event.target.closest('.mobile-menu') && !event.target.closest('.hamburger-btn')) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, [isOpen]);
+
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
+
   const links = [
-  { href: "/about", label: t('aboutUs', language) },
-  { href: "/programs", label: t('programs', language) },
-  { href: "/team", label: t('team', language) },
-  { href: "/rules", label: t('communityRules', language) },
-  { href: "/statutes", label: t('legalInfo', language) },
-];
+    { href: "/about", label: t('aboutUs', language) },
+    { href: "/programs", label: t('programs', language) },
+    { href: "/team", label: t('team', language) },
+    { href: "/rules", label: t('communityRules', language) },
+    { href: "/statutes", label: t('legalInfo', language) },
+  ];
 
   return (
-    <header className="bg-base-100 border-b border-base-content/10 sticky top-0 z-50">
+    <header className="bg-base-100 border-b border-base-content/10 sticky top-0 z-50 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <nav className="flex items-center justify-between h-16 md:h-20">
-          <Link className="flex items-center gap-2 md:gap-3" href="/">
-            <Image src={logo} alt={`${config.appName} logo`} className="w-8 h-8 md:w-10 md:h-10" width={40} height={40} />
+          <Link className="flex items-center gap-2 md:gap-3 hover:opacity-80 transition-opacity" href="/">
+            <Image src={logo} alt={`${config.appName} logo`} className="w-8 h-8 md:w-10 md:h-10" width={40} height={40} priority />
             <span className="font-bold text-sm sm:text-lg md:text-xl text-base-content">
               {config.appName}
             </span>
@@ -34,24 +58,32 @@ const Header = () => {
 
           <div className="hidden lg:flex lg:items-center lg:gap-6">
             {links.map((link) => (
-              <Link key={link.href} href={link.href} className="text-base-content/80 hover:text-primary font-medium text-sm">
+              <Link 
+                key={link.href} 
+                href={link.href} 
+                className="text-base-content/80 hover:text-primary font-medium text-sm transition-colors duration-200"
+              >
                 {link.label}
               </Link>
             ))}
           </div>
 
           <div className="hidden lg:flex lg:items-center lg:gap-3">
-            <div className="flex items-center gap-1">
+            <div className="flex items-center gap-1 bg-base-200 rounded-full px-3 py-1">
               <button
                 onClick={() => switchLanguage('en')}
-                className={`px-2 py-1 text-xs font-medium rounded ${language === 'en' ? 'text-primary' : 'text-base-content/60'}`}
+                className={`px-2 py-1 text-xs font-medium rounded transition-colors ${
+                  language === 'en' ? 'text-primary bg-base-100' : 'text-base-content/60 hover:text-base-content'
+                }`}
               >
                 EN
               </button>
               <span className="text-base-content/40">|</span>
               <button
                 onClick={() => switchLanguage('de')}
-                className={`px-2 py-1 text-xs font-medium rounded ${language === 'de' ? 'text-primary' : 'text-base-content/60'}`}
+                className={`px-2 py-1 text-xs font-medium rounded transition-colors ${
+                  language === 'de' ? 'text-primary bg-base-100' : 'text-base-content/60 hover:text-base-content'
+                }`}
               >
                 DE
               </button>
@@ -63,17 +95,17 @@ const Header = () => {
           </div>
 
           <div className="flex items-center gap-3 lg:hidden">
-            <div className="flex items-center gap-1">
+            <div className="flex items-center gap-1 bg-base-200 rounded-full px-2 py-1">
               <button
                 onClick={() => switchLanguage('en')}
-                className={`px-1 text-xs ${language === 'en' ? 'text-primary' : 'text-base-content/60'}`}
+                className={`px-1.5 text-xs ${language === 'en' ? 'text-primary font-semibold' : 'text-base-content/60'}`}
               >
                 EN
               </button>
               <span className="text-base-content/40">|</span>
               <button
                 onClick={() => switchLanguage('de')}
-                className={`px-1 text-xs ${language === 'de' ? 'text-primary' : 'text-base-content/60'}`}
+                className={`px-1.5 text-xs ${language === 'de' ? 'text-primary font-semibold' : 'text-base-content/60'}`}
               >
                 DE
               </button>
@@ -81,40 +113,47 @@ const Header = () => {
             <ThemeSwitch />
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 text-base-content hover:text-primary transition-colors"
+              className="hamburger-btn p-2 text-base-content hover:text-primary transition-colors"
               aria-label="Toggle menu"
+              aria-expanded={isOpen}
             >
-              <div className="w-6 h-6 flex flex-col justify-center items-center gap-1">
-                <span className={`block h-0.5 w-6 bg-current transition-all duration-300 ${isOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
-                <span className={`block h-0.5 w-6 bg-current transition-all duration-300 ${isOpen ? 'opacity-0' : ''}`}></span>
-                <span className={`block h-0.5 w-6 bg-current transition-all duration-300 ${isOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
-              </div>
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {isOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
             </button>
           </div>
         </nav>
       </div>
 
+      {/* Mobile Menu Overlay */}
       {isOpen && (
-        <div className="lg:hidden bg-base-100 border-t border-base-content/10">
-          <div className="px-4 py-4 space-y-3">
-            {links.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="block px-3 py-2 text-base-content hover:text-primary hover:bg-primary/5 rounded-md transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                {link.label}
-              </Link>
-            ))}
-            <div className="pt-3 border-t border-base-content/10">
-              <Link
-                href="mailto:ibcmanagement@outlook.com"
-                className="btn btn-primary w-full text-center"
-                onClick={() => setIsOpen(false)}
-              >
-                {t('contactUs', language)}
-              </Link>
+        <div className="fixed inset-0 z-40 lg:hidden" style={{ top: '64px' }}>
+          <div className="fixed inset-0 bg-black/50 backdrop-blur-sm" onClick={() => setIsOpen(false)} />
+          <div className="mobile-menu relative bg-base-100 border-b border-base-content/10 shadow-xl">
+            <div className="px-4 py-4 space-y-3 max-h-[calc(100vh-64px)] overflow-y-auto">
+              {links.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="block px-3 py-2 text-base-content hover:text-primary hover:bg-primary/5 rounded-md transition-colors font-medium"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <div className="pt-3 border-t border-base-content/10">
+                <Link
+                  href="mailto:ibcmanagement@outlook.com"
+                  className="btn btn-primary w-full text-center"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {t('contactUs', language)}
+                </Link>
+              </div>
             </div>
           </div>
         </div>

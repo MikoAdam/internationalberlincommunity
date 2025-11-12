@@ -5,7 +5,7 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'lh3.googleusercontent.com',
-        pathname: '/**', // Match all paths under this domain
+        pathname: '/**',
       },
       {
         protocol: 'https',
@@ -23,6 +23,11 @@ const nextConfig = {
         pathname: '/**',
       },
     ],
+  },
+  // Ensure proper internationalization
+  i18n: {
+    locales: ['en', 'de'],
+    defaultLocale: 'en',
   },
 };
 
