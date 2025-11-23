@@ -52,7 +52,7 @@ const TeamGrid = () => {
               <li key={member.name}>
                 <div 
                   onClick={() => router.push(`/team/${member.name.toLowerCase().replace(/\s+/g, '-')}`)}
-                  className="flex flex-col items-center gap-y-4 cursor-pointer hover:text-primary transition-colors bg-white dark:bg-base-200 p-6 rounded-xl shadow-lg hover:shadow-xl"
+                  className="flex flex-col items-center gap-y-4 cursor-pointer hover:text-primary transition-colors bg-base-200 p-6 rounded-xl shadow-lg hover:shadow-xl"
                 >
                   <img
                     src={member.profileImage}
@@ -86,7 +86,7 @@ const TeamGrid = () => {
             </p>
             <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 max-w-4xl mx-auto">
               {teamOrganizers.map((organizer) => (
-                <div key={organizer.name} className="p-4 bg-white dark:bg-base-200 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-base-content/10">
+                <div key={organizer.name} className="p-4 bg-base-200 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-base-content/10">
                   <div className="flex flex-col items-center text-center">
                     <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mb-3">
                       <span className="text-white font-bold text-lg">

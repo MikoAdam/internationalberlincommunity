@@ -4,28 +4,88 @@ import { useState, useEffect } from 'react';
 
 const ThemeSwitch = () => {
   const [isDark, setIsDark] = useState(true);
+  const [mounted, setMounted] = useState(false);
+
+  // Initialize theme on mount
+  useEffect(() => {
+    setMounted(true);
+    const savedTheme = localStorage.getItem('theme');
+    
+    if (savedTheme === 'light') {
+      setIsDark(false);
+      applyLightTheme();
+    } else {
+      setIsDark(true);
+      applyDarkTheme();
+    }
+  }, []);
+
+  const applyDarkTheme = () => {
+    document.documentElement.removeAttribute('data-light');
+    document.documentElement.style.setProperty('--bg-base-100', '#0f172a');
+    document.documentElement.style.setProperty('--bg-base-200', '#1e293b');
+    document.documentElement.style.setProperty('--bg-base-300', '#334155');
+    document.documentElement.style.setProperty('--text-base-content', '#f8fafc');
+    document.documentElement.style.setProperty('--text-base-content-80', '#cbd5e1');
+    document.documentElement.style.setProperty('--text-base-content-70', '#94a3b8');
+    document.documentElement.style.setProperty('--text-base-content-60', '#64748b');
+    document.documentElement.style.setProperty('--primary', '#10b981');
+    document.documentElement.style.setProperty('--primary-dark', '#059669');
+    document.documentElement.style.setProperty('--primary-light', '#34d399');
+    document.documentElement.style.setProperty('--secondary', '#3b82f6');
+    document.documentElement.style.setProperty('--secondary-dark', '#2563eb');
+    document.documentElement.style.setProperty('--accent', '#f59e0b');
+    document.documentElement.style.setProperty('--border', '#475569');
+    document.documentElement.style.setProperty('--border-light', '#64748b');
+  };
+
+  const applyLightTheme = () => {
+    document.documentElement.setAttribute('data-light', '');
+    document.documentElement.style.setProperty('--bg-base-100', '#ffffff');
+    document.documentElement.style.setProperty('--bg-base-200', '#f8fafc');
+    document.documentElement.style.setProperty('--bg-base-300', '#e2e8f0');
+    document.documentElement.style.setProperty('--text-base-content', '#0f172a');
+    document.documentElement.style.setProperty('--text-base-content-80', '#334155');
+    document.documentElement.style.setProperty('--text-base-content-70', '#475569');
+    document.documentElement.style.setProperty('--text-base-content-60', '#64748b');
+    document.documentElement.style.setProperty('--primary', '#059669');
+    document.documentElement.style.setProperty('--primary-dark', '#047857');
+    document.documentElement.style.setProperty('--primary-light', '#10b981');
+    document.documentElement.style.setProperty('--secondary', '#2563eb');
+    document.documentElement.style.setProperty('--secondary-dark', '#1d4ed8');
+    document.documentElement.style.setProperty('--accent', '#d97706');
+    document.documentElement.style.setProperty('--border', '#cbd5e1');
+    document.documentElement.style.setProperty('--border-light', '#e2e8f0');
+  };
 
   const toggleTheme = () => {
     const newIsDark = !isDark;
     setIsDark(newIsDark);
     
     if (newIsDark) {
-      document.documentElement.removeAttribute('data-light');
-      document.documentElement.style.setProperty('--bg-base-100', '#1e293b');
-      document.documentElement.style.setProperty('--bg-base-200', '#334155');
-      document.documentElement.style.setProperty('--text-base-content', '#f1f5f9');
-      document.documentElement.style.setProperty('--primary', '#14b8a6');
+      applyDarkTheme();
+      localStorage.setItem('theme', 'dark');
     } else {
-      document.documentElement.setAttribute('data-light', '');
-      document.documentElement.style.setProperty('--bg-base-100', '#ffffff');
-      document.documentElement.style.setProperty('--bg-base-200', '#f8fafc');
-      document.documentElement.style.setProperty('--text-base-content', '#1e293b');
-      document.documentElement.style.setProperty('--primary', '#0d9488');
+      applyLightTheme();
+      localStorage.setItem('theme', 'light');
     }
   };
 
+  // Prevent hydration mismatch
+  if (!mounted) {
+    return (
+      <button className="btn btn-ghost btn-circle" aria-label="Toggle theme">
+        <div className="w-5 h-5" />
+      </button>
+    );
+  }
+
   return (
-    <button onClick={toggleTheme} className="btn btn-ghost btn-circle">
+    <button 
+      onClick={toggleTheme} 
+      className="btn btn-ghost btn-circle"
+      aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+    >
       {isDark ? (
         <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
           <path d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z"/>

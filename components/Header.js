@@ -13,6 +13,14 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { language, switchLanguage } = useLanguage();
 
+  const links = [
+    { href: "/about", label: t('aboutUs', language) },
+    { href: "/programs", label: t('programs', language) },
+    { href: "/team", label: t('team', language) },
+    { href: "/rules", label: t('communityRules', language) },
+    { href: "/statutes", label: t('legalInfo', language) },
+  ];
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (isOpen && !event.target.closest('.mobile-menu') && !event.target.closest('.hamburger-btn')) {
@@ -34,14 +42,6 @@ const Header = () => {
       document.body.style.overflow = 'unset';
     };
   }, [isOpen]);
-
-  const links = [
-    { href: "/about", label: t('aboutUs', language) },
-    { href: "/programs", label: t('programs', language) },
-    { href: "/team", label: t('team', language) },
-    { href: "/rules", label: t('communityRules', language) },
-    { href: "/statutes", label: t('legalInfo', language) },
-  ];
 
   return (
     <header className="bg-base-100 border-b border-base-content/10 sticky top-0 z-50 shadow-sm">
@@ -86,6 +86,7 @@ const Header = () => {
                 DE
               </button>
             </div>
+            
             <ThemeSwitch />
             <Link href="mailto:ibcmanagement@outlook.com" className="btn btn-primary text-sm px-4 py-2">
               {t('contactUs', language)}
