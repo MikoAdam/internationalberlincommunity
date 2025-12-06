@@ -97,8 +97,10 @@ const TeamPage = () => {
               {teamOrganizers.map((organizer) => (
                 <div key={organizer.name} className="bg-base-200 rounded-xl p-4 hover:shadow-lg transition-all duration-300 border border-base-content/10">
                   <div className="flex flex-col items-center text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mb-3">
-                      <span className="text-white font-bold text-lg">
+                    <div className="w-16 h-16 rounded-full flex items-center justify-center
+  bg-primary text-white dark:bg-primary-dark dark:text-white
+  border-2 border-base-content/20 dark:border-base-content/70 shadow-sm mb-3">
+                      <span className="font-bold text-lg">
                         {organizer.name.split(' ').map(n => n[0]).join('')}
                       </span>
                     </div>
@@ -106,7 +108,7 @@ const TeamPage = () => {
                       {organizer.name}
                     </h3>
                     <p className="text-sm text-primary">
-                      {organizer.role}
+                      {t(organizer.role, language)}
                     </p>
                   </div>
                 </div>

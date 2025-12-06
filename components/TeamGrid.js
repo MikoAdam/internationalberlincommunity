@@ -7,7 +7,7 @@ import { t } from "@/lib/translations";
 export const boardMembers = [
   {
     name: "Le Phan Thanh Phuong",
-    role: "president", 
+    role: "president",
     profileImage: "/assets/Gia.jpeg",
     linkedinUrl: "https://www.linkedin.com/in/thanh-phuong-le-phan/",
     isLeadership: true,
@@ -53,7 +53,7 @@ const TeamGrid = () => {
           <ul role="list" className="grid gap-x-8 gap-y-12 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:col-span-2">
             {leadership.map((member) => (
               <li key={member.name}>
-                <div 
+                <div
                   onClick={() => router.push(`/team/${member.name.toLowerCase().replace(/\s+/g, '-')}`)}
                   className="flex flex-col items-center gap-y-4 cursor-pointer hover:text-primary transition-colors bg-base-200 p-6 rounded-xl shadow-lg hover:shadow-xl"
                 >
@@ -91,8 +91,10 @@ const TeamGrid = () => {
               {teamOrganizers.map((organizer) => (
                 <div key={organizer.name} className="p-4 bg-base-200 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-base-content/10">
                   <div className="flex flex-col items-center text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mb-3">
-                      <span className="text-white font-bold text-lg">
+                    <div className="w-16 h-16 rounded-full flex items-center justify-center mb-3
+  bg-primary text-white dark:bg-primary-dark dark:text-white
+  border-2 border-base-content/20 dark:border-base-content/70 shadow-sm">
+                      <span className="font-bold text-lg">
                         {organizer.name.split(' ').map(n => n[0]).join('')}
                       </span>
                     </div>
@@ -116,8 +118,8 @@ const TeamGrid = () => {
           <p className="text-base-content/70 mb-6 max-w-2xl mx-auto">
             {t('joinTeamDescription', language)}
           </p>
-          <a 
-            href="mailto:ibcmanagement@outlook.com?subject=Volunteer%20Interest" 
+          <a
+            href="mailto:ibcmanagement@outlook.com?subject=Volunteer%20Interest"
             className="btn btn-primary btn-lg"
           >
             {t('becomeVolunteer', language)}
