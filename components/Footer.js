@@ -64,9 +64,6 @@ const Footer = () => {
                 <Link href="/statutes" className="link link-hover">
                   Statutes
                 </Link>
-                <Link href="/impressum" className="link link-hover">
-                  Impressum
-                </Link>
               </div>
             </div>
 
