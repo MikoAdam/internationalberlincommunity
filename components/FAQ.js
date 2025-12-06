@@ -129,8 +129,7 @@ const FAQ = () => {
   ];
 
   return (
-    <section className="bg-base-100" id="faq">
-      <div className="py-24 px-8 max-w-7xl mx-auto flex flex-col md:flex-row gap-12">
+    <section className="bg-base-100 py-16 md:py-24" id="faq">      <div className="px-8 max-w-7xl mx-auto flex flex-col md:flex-row gap-12">
         <div className="flex flex-col text-left basis-1/2">
           <p className="inline-block font-semibold text-primary mb-4">{t('faq', language)}</p>
           <p className="sm:text-4xl text-3xl font-extrabold text-base-content">

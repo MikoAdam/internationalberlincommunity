@@ -46,7 +46,7 @@ const CountUp = ({ end, duration = 2000, suffix = "" }) => {
 
 const AboutUs = () => {
   return (
-    <section className="bg-base-100 py-20 md:py-32 relative overflow-hidden">
+    <section className="bg-base-100 py-16 md:py-24 relative overflow-hidden">
       {/* Subtle background decoration */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-0 left-0 w-96 h-96 bg-primary rounded-full blur-3xl"></div>
@@ -166,7 +166,7 @@ const AboutUs = () => {
               <h3 className="text-2xl md:text-3xl font-bold text-base-content mb-4">Our Story</h3>
               <div className="space-y-4 text-sm md:text-base text-base-content/80 leading-relaxed">
                 <p>
-                  The International Berlin Community (IBC) began in <strong>2021</strong> by organizing hikes. Hikes were free, accessible to everyone, and the easiest way to bring people together. From the very beginning, inclusivity and international character were central. Already at the first events, people from all over the world joined—students, expats, immigrants, refugees, and even diplomats.
+                  The International Berlin Community (IBC) began in <strong>2023</strong> by organizing hikes. Hikes were free, accessible to everyone, and the easiest way to bring people together. From the very beginning, inclusivity and international character were central. Already at the first events, people from all over the world joined: students, expats, immigrants, refugees, and even diplomats.
                 </p>
                 <p>
                   The idea quickly grew in popularity, and in <strong>2024</strong> we became a registered non-profit organization. As more volunteers got involved, the range of activities expanded beyond hikes. Today, IBC also organizes language exchanges, cultural celebrations such as Holi and Eid, multi-day trips even to other countries, guided tours, beach days, picnics, and book clubs.

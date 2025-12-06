@@ -37,7 +37,7 @@ const TeamGrid = () => {
   const leadership = boardMembers;
 
   return (
-    <section className="bg-base-100 py-24 sm:py-32">
+    <section className="bg-base-100 py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="max-w-2xl">
           <h2 className="text-4xl font-extrabold tracking-tight text-base-content sm:text-5xl">
@@ -91,9 +91,7 @@ const TeamGrid = () => {
               {teamOrganizers.map((organizer) => (
                 <div key={organizer.name} className="p-4 bg-base-200 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-base-content/10">
                   <div className="flex flex-col items-center text-center">
-                    <div className="w-16 h-16 rounded-full flex items-center justify-center mb-3
-  bg-primary text-white dark:bg-primary-dark dark:text-white
-  border-2 border-base-content/20 dark:border-base-content/70 shadow-sm">
+                    <div className="w-16 h-16 rounded-full flex items-center justify-center mb-3 bg-primary text-white dark:bg-primary-dark dark:text-white border-2 border-base-content/20 dark:border-base-content/70 shadow-sm">
                       <span className="font-bold text-lg">
                         {organizer.name.split(' ').map(n => n[0]).join('')}
                       </span>

@@ -57,7 +57,7 @@ const AboutPage = () => {
         <Header />
       </Suspense>
       <main className="min-h-screen">
-        <section className="bg-gradient-to-br from-primary/10 to-secondary/10 py-20">
+        <section className="bg-gradient-to-br from-primary/10 to-secondary/10 py-16 md:py-24">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="text-center">
               <h1 className="text-5xl md:text-6xl font-extrabold text-base-content mb-6">
@@ -97,7 +97,7 @@ const AboutPage = () => {
           </div>
         </section>
 
-        <section className="py-20 bg-base-100">
+        <section className="py-16 md:py-24 bg-base-100">
           <div className="max-w-4xl mx-auto px-6 lg:px-8">
             <h2 className="text-4xl font-bold text-base-content mb-8 text-center">
               {t('ourMissionTitle', language)}
@@ -108,7 +108,7 @@ const AboutPage = () => {
           </div>
         </section>
 
-        <section className="py-20 bg-base-200">
+        <section className="py-16 md:py-24 bg-base-200">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <div className="grid md:grid-cols-3 gap-8">
               <div className="bg-base-100 p-8 rounded-xl shadow-lg">
@@ -157,7 +157,7 @@ const AboutPage = () => {
           </div>
         </section>
 
-        <section className="py-20 bg-base-100">
+        <section className="py-16 md:py-24 bg-base-100">
           <div className="max-w-4xl mx-auto px-6 lg:px-8">
             <h2 className="text-4xl font-bold text-base-content mb-8 text-center">
               {t('leadershipTitle', language)}
@@ -196,7 +196,7 @@ const AboutPage = () => {
           </div>
         </section>
 
-        <section className="py-20 bg-gradient-to-br from-primary/10 to-secondary/10">
+        <section className="py-16 md:py-24 bg-gradient-to-br from-primary/10 to-secondary/10">
           <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
             <h2 className="text-4xl font-bold text-base-content mb-6">
               {t('getInTouchTitle', language)}

@@ -67,7 +67,7 @@ const TeamPage = () => {
                       <h3 className="text-2xl font-bold text-base-content group-hover:text-primary transition-colors mb-2">
                         {member.name}
                       </h3>
-                      <p className="text-lg text-primary font-semibold mb-4">{member.role}</p>
+                      <p className="text-lg text-primary font-semibold mb-4">{t(member.role, language)}</p>
                       {member.linkedinUrl && (
                         <a
                           href={member.linkedinUrl}
