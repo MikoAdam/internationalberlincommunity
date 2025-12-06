@@ -3,8 +3,12 @@
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { useLanguage } from '@/components/LanguageContext';
+import { t } from '@/lib/translations';
 
 export default function AdamProfile() {
+  const { language } = useLanguage();
+  
   return (
     <>
       <Header />
@@ -26,7 +30,7 @@ export default function AdamProfile() {
                   Adam Miko
                 </h1>
                 <p className="text-xl text-primary font-semibold mb-4">
-                  Founder / Vice President
+                  {t('founderVicePresident', language)}
                 </p>
                 <p className="text-base-content/70 mb-6">Berlin, Germany</p>
 
@@ -48,7 +52,7 @@ export default function AdamProfile() {
                       d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37z"
                     />
                   </svg>
-                  LinkedIn Profile
+                  {t('linkedinProfile', language)}
                 </a>
               </div>
             </div>
@@ -58,18 +62,19 @@ export default function AdamProfile() {
               {/* About */}
               <section className="bg-base-100 rounded-2xl p-8 shadow-soft mb-8">
                 <h2 className="text-2xl font-bold text-base-content mb-6 border-b border-base-300 pb-3">
-                  About
+                  {t('adamAbout', language)}
                 </h2>
                 <div className="space-y-4 text-base-content/80 leading-relaxed">
                   <p>
-I am a systems engineer and community builder based in Berlin. In 2023 January, I founded the International Berlin Community (IBC) e.V., a registered non-profit that has grown into one of Berlin’s most active international communities. I lead a team of 20+ volunteer organizers and oversee partnerships with NGOs and local institutions, connecting over 10,000 members from more than 100 countries through inclusive events, workshops, and language exchanges.                  </p>
+                    {t('adamAboutText', language)}
+                  </p>
                 </div>
               </section>
 
               {/* Experience */}
               <section className="bg-base-100 rounded-2xl p-8 shadow-soft mb-8">
                 <h2 className="text-2xl font-bold text-base-content mb-6 border-b border-base-300 pb-3">
-                  Experience
+                  {t('experience', language)}
                 </h2>
 
                 <div className="space-y-8">
@@ -78,18 +83,16 @@ I am a systems engineer and community builder based in Berlin. In 2023 January, 
                     <div className="flex items-start justify-between mb-2">
                       <div>
                         <h3 className="text-xl font-semibold text-base-content">
-                          System Engineer
+                          {t('systemsEngineer', language)}
                         </h3>
                         <p className="text-primary font-medium">OHB SE</p>
                       </div>
                       <span className="text-sm text-base-content/60 whitespace-nowrap">
-                        2025 - Present
+                        2025 - {t('present', language)}
                       </span>
                     </div>
                     <p className="text-base-content/80">
-                      Contributing to satellite systems development, digital
-                      engineering environments, and improving lifecycle
-                      processes for complex aerospace projects.
+                      {t('ohbDesc', language)}
                     </p>
                   </div>
 
@@ -98,25 +101,20 @@ I am a systems engineer and community builder based in Berlin. In 2023 January, 
                     <div className="flex items-start justify-between mb-2">
                       <div>
                         <h3 className="text-xl font-semibold text-base-content">
-                          Founder / Vice President
+                          {t('founderVicePresident', language)}
                         </h3>
                         <p className="text-primary font-medium">
                           International Berlin Community e.V.
                         </p>
                       </div>
                       <span className="text-sm text-base-content/60 whitespace-nowrap">
-                        2023 - Present
+                        2023 - {t('present', language)}
                       </span>
                     </div>
                     <ul className="text-base-content/80 space-y-2">
-                      <li>• Built nonprofit with ten thousand members</li>
-                      <li>
-                        • Managed volunteers, cultural events, and partnerships
-                      </li>
-                      <li>
-                        • Responsible for legal, administrative, and strategic
-                        development
-                      </li>
+                      <li>• {t('ibcDesc1', language)}</li>
+                      <li>• {t('ibcDesc2', language)}</li>
+                      <li>• {t('ibcDesc3', language)}</li>
                     </ul>
                   </div>
 
@@ -125,7 +123,7 @@ I am a systems engineer and community builder based in Berlin. In 2023 January, 
                     <div className="flex items-start justify-between mb-2">
                       <div>
                         <h3 className="text-xl font-semibold text-base-content">
-                          Consultant
+                          {t('consultant', language)}
                         </h3>
                         <p className="text-primary font-medium">
                           GARANTIS IT Solutions
@@ -136,9 +134,7 @@ I am a systems engineer and community builder based in Berlin. In 2023 January, 
                       </span>
                     </div>
                     <p className="text-base-content/80">
-                      Delivered consulting projects in regulated industries,
-                      handling planning, implementation, stakeholder
-                      communication, and client training.
+                      {t('garantisDesc', language)}
                     </p>
                   </div>
 
@@ -147,7 +143,7 @@ I am a systems engineer and community builder based in Berlin. In 2023 January, 
                     <div className="flex items-start justify-between mb-2">
                       <div>
                         <h3 className="text-xl font-semibold text-base-content">
-                          Certification & Development Process
+                          {t('certDev', language)}
                         </h3>
                         <p className="text-primary font-medium">
                           eRC-System GmbH
@@ -158,8 +154,7 @@ I am a systems engineer and community builder based in Berlin. In 2023 January, 
                       </span>
                     </div>
                     <p className="text-base-content/80">
-                      Supported certification workflow, safety processes, and
-                      software for electric aircraft development.
+                      {t('ercDesc', language)}
                     </p>
                   </div>
 
@@ -168,7 +163,7 @@ I am a systems engineer and community builder based in Berlin. In 2023 January, 
                     <div className="flex items-start justify-between mb-2">
                       <div>
                         <h3 className="text-xl font-semibold text-base-content">
-                          Junior Software Engineer
+                          {t('juniorSWE', language)}
                         </h3>
                         <p className="text-primary font-medium">EITCO GmbH</p>
                       </div>
@@ -177,8 +172,7 @@ I am a systems engineer and community builder based in Berlin. In 2023 January, 
                       </span>
                     </div>
                     <p className="text-base-content/80">
-                      Delivered feature improvements and bug fixes for
-                      enterprise systems using Java, Kotlin, and Spring Boot.
+                      {t('eitcoDesc', language)}
                     </p>
                   </div>
 
@@ -187,7 +181,7 @@ I am a systems engineer and community builder based in Berlin. In 2023 January, 
                     <div className="flex items-start justify-between mb-2">
                       <div>
                         <h3 className="text-xl font-semibold text-base-content">
-                          Analyst
+                          {t('analyst', language)}
                         </h3>
                         <p className="text-primary font-medium">Accenture</p>
                       </div>
@@ -196,7 +190,8 @@ I am a systems engineer and community builder based in Berlin. In 2023 January, 
                       </span>
                     </div>
                     <p className="text-base-content/80">
-Worked across several projects in consulting and software development. Contributed to client delivery, supported digital transformation initiatives, and helped improve internal tools and processes while collaborating with international teams.                    </p>
+                      {t('accentureDesc', language)}
+                    </p>
                   </div>
                 </div>
               </section>
@@ -204,15 +199,15 @@ Worked across several projects in consulting and software development. Contribut
               {/* Education */}
               <section className="bg-base-100 rounded-2xl p-8 shadow-soft">
                 <h2 className="text-2xl font-bold text-base-content mb-6 border-b border-base-300 pb-3">
-                  Education
+                  {t('education', language)}
                 </h2>
 
                 <div className="border-l-4 border-primary pl-6">
                   <h3 className="text-xl font-semibold text-base-content mb-2">
-                    Bachelor of Science - Computer Science Engineering
+                    {t('bscCS', language)}
                   </h3>
                   <p className="text-primary font-medium mb-2">
-                    Budapest University of Technology and Economics
+                    {t('bme', language)}
                   </p>
                   <p className="text-base-content/70">2018 - 2021</p>
                 </div>
