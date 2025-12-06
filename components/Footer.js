@@ -1,128 +1,197 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import config from "@/config";
 import logo from "@/app/icon.png";
+import { useLanguage } from "./LanguageContext";
+import { t } from "@/lib/translations";
 
 const Footer = () => {
+  const { language } = useLanguage();
+
   return (
     <footer className="bg-base-200 border-t border-base-content/10">
-      <div className="max-w-7xl mx-auto px-8 py-24">
-        <div className="flex lg:items-start flex-wrap flex-col md:flex-row">
-          <div className="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
-            <Link
-              href="/#"
-              aria-current="page"
-              className="flex gap-2 justify-center md:justify-start items-center"
-            >
+      <div className="max-w-7xl mx-auto px-6 py-12 md:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* Logo & Description */}
+          <div className="md:col-span-1">
+            <Link href="/" className="flex gap-2 items-center mb-4">
               <Image
                 src={logo}
                 alt={`${config.appName} logo`}
-                priority={true}
+                priority
                 className="w-6 h-6"
                 width={24}
                 height={24}
               />
-              <strong className="font-extrabold tracking-tight text-base md:text-lg">
+              <strong className="font-extrabold tracking-tight text-base">
                 {config.appName}
               </strong>
             </Link>
-
-            <p className="mt-3 text-sm text-base-content/80">
+            <p className="text-sm text-base-content/80 mb-3">
               {config.appDescription}
             </p>
-            <p className="mt-3 text-sm text-base-content/60">
-              Copyright © 2023 - {new Date().getFullYear()} - All rights reserved
+            <p className="text-xs text-base-content/60">
+              © 2023 - {new Date().getFullYear()} <br />
+              {t("allRightsReserved", language)}
             </p>
           </div>
 
-          <div className="flex-grow flex flex-wrap justify-center md:justify-between -mb-10 md:mt-0 mt-10 text-center">
-            <div className="w-full sm:w-1/2 lg:w-1/4 px-4 mb-10">
-              <div className="footer-title font-semibold text-base-content tracking-widest text-sm md:text-left mb-3">
-                LINKS
-              </div>
-              <div className="flex flex-col justify-center items-center md:items-start gap-2 mb-10 text-sm">
-                <Link href="/programs" className="link link-hover">
-                  Programs
-                </Link>
-                <Link href="/about" className="link link-hover">
-                  About
-                </Link>
-                <Link href="/team" className="link link-hover">
-                  Team
-                </Link>
-              </div>
+          {/* Links */}
+          <div>
+            <div className="font-semibold text-base-content text-sm mb-3">
+              {t("links", language).toUpperCase()}
             </div>
-
-            <div className="w-full sm:w-1/2 lg:w-1/4 px-4 mb-10">
-              <div className="footer-title font-semibold text-base-content tracking-widest text-sm md:text-left mb-3">
-                LEGAL
-              </div>
-              <div className="flex flex-col justify-center items-center md:items-start gap-2 mb-10 text-sm">
-                <Link href="/rules" className="link link-hover">
-                  Rules
-                </Link>
-                <Link href="/statutes" className="link link-hover">
-                  Statutes
-                </Link>
-              </div>
+            <div className="flex flex-col gap-2 text-sm">
+              <Link
+                href="/programs"
+                className="link link-hover text-base-content/80 hover:text-primary"
+              >
+                {t("programs", language)}
+              </Link>
+              <Link
+                href="/about"
+                className="link link-hover text-base-content/80 hover:text-primary"
+              >
+                {t("aboutUs", language)}
+              </Link>
+              <Link
+                href="/team"
+                className="link link-hover text-base-content/80 hover:text-primary"
+              >
+                {t("team", language)}
+              </Link>
             </div>
+          </div>
 
-            <div className="w-full sm:w-1/2 lg:w-1/4 px-4 mb-10">
-              <div className="footer-title font-semibold text-base-content tracking-widest text-sm md:text-left mb-3">
-                CONTACT
-              </div>
-              <div className="flex flex-col justify-center items-center md:items-start gap-2 mb-10 text-sm">
-                <a
-                  href="https://www.facebook.com/groups/internationalberlinhiking"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 link link-hover"
-                  aria-label="Visit our Facebook group"
+          {/* Legal */}
+          <div>
+            <div className="font-semibold text-base-content text-sm mb-3">
+              {t("legal", language).toUpperCase()}
+            </div>
+            <div className="flex flex-col gap-2 text-sm">
+              <Link
+                href="/rules"
+                className="link link-hover text-base-content/80 hover:text-primary"
+              >
+                {t("communityRules", language)}
+              </Link>
+              <Link
+                href="/statutes"
+                className="link link-hover text-base-content/80 hover:text-primary"
+              >
+                {t("legalInfo", language)}
+              </Link>
+            </div>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <div className="font-semibold text-base-content text-sm mb-3">
+              {t("contact", language).toUpperCase()}
+            </div>
+            <div className="flex flex-col gap-2 text-sm">
+              <a
+                href="https://www.facebook.com/groups/internationalberlinhiking"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 link link-hover text-base-content/80 hover:text-primary"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 256 256"
+                  className="flex-shrink-0"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256"><path fill="#1877f2" d="M256 128C256 57.308 198.692 0 128 0S0 57.308 0 128c0 63.888 46.808 116.843 108 126.445V165H75.5v-37H108V99.8c0-32.08 19.11-49.8 48.348-49.8C170.352 50 185 52.5 185 52.5V84h-16.14C152.959 84 148 93.867 148 103.99V128h35.5l-5.675 37H148v89.445c61.192-9.602 108-62.556 108-126.445"/><path fill="#fff" d="m177.825 165l5.675-37H148v-24.01C148 93.866 152.959 84 168.86 84H185V52.5S170.352 50 156.347 50C127.11 50 108 67.72 108 99.8V128H75.5v37H108v89.445A129 129 0 0 0 128 256a129 129 0 0 0 20-1.555V165z"/></svg>
-                  Facebook
-                </a>
-                <a
-                  href="https://www.instagram.com/internationalberlincommunity/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 link link-hover"
-                  aria-label="Visit our Instagram"
+                  <path
+                    fill="currentColor"
+                    d="M128 24a104 104 0 1 0 104 104A104.1 104.1 0 0 0 128 24m8 191.63V152h24a8 8 0 0 0 0-16h-24v-24a16 16 0 0 1 16-16h16a8 8 0 0 0 0-16h-16a32 32 0 0 0-32 32v24H96a8 8 0 0 0 0 16h24v63.63a88 88 0 1 1 16 0"
+                  />
+                </svg>
+                Facebook
+              </a>
+
+              <a
+                href="https://www.instagram.com/internationalberlincommunity/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 link link-hover text-base-content/80 hover:text-primary"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  className="flex-shrink-0"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256"><g fill="none"><rect width="256" height="256" fill="url(#skillIconsInstagram0)" rx="60"/><rect width="256" height="256" fill="url(#skillIconsInstagram1)" rx="60"/><path fill="#fff" d="M128.009 28c-27.158 0-30.567.119-41.233.604c-10.646.488-17.913 2.173-24.271 4.646c-6.578 2.554-12.157 5.971-17.715 11.531c-5.563 5.559-8.98 11.138-11.542 17.713c-2.48 6.36-4.167 13.63-4.646 24.271c-.477 10.667-.602 14.077-.602 41.236s.12 30.557.604 41.223c.49 10.646 2.175 17.913 4.646 24.271c2.556 6.578 5.973 12.157 11.533 17.715c5.557 5.563 11.136 8.988 17.709 11.542c6.363 2.473 13.631 4.158 24.275 4.646c10.667.485 14.073.604 41.23.604c27.161 0 30.559-.119 41.225-.604c10.646-.488 17.921-2.173 24.284-4.646c6.575-2.554 12.146-5.979 17.702-11.542c5.563-5.558 8.979-11.137 11.542-17.712c2.458-6.361 4.146-13.63 4.646-24.272c.479-10.666.604-14.066.604-41.225s-.125-30.567-.604-41.234c-.5-10.646-2.188-17.912-4.646-24.27c-2.563-6.578-5.979-12.157-11.542-17.716c-5.562-5.562-11.125-8.979-17.708-11.53c-6.375-2.474-13.646-4.16-24.292-4.647c-10.667-.485-14.063-.604-41.23-.604zm-8.971 18.021c2.663-.004 5.634 0 8.971 0c26.701 0 29.865.096 40.409.575c9.75.446 15.042 2.075 18.567 3.444c4.667 1.812 7.994 3.979 11.492 7.48c3.5 3.5 5.666 6.833 7.483 11.5c1.369 3.52 3 8.812 3.444 18.562c.479 10.542.583 13.708.583 40.396s-.104 29.855-.583 40.396c-.446 9.75-2.075 15.042-3.444 18.563c-1.812 4.667-3.983 7.99-7.483 11.488c-3.5 3.5-6.823 5.666-11.492 7.479c-3.521 1.375-8.817 3-18.567 3.446c-10.542.479-13.708.583-40.409.583c-26.702 0-29.867-.104-40.408-.583c-9.75-.45-15.042-2.079-18.57-3.448c-4.666-1.813-8-3.979-11.5-7.479s-5.666-6.825-7.483-11.494c-1.369-3.521-3-8.813-3.444-18.563c-.479-10.542-.575-13.708-.575-40.413s.096-29.854.575-40.396c.446-9.75 2.075-15.042 3.444-18.567c1.813-4.667 3.983-8 7.484-11.5s6.833-5.667 11.5-7.483c3.525-1.375 8.819-3 18.569-3.448c9.225-.417 12.8-.542 31.437-.563zm62.351 16.604c-6.625 0-12 5.37-12 11.996c0 6.625 5.375 12 12 12s12-5.375 12-12s-5.375-12-12-12zm-53.38 14.021c-28.36 0-51.354 22.994-51.354 51.355s22.994 51.344 51.354 51.344c28.361 0 51.347-22.983 51.347-51.344c0-28.36-22.988-51.355-51.349-51.355zm0 18.021c18.409 0 33.334 14.923 33.334 33.334c0 18.409-14.925 33.334-33.334 33.334s-33.333-14.925-33.333-33.334c0-18.411 14.923-33.334 33.333-33.334"/><defs><radialGradient id="skillIconsInstagram0" cx="0" cy="0" r="1" gradientTransform="matrix(0 -253.715 235.975 0 68 275.717)" gradientUnits="userSpaceOnUse"><stop stopColor="#fd5"/><stop offset=".1" stopColor="#fd5"/><stop offset=".5" stopColor="#ff543e"/><stop offset="1" stopColor="#c837ab"/></radialGradient><radialGradient id="skillIconsInstagram1" cx="0" cy="0" r="1" gradientTransform="matrix(22.25952 111.2061 -458.39518 91.75449 -42.881 18.441)" gradientUnits="userSpaceOnUse"><stop stopColor="#3771c8"/><stop offset=".128" stopColor="#3771c8"/><stop offset="1" stopColor="#60f" stopOpacity="0"/></radialGradient></defs></g></svg>
-                  Instagram
-                </a>
-                <a
-                  href="https://chat.whatsapp.com/KvFKTUWcWrd6lhff5YlIow"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 link link-hover"
-                  aria-label="Join our WhatsApp group"
+                  <path
+                    fill="currentColor"
+                    d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3"
+                  />
+                </svg>
+                Instagram
+              </a>
+
+              <a
+                href="https://chat.whatsapp.com/KvFKTUWcWrd6lhff5YlIow"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 link link-hover text-base-content/80 hover:text-primary"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  className="flex-shrink-0"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 258"><defs><linearGradient id="logosWhatsappIcon0" x1="50%" x2="50%" y1="100%" y2="0%"><stop offset="0%" stopColor="#1faf38"/><stop offset="100%" stopColor="#60d669"/></linearGradient><linearGradient id="logosWhatsappIcon1" x1="50%" x2="50%" y1="100%" y2="0%"><stop offset="0%" stopColor="#f9f9f9"/><stop offset="100%" stopColor="#fff"/></linearGradient></defs><path fill="url(#logosWhatsappIcon0)" d="M5.463 127.456c-.006 21.677 5.658 42.843 16.428 61.499L4.433 252.697l65.232-17.104a123 123 0 0 0 58.8 14.97h.054c67.815 0 123.018-55.183 123.047-123.01c.013-32.867-12.775-63.773-36.009-87.025c-23.23-23.25-54.125-36.061-87.043-36.076c-67.823 0-123.022 55.18-123.05 123.004"/><path fill="url(#logosWhatsappIcon1)" d="M1.07 127.416c-.007 22.457 5.86 44.38 17.014 63.704L0 257.147l67.571-17.717c18.618 10.151 39.58 15.503 60.91 15.511h.055c70.248 0 127.434-57.168 127.464-127.423c.012-34.048-13.236-66.065-37.3-90.15C194.633 13.286 162.633.014 128.536 0C58.276 0 1.099 57.16 1.071 127.416m40.24 60.376l-2.523-4.005c-10.606-16.864-16.204-36.352-16.196-56.363C22.614 69.029 70.138 21.52 128.576 21.52c28.3.012 54.896 11.044 74.9 31.06c20.003 20.018 31.01 46.628 31.003 74.93c-.026 58.395-47.551 105.91-105.943 105.91h-.042c-19.013-.01-37.66-5.116-53.922-14.765l-3.87-2.295l-40.098 10.513z"/><path fill="#fff" d="M96.678 74.148c-2.386-5.303-4.897-5.41-7.166-5.503c-1.858-.08-3.982-.074-6.104-.074c-2.124 0-5.575.799-8.492 3.984c-2.92 3.188-11.148 10.892-11.148 26.561s11.413 30.813 13.004 32.94c1.593 2.123 22.033 35.307 54.405 48.073c26.904 10.609 32.379 8.499 38.218 7.967c5.84-.53 18.844-7.702 21.497-15.139c2.655-7.436 2.655-13.81 1.859-15.142c-.796-1.327-2.92-2.124-6.105-3.716s-18.844-9.298-21.763-10.361c-2.92-1.062-5.043-1.592-7.167 1.597c-2.124 3.184-8.223 10.356-10.082 12.48c-1.857 2.129-3.716 2.394-6.9.801c-3.187-1.598-13.444-4.957-25.613-15.806c-9.468-8.442-15.86-18.867-17.718-22.056c-1.858-3.184-.199-4.91 1.398-6.497c1.431-1.427 3.186-3.719 4.78-5.578c1.588-1.86 2.118-3.187 3.18-5.311c1.063-2.126.531-3.986-.264-5.579c-.798-1.593-6.987-17.343-9.819-23.64"/></svg>
-                  WhatsApp
-                </a>
-                <a
-                  href="mailto:ibcmanagement@outlook.com"
-                  className="flex items-center gap-2 link link-hover"
-                  aria-label="Send us an email"
+                  <path
+                    fill="currentColor"
+                    d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.26 8.26 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07s.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28"
+                  />
+                </svg>
+                WhatsApp
+              </a>
+
+              <a
+                href="mailto:ibcmanagement@outlook.com"
+                className="flex items-center gap-2 link link-hover text-base-content/80 hover:text-primary"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  className="flex-shrink-0"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 256 256"><g fill="none"><rect width="256" height="256" fill="#242938" rx="60"/><path fill="#4285f4" d="M41.636 203.028h31.818v-77.273L28 91.665v97.727c0 7.545 6.114 13.636 13.636 13.636"/><path fill="#34a853" d="M182.545 203.028h31.819c7.545 0 13.636-6.113 13.636-13.636V91.665l-45.455 34.09"/><path fill="#fbbc04" d="M182.545 66.664v59.091L228 91.665V73.481c0-16.863-19.25-26.477-32.727-16.363"/><path fill="#ea4335" d="M73.455 125.755v-59.09L128 107.574l54.545-40.91v59.091L128 166.665"/><path fill="#c5221f" d="M28 73.483v18.181l45.454 34.091v-59.09l-12.727-9.546C47.227 47.005 28 56.619 28 73.483"/></g></svg>
-                  Email
-                </a>
-                <a
-                  href="https://t.me/+-k5Vkm-SxkE0ZDFl"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 link link-hover"
-                  aria-label="Visit our Telegram group"
+                  <path
+                    fill="currentColor"
+                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2m0 4l-8 5l-8-5V6l8 5l8-5z"
+                  />
+                </svg>
+                {t("email", language)}
+              </a>
+
+              <a
+                href="https://t.me/+-k5Vkm-SxkE0ZDFl"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 link link-hover text-base-content/80 hover:text-primary"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  viewBox="0 0 16 16"
+                  className="flex-shrink-0"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="#0088cc" className="bi bi-telegram" viewBox="0 0 16 16">
-                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.287 5.906q-1.168.486-4.666 2.01-.567.225-.595.442c-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294q.39.01.868-.32 3.269-2.206 3.374-2.23c.05-.012.12-.026.166.016s.042.12.037.141c-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8 8 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629q.14.092.27.187c.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.4 1.4 0 0 0-.013-.315.34.34 0 0 0-.114-.217.53.53 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09"/>
-                  </svg>
-                  Telegram
-                </a>
-              </div>
+                  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.287 5.906q-1.168.486-4.666 2.01-.567.225-.595.442c-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294q.39.01.868-.32 3.269-2.206 3.374-2.23c.05-.012.12-.026.166.016s.042.12.037.141c-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8 8 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629q.14.092.27.187c.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.4 1.4 0 0 0-.013-.315.34.34 0 0 0-.114-.217.53.53 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09"/>
+                </svg>
+                Telegram
+              </a>
             </div>
           </div>
         </div>

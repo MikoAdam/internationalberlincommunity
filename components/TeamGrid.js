@@ -1,11 +1,13 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import { useLanguage } from "./LanguageContext";
+import { t } from "@/lib/translations";
 
 export const boardMembers = [
   {
     name: "Le Phan Thanh Phuong",
-    role: "President", 
+    role: "president", 
     profileImage: "/assets/Gia.jpeg",
     linkedinUrl: "https://www.linkedin.com/in/thanh-phuong-le-phan/",
     isLeadership: true,
@@ -13,7 +15,7 @@ export const boardMembers = [
   },
   {
     name: "Adam Miko",
-    role: "Founder / Vice President",
+    role: "founderVicePresident",
     profileImage: "/assets/adam.jpeg",
     linkedinUrl: "https://linkedin.com/in/adammiko",
     isLeadership: true,
@@ -22,15 +24,16 @@ export const boardMembers = [
 ];
 
 export const teamOrganizers = [
-  { name: "Masud H.", role: "Language Exchange Coordinator" },
-  { name: "Ratnesh P.", role: "Event Organizer" },
-  { name: "Talal D.", role: "Event Organizer" },
-  { name: "Ashish S.", role: "Event Organizer" },
-  { name: "Shristi R.", role: "Event Organizer" }
+  { name: "Masud H.", role: "languageCoordinator" },
+  { name: "Ratnesh P.", role: "eventOrganizer" },
+  { name: "Talal D.", role: "eventOrganizer" },
+  { name: "Ashish S.", role: "eventOrganizer" },
+  { name: "Shristi R.", role: "eventOrganizer" }
 ];
 
 const TeamGrid = () => {
   const router = useRouter();
+  const { language } = useLanguage();
   const leadership = boardMembers;
 
   return (
@@ -38,15 +41,15 @@ const TeamGrid = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="max-w-2xl">
           <h2 className="text-4xl font-extrabold tracking-tight text-base-content sm:text-5xl">
-            Meet Our Team
+            {t('meetOurTeam', language)}
           </h2>
           <p className="mt-4 text-lg text-base-content/80">
-            Our passionate team of volunteers works tirelessly to create memorable experiences.
+            {t('teamDescription', language)}
           </p>
         </div>
 
         <div className="mt-16">
-          <h3 className="text-2xl font-bold text-base-content mb-8">Board of Directors</h3>
+          <h3 className="text-2xl font-bold text-base-content mb-8">{t('leadershipTitle', language)}</h3>
           <ul role="list" className="grid gap-x-8 gap-y-12 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:col-span-2">
             {leadership.map((member) => (
               <li key={member.name}>
@@ -66,11 +69,11 @@ const TeamGrid = () => {
                     {member.name}
                   </h4>
                   <p className="text-lg font-semibold leading-6 text-primary">
-                    {member.role}
+                    {t(member.role, language)}
                   </p>
-                  <span className="text-primary text-sm font-medium">Open CV</span>
+                  <span className="text-primary text-sm font-medium">{t('openCV', language)}</span>
                   {member.linkedinUrl && (
-                    <span className="text-base-content/60 text-sm">LinkedIn Profile</span>
+                    <span className="text-base-content/60 text-sm">{t('linkedinProfile', language)}</span>
                   )}
                 </div>
               </li>
@@ -79,10 +82,10 @@ const TeamGrid = () => {
         </div>
 
         <div className="mt-20">
-          <h3 className="text-2xl font-bold text-base-content mb-8">Our Organizers</h3>
+          <h3 className="text-2xl font-bold text-base-content mb-8">{t('organizersTitle', language)}</h3>
           <div className="text-center">
             <p className="text-base-content/70 mb-6">
-              We have an amazing team of volunteer organizers who make our events possible.
+              {t('organizersDescription', language)}
             </p>
             <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 max-w-4xl mx-auto">
               {teamOrganizers.map((organizer) => (
@@ -97,7 +100,7 @@ const TeamGrid = () => {
                       {organizer.name}
                     </h4>
                     <p className="text-sm text-primary">
-                      {organizer.role}
+                      {t(organizer.role, language)}
                     </p>
                   </div>
                 </div>
@@ -108,16 +111,16 @@ const TeamGrid = () => {
 
         <div className="mt-20 text-center">
           <h3 className="text-2xl font-bold text-base-content mb-4">
-            Want to Join Our Team?
+            {t('joinTeamTitle', language)}
           </h3>
           <p className="text-base-content/70 mb-6 max-w-2xl mx-auto">
-            We're always looking for passionate volunteers who want to help build bridges across cultures.
+            {t('joinTeamDescription', language)}
           </p>
           <a 
             href="mailto:ibcmanagement@outlook.com?subject=Volunteer%20Interest" 
             className="btn btn-primary btn-lg"
           >
-            Become a Volunteer
+            {t('becomeVolunteer', language)}
           </a>
         </div>
       </div>

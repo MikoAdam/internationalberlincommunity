@@ -22,17 +22,6 @@ const Header = () => {
   ];
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (isOpen && !event.target.closest('.mobile-menu') && !event.target.closest('.hamburger-btn')) {
-        setIsOpen(false);
-      }
-    };
-
-    document.addEventListener('click', handleClickOutside);
-    return () => document.removeEventListener('click', handleClickOutside);
-  }, [isOpen]);
-
-  useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
     } else {
@@ -112,7 +101,7 @@ const Header = () => {
             <ThemeSwitch />
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="hamburger-btn p-2 text-base-content hover:text-primary transition-colors rounded-md hover:bg-base-200"
+              className="hamburger-btn p-2 text-base-content hover:text-primary transition-colors rounded-md hover:bg-base-200 relative z-[60]"
               aria-label="Toggle menu"
               aria-expanded={isOpen}
             >
@@ -129,32 +118,41 @@ const Header = () => {
       </div>
 
       {isOpen && (
-        <div className="fixed inset-0 z-40 lg:hidden" style={{ top: '64px' }}>
-          <div className="fixed inset-0 bg-black/50 backdrop-blur-sm" onClick={() => setIsOpen(false)} />
-          <div className="mobile-menu relative bg-base-100 border-b border-base-content/10 shadow-2xl">
-            <div className="px-4 py-4 space-y-1 max-h-[calc(100vh-64px)] overflow-y-auto">
-              {links.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="block px-4 py-3 text-base-content hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200 font-medium"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              ))}
-              <div className="pt-3 mt-3 border-t border-base-content/10">
-                <Link
-                  href="mailto:ibcmanagement@outlook.com"
-                  className="btn btn-primary w-full text-center"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {t('contactUs', language)}
-                </Link>
+        <>
+          {/* Backdrop */}
+          <div 
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 lg:hidden" 
+            style={{ top: '64px' }}
+            onClick={() => setIsOpen(false)} 
+          />
+          
+          {/* Menu Panel */}
+          <div className="fixed top-16 left-0 right-0 z-50 lg:hidden">
+            <div className="mobile-menu bg-base-100 border-b border-base-content/10 shadow-2xl max-h-[calc(100vh-4rem)] overflow-y-auto">
+              <div className="px-4 py-4 space-y-1">
+                {links.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="block px-4 py-3 text-base-content hover:text-primary hover:bg-primary/5 rounded-lg transition-all duration-200 font-medium"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+                <div className="pt-3 mt-3 border-t border-base-content/10">
+                  <Link
+                    href="mailto:ibcmanagement@outlook.com"
+                    className="btn btn-primary w-full text-center"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {t('contactUs', language)}
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        </>
       )}
     </header>
   );
