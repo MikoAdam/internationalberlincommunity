@@ -28,7 +28,7 @@ export default function AdamProfile() {
                   Berlin, Germany
                 </p>
                 <a
-                  href="https://linkedin.com/in/adammiko"
+                  href="https://www.linkedin.com/in/%C3%A1d%C3%A1m-mik%C3%B3/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-primary btn-sm w-full"
