@@ -17,14 +17,14 @@ export default function LeProfile() {
               <div className="bg-base-200 rounded-2xl p-8 text-center sticky top-24">
                 <img
                   src="/assets/Gia.jpeg"
-                  alt="Lê Phan Thanh Phương"
+                  alt="Gia Phan"
                   className="w-48 h-48 rounded-full mx-auto mb-6 object-cover shadow-large"
                   onError={(e) => {
                     e.target.src = "/assets/adam.jpeg"; // Fallback to Adam's photo if Gia's not available
                   }}
                 />
                 <h1 className="text-3xl font-bold text-base-content mb-2">
-                  Lê Phan Thanh Phương
+                  Gia Phan
                 </h1>
                 <p className="text-xl text-primary font-semibold mb-4">
                   President, International Berlin Community
@@ -57,7 +57,7 @@ export default function LeProfile() {
                   Sound Designer turned Psychology student and soon Auditory Neuroscientist. Leading IBC's mission to build bridges across cultures in Berlin's vibrant international community.
                 </p>
                 <p className="text-base-content/80 leading-relaxed">
-                  As President of the International Berlin Community (IBC) e.V., I'm passionate about fostering inclusivity, cultural exchange, and community building. Our registered non-profit has grown to become one of Berlin's leading organizations for international community integration, serving over 6,500 members from 50+ nationalities.
+                  As President of the International Berlin Community (IBC) e.V., I'm passionate about fostering inclusivity, cultural exchange, and community building. Our registered non-profit has grown to become one of Berlin's leading organizations for international community integration, serving over 10.000 members from 100+ nationalities.
                 </p>
               </section>
 
