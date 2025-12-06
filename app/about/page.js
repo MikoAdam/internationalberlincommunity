@@ -181,7 +181,7 @@ const AboutPage = () => {
                 <h3 className="text-2xl font-bold text-primary mb-2">
                   {t('vicePresidentName', language)}
                 </h3>
-                <p className="text-base-content/70 mb-4">{t('founder/vicepresident', language)}</p>
+                <p className="text-base-content/70 mb-4">{t('founderVicePresident', language)}</p>
                 <p className="text-base-content/80">
                   {t('vicePresidentBio', language)}
                 </p>
@@ -221,10 +221,6 @@ const AboutPage = () => {
                 {t('socialMediaLabel', language)}
               </a>
             </div>
-
-            <p className="mt-8 text-base-content/70">
-              {t('partnershipContact', language)}
-            </p>
           </div>
         </section>
       </main>
