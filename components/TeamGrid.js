@@ -17,7 +17,7 @@ export const boardMembers = [
     name: "Adam Miko",
     role: "founderVicePresident",
     profileImage: "/assets/adam.jpeg",
-    linkedinUrl: "https://linkedin.com/in/adammiko",
+    linkedinUrl: "https://linkedin.com/in/ádám-mikó",
     isLeadership: true,
     hasPage: true
   }

@@ -114,7 +114,7 @@ export const authors = [
       {
         name: socialIcons.linkedin.name,
         icon: socialIcons.linkedin.svg,
-        url: "https://linkedin.com/in/adammiko",
+        url: "https://linkedin.com/in/ádám-mikó",
       },
     ],
   },
