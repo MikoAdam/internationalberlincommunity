@@ -182,10 +182,10 @@ const AboutUs = () => {
         <div className="text-center">
           <div className="bg-gradient-to-r from-primary/10 via-secondary/5 to-primary/10 rounded-3xl p-8 md:p-12 border border-primary/20 shadow-xl max-w-4xl mx-auto">
             <h3 className="text-2xl md:text-3xl font-bold text-base-content mb-4">
-              Partner with Berlin's Leading Integration Non-Profit
+              Get in Touch
             </h3>
             <p className="text-base md:text-lg text-base-content/80 mb-8 max-w-2xl mx-auto">
-              Join us in scaling proven community integration solutions that strengthen Berlin's social fabric while supporting your organization's diversity and inclusion objectives.
+              Interested in partnering with us? We welcome collaborations with NGOs, government institutions, businesses, and international networks.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
               <a href="mailto:ibcmanagement@outlook.com?subject=Partnership%20Inquiry" 
