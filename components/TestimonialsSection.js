@@ -104,7 +104,7 @@ const TestimonialsSection = () => {
         <div className="text-center mb-12 md:mb-16">
           <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full mb-6">
             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" className="w-5 h-5 text-primary">
-              <path fill="currentColor" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z"/>
+              <path fill="currentColor" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2L9.19 8.63L2 9.24l5.46 4.73L5.82 21z" />
             </svg>
             <span className="text-primary font-medium">{t('fiveStarReviews', language)}</span>
           </div>
@@ -117,22 +117,20 @@ const TestimonialsSection = () => {
         </div>
 
         {/* Statistics Row */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 mb-12 md:mb-16">
-          <div className="text-center">
-            <div className="text-2xl md:text-3xl font-bold text-primary mb-2">5.0★</div>
-            <div className="text-xs md:text-sm text-base-content/60">{t('averageRating', language)}</div>
-          </div>
-          <div className="text-center">
-            <div className="text-2xl md:text-3xl font-bold text-primary mb-2">500+</div>
-            <div className="text-xs md:text-sm text-base-content/60">{t('happyReviews', language)}</div>
-          </div>
-          <div className="text-center">
-            <div className="text-2xl md:text-3xl font-bold text-primary mb-2">10,000+</div>
-            <div className="text-xs md:text-sm text-base-content/60">{t('communityMembers', language)}</div>
-          </div>
-          <div className="text-center">
-            <div className="text-2xl md:text-3xl font-bold text-primary mb-2">100%</div>
-            <div className="text-xs md:text-sm text-base-content/60">{t('freeEvents', language)}</div>
+        <div className="flex justify-center mb-12 md:mb-16">
+          <div className="grid grid-cols-3 gap-4 md:gap-8 max-w-2xl">
+            <div className="text-center">
+              <div className="text-2xl md:text-3xl font-bold text-primary mb-2">4.9★</div>
+              <div className="text-xs md:text-sm text-base-content/60">{t('averageRating', language)}</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl md:text-3xl font-bold text-primary mb-2">100+</div>
+              <div className="text-xs md:text-sm text-base-content/60">{t('countries', language)}</div>
+            </div>
+            <div className="text-center">
+              <div className="text-2xl md:text-3xl font-bold text-primary mb-2">100%</div>
+              <div className="text-xs md:text-sm text-base-content/60">{t('freeEvents', language)}</div>
+            </div>
           </div>
         </div>
 
@@ -153,16 +151,16 @@ const TestimonialsSection = () => {
               {t('joinThousands', language)}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
-                href="https://www.facebook.com/groups/internationalberlinhiking" 
-                target="_blank" 
+              <a
+                href="https://www.facebook.com/groups/internationalberlinhiking"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-primary btn-lg"
               >
                 {t('joinOurCommunity', language)}
               </a>
-              <a 
-                href="mailto:ibcmanagement@outlook.com?subject=Community%20Interest" 
+              <a
+                href="mailto:ibcmanagement@outlook.com?subject=Community%20Interest"
                 className="btn btn-outline btn-lg"
               >
                 {t('contactUs', language)}
