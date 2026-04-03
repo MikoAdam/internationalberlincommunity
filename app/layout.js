@@ -5,7 +5,7 @@ import { LanguageProvider } from '@/components/LanguageContext'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'International Berlin Community e.V. | Make Friends & Fight Loneliness in Berlin',
+  title: 'International Berlin Community e.V. | Building Bridges Across Cultures',
   description: 'Join 10,000+ people from 100+ countries in Berlin. Free community events, hiking, cultural exchange. Combat loneliness, make friends, integrate into Berlin life. Registered non-profit supporting expats, refugees, and locals.',
   keywords: 'Berlin community, make friends Berlin, Berlin expats, loneliness Berlin, Berlin events, integration Berlin, cultural exchange Berlin, Berlin hiking, expat community, refugee support Berlin, international community Berlin, Berlin meetup, new in Berlin, friends in Berlin, Berlin social events',
   authors: [{ name: 'International Berlin Community e.V.' }],
@@ -14,7 +14,7 @@ export const metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    title: 'International Berlin Community | Make Friends & Fight Loneliness in Berlin',
+    title: 'International Berlin Community | Building Bridges Across Cultures',
     description: 'Join 10,000+ people from 100+ countries. Free events, hiking, cultural exchange. Combat loneliness in Berlin.',
     siteName: 'International Berlin Community',
   },
