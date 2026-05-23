@@ -59,7 +59,7 @@ export default function RootLayout({ children }) {
               "areaServed": "Berlin, Germany",
               "sameAs": [
                 "https://www.facebook.com/groups/internationalberlinhiking",
-                "https://www.instagram.com/ibc.berlin"
+                "https://www.instagram.com/internationalberlincommunity/"
               ]
             })
           }}

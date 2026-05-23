@@ -213,7 +213,7 @@ const AboutPage = () => {
                 {t('emailLabel', language)}
               </a>
               <a
-                href="https://www.instagram.com/ibc.berlin"
+                href="https://www.instagram.com/internationalberlincommunity/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-outline btn-lg"
